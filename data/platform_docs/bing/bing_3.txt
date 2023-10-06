@@ -1,0 +1,24 @@
+Building Websites Optimized for All Platforms (desktop, mobile, etc.)
+
+Today the Web is accessible almost everywhere.  Our PC, laptops, tablets, smartphones and more allow us to access content anywhere, anytime. This also means there is a need to show content in many ways, optimized to different environments. A common SEO question we receive is how to optimize websites for various platforms such as desktop, mobile phone, tablet, etc.
+
+At Bing, we want to keep things simple by proposing the “one URL per content item” strategy. For each website, instead of having different URLs per platform (one URL for desktop, another for mobile devices, etc.), our feedback is that producing fewer variations of URLs will benefit you by avoiding sub-optimal and underperforming results.  It can help manage unwanted bandwidth usage as well.
+
+There could even be a compelling monetary case made here for some businesses.  To build, maintain and continually update a second site, such as a mobile version of your normal website, often entails some cost.  Depending on the depth and frequency of work, that cost can add up each year.
+
+By outputting only one URL for the same content, you will have the following benefits:
+
+    You have more ranking signals coming to this URL. Example: the vast majority of mobile URLs do not have inbound links from other websites as people do not link to mobiles URLs like they link to regular web-situated URLs.
+    This is also less search engine crawler traffic coming to your web servers, which is especially useful for large websites. Fewer URLs to crawl reduces the bandwidth our crawlers consume.
+    Less work (and potentially less cost) building, updating and maintaining a stand-alone mobile-focused website.
+
+Now that you have a single URL for each piece of your content, how do you optimize your website for different platforms?
+
+    By performing client browser detection (user agent, customer preferences, etc.), you can still optimize the display for the device your customers are using. This topic is presented in detail in the document Designing Web Sites for Phone Browsers; please note that this document does touch briefly on the subject of redirection to alternate URLs for mobile content, which is not the approach we recommend for best SEO results.
+    Also keep in mind our guidance on cloaking.  Bing recommends you avoid cloaking
+
+Can I still optimize display for mobile clients?  Is it the end of m.domain.com style URLs?
+
+We do not recommend you change everything right away. We are recommending that you think twice in your future strategies and figure out if the “one URL per content item” strategy can improve your SEO. Occasionally, it may make sense to keep some URLs targeted at specific clients (e.g. mobile devices), which you can opt to block from us via the usual methods (robots.txt, webmaster tools) or not. Our real concern is the hundreds of millions of additional URLs that are created on mobile-only domains, which for most of them will never accrue any value and rarely, if ever, rank in any form of search, yet still consume resources on both your servers and ours.
+
+As noted, it may make sense to keep select URLs for specific instances, but you still need to manage these URLs.  By placing all of your URLs online and making them accessible, you encourage the search engine to index all of that extra content and wade through the information to try to understand what has value and what does not. If everyone links to your HTML webpage online, we’ll see that version as holding more value than a URL specific to a mobile device, which actually won’t even have enough link signals to tell us of its value. In the end, the lack of signals is itself a signal to us, and not a positive one.

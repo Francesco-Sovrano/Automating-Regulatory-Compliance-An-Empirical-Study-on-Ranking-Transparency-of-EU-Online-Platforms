@@ -1,0 +1,10 @@
+Edit or Remove Review
+
+To remove your review:
+1. Go to your profile.
+2. Click the ellipses (...) button at the top right corner of the review box.
+3. Select Delete and confirm your request by clicking on Delete again.
+
+The review will immediately disappear from the website. 
+
+TIP: Please note that reviews cannot be edited. The only way to update your review is to delete it and submit an updated version.

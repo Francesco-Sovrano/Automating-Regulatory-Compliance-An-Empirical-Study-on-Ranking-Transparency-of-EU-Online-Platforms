@@ -1,0 +1,36 @@
+Sitemaps
+
+Sitemaps are an excellent way to tell Bing about URLs on your site that would be otherwise hard to discover by our web crawlers. You can submit your sitemaps to your Bing Webmaster Tools account in any of these formats:
+1. XML Sitemap
+2. RSS 2.0
+3. Atom 0.3 and 1.0
+4. Text (a plain text file containing one URL per line)
+
+The sitemaps page contains a list of all the sitemaps, sitemap indexes and feeds known to Bing for a particular site. These include the ones submitted by the users, those imported from Google Search Console and the ones that were discovered organically by Bing.
+
+To submit a sitemap, click on the "Submit sitemaps” button on top (right) to get the menu. Note that you can only submit your sitemaps in accepted formats, and only for the site that is selected from the site selection list.
+
+The table below shows the submitted/discovered/imported dates of the sitemaps along with the last processing date, processing status and the number of URLs discovered. You can also filter the sitemaps based on the type and based on their processing status.
+
+Sitemap Filter
+
+Resubmitting a sitemap is now a one-click experience; you can resubmit an individual sitemap by using the highlighted button shown below, or after selecting that sitemap. Resubmitting multiple sitemaps is not allowed; you will have to resubmit individual sitemaps in case you want to resubmit more than one sitemap.
+
+Sitemap Resubmit
+
+Click on any of the sitemap’s entry to view details of the specific sitemap. The details page gives the exact error or warning that you need to resolve in the sitemap. This page displays the stats and lists all the sitemaps present in the sitemaps index; clicking on individual sitemaps will give you the processing details for each page.
+
+Sitemap details
+
+You can also download the entire sitemaps list or individual sitemaps after applying a set of filters or after selecting a few entries from the sitemap table.
+
+Sitemap Download
+
+ 
+
+Other ways to let Bing know about the sitemaps:
+Reference in robots.txt file
+
+You can also leave a reference to your sitemap in your robots.txt file; simply add a sitemap directive line in your robots.txt file.
+
+Sitemap: http://www.example.com/sitemap.xml

@@ -1,0 +1,42 @@
+Content removal: Report broken links or outdated cache pages
+
+Improve your site’s appearance in Bing search by removing content with legal issues or content that is outdated.
+
+Use the Content Removal Tool to notify Bing about two types of outdated content:
+1. Pages that appear in our search results that are broken links (404 – Not Found).
+2. Pages that appear in our search results that contain outdated content in the cached version of the page.
+
+noteNOTE
+If you are the webmaster or site owner, please verify your site in Webmaster Tools and use the Block URLs tool to remove a URL or cached page from the Bing search results.
+Content Removal Overview
+Removing a broken link (page removal)
+
+Use the Content Removal tool to update Bing search results for pages with broken links. When you remove a page from your website, it will eventually drop out of our search index when we recrawl the page. This process can take time as the next recrawl can be after a week or a month. If you notify Bing about the broken link (404 – Not Found) through the Content Removal tool, we can speed up removing the URL from our search results. If the URL still points to a page that is live on the web, you have the option to remove outdated cached content. If we are unable to reach the URL, which you want to remove, (as your server is unreachable), you will not be able to submit a page removal or outdated cache removal request.
+Steps to submit a page removal request
+
+You can submit a page removal request for a webpage with a broken link (404 – Not Found) through the following steps:
+1. Login to your Bing Webmaster Tools account.
+2. Go to http://www.bing.com/webmasters/tools/contentremoval
+3. In the Content URL input box, enter the exact URL you found in the Bing web results (by using Copy Shortcut/Copy Link Address functionality in your browser).
+4. In the Removal type dropdown menu select Remove page.
+5. Click Submit
+
+Page Removal When you click Submit, we will run a check to see whether the page is available on the web. If the webpage no longer exits, we will submit the request and add it to the Submission History table. But if the page is still available on the web, we will prompt you to submit a Remove outdated cache option (see steps below).
+Removing outdated cache (outdated cache removal)
+
+When a page is live on the web, Bingbot (Bing’s crawler) crawls the page at regular intervals to update the content in our index and stores a copy in Bing cache. But if a page is removed it can take time to reflect in the index and the cached page. You can notify Bing about outdated cache by providing the URL and a word/words from the outdated cached page that no longer exists but is live on the web.
+Steps to submit an outdated cache removal request
+
+To submit an outdated cache removal request for a live webpage (HTTP status code 200) take the following steps:
+1. Login to your Bing Webmaster Tools account (formerly known as Windows Live ID).
+2. Go to www.bing.com/webmasters/tools/contentremoval
+3. In the Content URL input box, enter the exact URL you found in the Bing web results (by using Copy Shortcut/Copy Link Address functionality in your browser).
+4. In the Removal type dropdown menu, select Remove outdated cache.
+5. In the Cached page text, enter the word/words that still appear on the cached page, but the page no longer exists on the web.
+6. Click Submit
+
+Outdated Cache Removal
+
+When you click Submit, we will check whether the page no longer contains the word or words you have entered. If the words no longer exist, your request will be added to the Submission History table below, showing you the date, Content URL, Removal type and Status, along with the HTTP Status Code.
+
+The Submission History table will show you the most recent submissions for your account. Since this is a history table of requests you made and their status, you cannot remove or edit individual items in it. 

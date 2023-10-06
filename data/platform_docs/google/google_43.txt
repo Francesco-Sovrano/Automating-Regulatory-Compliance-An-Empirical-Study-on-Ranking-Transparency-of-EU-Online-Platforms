@@ -1,0 +1,188 @@
+Sitelinks search box (WebSite) structured data
+
+A sitelinks search box is a quick way for people to search your site or app immediately on the search results page. The search box implements real-time suggestions and other features.
+
+Google Search may automatically expose a search box scoped to your website when it appears as a search result, without you having to do anything additional to make this happen. This search box is powered by Google Search. However, you can explicitly provide information by adding WebSite structured data, which can help Google better understand your site.
+
+If Google Search already exposed a sitelink search box for your site, you can control certain aspects of the sitelink search box by adding WebSite structured data.
+Important: Google doesn't guarantee that a sitelinks search box will be shown in search results. Additionally, using the sitelinks search box markup doesn't make it more likely that a sitelinks search box will be shown. For a list of common reasons why Google may not show structured data in search results, review the General Structured Data Guidelines.
+How to implement sitelinks search box
+
+Here are the steps to make your site eligible to display with a search box in Google Search results:
+
+    Install a working search engine on your web site or Android app.
+
+    Sitelinks search queries send the user to the search results page for your site or app, so you need a functioning search engine to power this feature.
+        Websites: Set up a search engine on your website. The feature forwards the user's query to your target using the syntax specified in your structured data. Your search engine must support UTF-8-encoded queries.
+        Apps: See Search Overview on the Android Developer Site to learn how to implement a search engine for your app. Your Android app must support an ACTION_VIEW intent from Search results, with the corresponding data URI specified in your markup's potentialAction.target property.
+    Implement the WebSite structured data element on the home page for your site. An app must have an associated website to enable this feature, even if the website is only a single page. A few additional guidelines:
+        Add this markup only to the home page, not to any other pages.
+        If you're already implementing WebSite structured data for the site names feature, make sure that you nest the site name properties in the same node. In other words, avoid creating an additional WebSite structured data block on your home page if you can help it.
+        Always specify one SearchAction for the website, and optionally another if supporting app search. You must have a SearchAction for the website even if the app is your preferred search target; this ensures that if the user is not searching from an Android phone or does not have your Android app installed, the search result directs to your website.
+        Based on the format you're using, learn where to insert structured data on the page.
+    Using a CMS? It may be easier to use a plugin that's integrated into your CMS.
+    Using JavaScript? Learn how to generate structured data with JavaScript.
+    Follow the guidelines.
+    Validate your code using the Rich Results Test.
+    Verify your search engine implementation by copying the WebSite.potentialAction.target URL from your structured data, replacing {search_term_string} with a test query, and browsing to that URL in a web browser. For example, if your website is example.com, and you want to test the query "kittens", you would browse to https://www.example.com/search/?q=kittens.
+    Note: Throughout this document we're using q as URL parameter key for {search_term_string}, but it can be any string permitted by RFC 3986 in the query component of a URL. If you want to have cheesey_query={search_term_string}, that's fine, too.
+    Set a preferred canonical URL for your domain's home page using the rel="canonical" link element on all variants of the home page. This helps Google Search choose the correct URL for your markup. Your server must support UTF-8 character encoding.
+    For apps, enable the proper intent filters to support the URL you specify in the app target of your markup. For an example of how to create intent filters for Google Search urls, see Firebase App Indexing for Android.
+    Deploy a few pages that include your structured data and use the URL Inspection tool to test how Google sees the page. Be sure that your page is accessible to Google and not blocked by a robots.txt file, the noindex tag, or login requirements. If the page looks okay, you can ask Google to recrawl your URLs.
+    Note: Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it.
+    To keep Google informed of future changes, we recommend that you submit a sitemap. You can automate this with the Search Console Sitemap API.
+
+Example
+
+Here is an example search result for "Pinterest" on Google that returns a sitelinks search box for the Pinterest website:
+
+Sitelinks search box in-use
+Note: The actual appearance in search results might be different. You can preview most features with the Rich Results Test.
+
+Here is some example markup that would implement a sitelinks search box that uses the website's custom search engine:
+
+Here's an example of a site and an app in JSON-LD:
+
+
+Guidelines
+
+You must follow these guidelines for your site to be eligible to appear as a rich result.
+Warning: If your site violates one or more of these guidelines, then Google may take manual action against it. Once you have remedied the problem, you can submit your site for reconsideration.
+
+    Search Essentials
+    General structured data guidelines
+
+Prevent a sitelinks search box from appearing
+
+Google Search can choose to add a sitelinks search box to your site even if it does not include the structured data described here. However, you can prevent this behavior by add the following meta tag to your home page:
+
+
+The sitelinks search box will be disabled as part of the normal Googlebot crawling and processing of the page, which can take a few weeks depending on the site and other factors.
+Structured data type definitions
+
+To make your content eligible for display with a sitelinks search box, include the required properties.
+Modified type WebSite
+
+Google Search uses a modified WebSite structured data type both for website and app search boxes. The full definition of WebSite is provided on schema.org, although Google Search deviates slightly from the standard. The Google-supported properties are the following:
+Required properties
+potentialAction 	
+
+Array of one or two SearchAction objects
+
+This object describes the URI to send the query to, and the syntax of the request that is sent. You must implement a webpage or intent handler that can receive the request, and perform an appropriate search on the submitted string. If the user is not on an Android app (or is on an Android app but has not specified an Android intent target), the search box will send the website version of the query to the location specified; if the user is on an Android device and has specified an Android intent URI, it will send that intent.
+
+You must create a website SearchAction to enable the desktop search case. If also supporting app search, you can additionally specify a SearchAction object for your app. Each SearchAction object must contain the following nested properties:
+
+    potentialAction.@type
+    potentialAction.target
+    potentialAction.query-input
+
+Website example
+
+The following example sends a GET request to https://query.example.com/search?q=user%20search%20string.
+
+"potentialAction": [{
+  "@type": "SearchAction",
+  "target": {
+    "@type": "EntryPoint",
+    "urlTemplate": "https://query.example.com/search?q={search_term_string}"
+  }
+  "query-input": "required name=search_term_string"
+}]
+
+App example
+
+The following example sends an Android intent to android-app://com.example/https/query.example.com/search/?q=user_search_string.
+
+"potentialAction": [{
+  "@type": "SearchAction",
+  "target": {
+    "@type": "EntryPoint",
+    "urlTemplate": "android-app://com.example/https/query.example.com/search/?q={search_term_string}"
+  }
+  "query-input": "required name=search_term_string"
+}]
+
+potentialAction.query-input 	
+
+Text
+
+Use the literal string required name = search-term, or whatever placeholder you used in target. Make sure that both placeholder values match. For example, both placeholder values in the target and query-input properties use the string search-term:
+
+"potentialAction": [{
+  "@type": "SearchAction",
+  "target": {
+    "@type": "EntryPoint",
+    "urlTemplate": "https://query.example.com/search?q={search-term}"
+  }
+  "query-input": "required name=search-term"
+}]
+
+query-input is an annotated property. See the Potential Actions page for more information.
+potentialAction.target 	
+
+EntryPoint
+
+An EntryPoint object with a urlTemplate property.
+
+The urlTemplate must be a string in this format: search_handler_uri{search_term_string}
+
+For example:
+https://query.example.com/search?q={search_term_string}
+search_handler_uri 	For websites, the URL of the handler that receives and handles the search query; for apps, the URI of the intent handler for your search engine that handles queries.
+search_term_string 	
+
+A placeholder string that is replaced by user's search query when the user clicks the "Search" button in the search box. Make sure that whatever placeholder string you use here also matches the value for the name element for the query-input property.
+Google also supports a shorthand format of this property where you can provide Text directly in the potentialAction.target and Google expands it into urlTemplate. For example:
+
+"potentialAction": [{
+  "@type": "SearchAction",
+  "target": "android-app://com.example/https/query.example.com/search/?q={search_term_string}",
+  "query-input": "required name=search_term_string"
+}]
+
+But this is non-standard and Google primarily supports it for Microdata simplicity. For best results, include the whole EntryPoint object.
+url 	
+
+URL
+
+Specifies the URL of the site being searched. Set to the canonical home page of your site. For example: https://www.example.org
+Monitor rich results with Search Console
+
+Search Console is a tool that helps you monitor how your pages perform in Google Search. You don't have to sign up for Search Console to be included in Google Search results, but it can help you understand and improve how Google sees your site. We recommend checking Search Console in the following cases:
+
+    After deploying structured data for the first time
+    After releasing new templates or updating your code
+    Analyzing traffic periodically
+
+After deploying structured data for the first time
+
+After Google has indexed your pages, look for issues using the relevant Rich result status report. Ideally, there will be an increase of valid items, and no increase in invalid items. If you find issues in your structured data:
+
+    Fix the invalid items.
+    Inspect a live URL to check if the issue persists.
+    Request validation using the status report.
+
+After releasing new templates or updating your code
+When you make significant changes to your website, monitor for increases in structured data invalid items.
+
+    If you see an increase in invalid items, perhaps you rolled out a new template that doesn't work, or your site interacts with the existing template in a new and bad way.
+    If you see a decrease in valid items (not matched by an increase in invalid items), perhaps you are no longer embedding structured data in your pages. Use the URL Inspection tool to learn what is causing the issue.
+
+Warning: Don't use cached links to debug your pages. Instead, use the URL Inspection Tool because it has the most up-to-date version of your pages.
+Analyzing traffic periodically
+Analyze your Google Search traffic using the Performance Report. The data will show you how often your page appears as a rich result in Search, how often users click on it and what is the average position you appear on search results. You can also automatically pull these results with the Search Console API.
+Troubleshooting
+
+If you're having trouble implementing or debugging structured data, here are some resources that may help you.
+
+    If you're using a content management system (CMS) or someone else is taking care of your site, ask them to help you. Make sure to forward any Search Console message that details the issue to them.
+    Google does not guarantee that features that consume structured data will show up in search results. For a list of common reasons why Google may not show your content in a rich result, see the General Structured Data Guidelines.
+    You might have an error in your structured data. Check the list of structured data errors.
+    If you received a structured data manual action against your page, the structured data on the page will be ignored (although the page can still appear in Google Search results). To fix structured data issues, use the Manual Actions report.
+    Review the guidelines again to identify if your content isn't compliant with the guidelines. The problem can be caused by either spammy content or spammy markup usage. However, the issue may not be a syntax issue, and so the Rich Results Test won't be able to identify these issues.
+    Troubleshoot missing rich results / drop in total rich results.
+    Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it. For general questions about crawling and indexing, check the Google Search crawling and indexing FAQ.
+    Post a question in the Google Search Central forum.
+
+

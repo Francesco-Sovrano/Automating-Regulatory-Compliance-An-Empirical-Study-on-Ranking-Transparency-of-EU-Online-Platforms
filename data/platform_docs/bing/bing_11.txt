@@ -1,0 +1,56 @@
+URL inspection
+
+The URL inspection tool allows you to check and take necessary actions on URLs under the domain selected, for crawling, indexing, SEO, markup details and errors. This powerful tool shows crawling issues, index status, SEO errors and markup info. It also includes appropriate messages in instances where URL is not shown or can’t be shown in Bing search results, and suggests appropriate actions to fix the issue. As a webmaster, you can enter a URL for inspection from the domain you have already added or select one from the last 10 URLs inspected in recent history.
+Url Inspection Search Bar
+
+When you submit a URL for inspection, our system will check its status in Bing Index and provide detailed cards (Index card, SEO card and Markup card) as shown below. You also have the option to check the URL under the Live URL tab, which allows you to see exactly what the Bingbot sees while downloading a page from your site.
+Url Inspection Example Report
+Index card
+
+This section shows the index status and details of the URL. It includes details on each step, i.e., when and where the URL was discovered, crawled, and indexed along with the option to see HTML (Hypertext Markup Language) format and HTTP (Hypertext Transfer Protocol) response details. In case the URL is not indexed or facing indexing errors from Bingbot and fails to appear in Bing search results, the error along with required actions (request indexing, contact support, edit robots.txt, etc.) will be shown here.
+Url Inspection Index Card
+
+If the URL is indexed successfully, you can view details of the HTTP response and HTML code; and copy, search and validate for specific changes made by them. HTTP response status codes are majorly separated into five classes or categories:
+1. 1xx informational response – the request was received, continuing process
+2. 2xx successful – the request was successfully received, understood, and accepted
+3. 3xx redirection – further action needs to be taken to complete the request
+4. 4xx client error – the request contains bad syntax or cannot be fulfilled
+5. 5xx server error – the server failed to fulfil an apparently valid request
+
+When you make the necessary changes, you can request for indexing, based on the availability of URL submission quota, and action will be taken up on priority by our systems.
+SEO card
+
+This section provides details on SEO errors, warnings and notices about your webpages. Our system will scan your URL and report (based on a set of SEO best practices) on the compliance/non-compliance of these SEO best practices by your website.
+Url Inspection Search Bar
+
+Key points:
+1. The Error count tells you how many violations have been found on the scanned page.
+2. Items marked in red are high priority, yellow means medium priority, and blue means low priority.
+3. Hovering on an issue pops up a “How to fix” option, which shows error details and steps to resolve it. Url Inspection Search Bar
+4. Clicking on an error gives detailed analysis of the error, highlights the corresponding in-code HTML, and steps to fix it. Url Inspection
+
+You can also navigate between multiple instances and check the live status of a URL, or request indexing for recrawl of a webpage (based on availability of URL submission quota for the day).
+Markup card
+
+The Markup card helps you understand whether your selected structured markup language is implemented in a way that allows Bing to read and understand your content. This tool can be used on any URL to view the special markup applied in source code of your webpage. Click on any markup type found to get details of the issue.
+
+Markup languages recognized by this tool are:
+1. HTML Microdata
+2. Microformats
+3. Open Graph
+4. JSON-LD
+
+Url Inspection Markups Report
+
+This tool checks issues for the above-mentioned formats only and it does not validate "regular" HTML in the webpage.
+Live URL
+
+The Live URL feature helps to find if your content is getting indexed or if your site may have been compromised; for example, it may be sending different sets of HTML to Bingbot and to users. It is a tool to determine if a page on your site is crawled without request for indexing. This feature sends requests to Bingbot, so it’s normal to experience a few seconds delay to run your request.
+Url Inspection Live URL Report
+
+If the tool is unable to crawl a page due to other blocks or constraints, the issue is communicated with details.
+
+You can also search for specific details/sections here to check for updates. This feature also checks for SEO errors and markups.
+Url Inspection View Tested Page Pop Up
+
+The Live URL testing feature does not follow redirects. It lets you know the page resulted in a redirect and shows the destination URL. To fetch that page, you need to click on the Inspect redirect destination option and use the specified URL. This is how Bingbot crawler works. Every redirect requires a brand-new fetch, and this new fetch does not necessarily happen immediately after encountering the redirect. 

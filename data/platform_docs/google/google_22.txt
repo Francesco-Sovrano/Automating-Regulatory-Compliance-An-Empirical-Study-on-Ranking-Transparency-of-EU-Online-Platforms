@@ -1,0 +1,1655 @@
+
+
+Learning video (LearningResource, VideoObject, Clip) structured data Example of a Learning Video rich result
+
+Google Search is an entry point for students and teachers to discover and watch educational videos. When you explicitly provide learning-specific information with structured data, such as the educational level and concept and skills covered in the video, Google can better understand the content in your video, and provide an enhanced experience to help learners find the right content.
+
+Learning video structured data may also enable information chips about the learning video, like the educational level and what type of video it is (for example, an overview or a solution video).
+How information chips can appear below a learning video, before the user taps the video How information chips can appear above a learning video, after the user taps the video
+Feature availability
+
+The Learning Video rich result is available in English in all regions where Google Search is available. The feature is only available when searching for academic learning content on desktop and mobile.
+Examples
+Single Learning Video
+
+Here's an example of a single Learning Video.
+
+
+  <head>
+    <title>Learning video markup example</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["VideoObject", "LearningResource"],
+      "name": "An introduction to Genetics",
+      "description": "Explanation of the basics of Genetics for beginners.",
+      "learningResourceType": "Concept Overview",
+      "educationalLevel": "High school (US)",
+      "contentUrl": "https://www.example.com/video/123/file.mp4",
+      "thumbnailUrl": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+      ],
+      "uploadDate": "2016-03-31T08:00:00+08:00"
+    }
+    </script>
+  </head>
+  
+  
+
+
+Learning Video with multiple clips
+
+Here's an example of a Learning Video that has three clips: two clips for walking through the problem, and one clip for an overview of the concept.
+
+
+  <head>
+    <title>Learning video and clips markup example</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["VideoObject", "LearningResource"],
+      "name": "An introduction to XYZ",
+      "description": "Solving equations using exponent properties",
+      "educationalLevel": "High school (US)",
+      "educationalAlignment": {
+        "@type": "AlignmentObject",
+        "educationalFramework": "Common Core",
+        "targetName": "HSA-SSE.B.3",
+        "targetUrl": "https://www.corestandards.org/Math/Content/HSA/SSE/#CCSS.Math.Content.HSA.SSE.B.3"
+      },
+      "contentUrl": "https://www.example.com/video/123/file.mp4",
+      "thumbnailUrl": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+      ],
+      "hasPart": [{
+        "@type": ["Clip", "LearningResource"],
+        "learningResourceType": "Concept Overview",
+        "name": "Understanding exponents",
+        "startOffset": 40,
+        "endOffset": 120,
+        "url": "https://www.example.com/example?t=501"
+      },{
+        "@type": ["Clip", "LearningResource"],
+        "learningResourceType": "Problem Walkthrough",
+        "name": "Example problem 1: suspended wires",
+        "text": "Consider a weight suspended from two wires as shown in Figure. Find the tension in each wire.",
+        "startOffset": 150,
+        "endOffset": 225,
+        "url": "https://www.example.com/example?t=30"
+      },{
+        "@type": ["Clip", "LearningResource"],
+        "learningResourceType": "Problem Walkthrough",
+        "name": "Example problem 2: exponents",
+        "text": "Consider a weight suspended from five wires as shown in Figure. Find the tension in one wire.",
+        "startOffset": 275,
+        "endOffset": 500,
+        "url": "https://www.example.com/example?t=201"
+      }],
+      "uploadDate": "2018-03-31T08:00:00+08:00"
+    }
+    </script>
+  </head>
+  
+  
+
+
+Problem Walkthrough video
+
+This example shows all the properties that must be added to the Learning Videos markup to make it a valid Problem Walkthrough video.
+
+
+  <head>
+    <title>Problem Walkthrough Learning Video example</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["VideoObject", "LearningResource"],
+      "name": "Mechanics problem for Grade 10",
+      "description": "Video walks through solution for problems in mechanics.",
+      "learningResourceType": "Problem Walkthrough",
+      "text": "Three balls have a mass of 2kg, 4kg and 6kg each. Find the relative velocity after collision.",
+      "contentUrl": "https://www.example.com/video/123/file.mp4",
+      "thumbnailUrl": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+      ],
+      "uploadDate": "2016-03-31T08:00:00+08:00"
+    }
+    </script>
+  </head>
+  
+  
+
+
+Multiple Problem Walkthrough clips
+
+Here's an example of webpage with multiple Problem Walkthrough clips. This example shows all the properties that must be added to the Learning Videos markup at video and clip level to make it a valid Problem Walkthrough clip markup.
+
+
+  <head>
+    <title>Problem Walkthrough in clips in Learning Videos markup</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["VideoObject", "LearningResource"],
+      "name": "An introduction to XYZ",
+      "description": "Solving equations using exponent properties",
+      "learningResourceType": "Problem Walkthrough",
+      "contentUrl": "https://www.example.com/video/123/file.mp4",
+      "text": "Three balls have a mass of 2kg, 4kg and 6kg each. Find the relative velocity after collision.",
+      "thumbnailUrl": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+      ],
+      "hasPart": [{
+        "@type": ["Clip", "LearningResource"],
+        "learningResourceType": "Problem Walkthrough",
+        "name": "Example problem 1: suspended wires",
+        "text": "Consider a weight suspended from two wires. Find the tension in each wire.",
+        "startOffset": 150,
+        "endOffset": 225,
+        "url": "https://www.example.com/example?t=150"
+      },{
+        "@type": ["Clip", "LearningResource"],
+        "learningResourceType": "Problem Walkthrough",
+        "name": "Example problem 2: exponents",
+        "text": "Consider a weight suspended from five wires. Find the tension in one wire.",
+        "startOffset": 275,
+        "endOffset": 500,
+        "url": "https://www.example.com/example?t=275"
+      }],
+      "uploadDate": "2018-03-31T08:00:00+08:00"
+    }
+    </script>
+  </head>
+  
+  
+
+
+How to add structured data
+
+Structured data is a standardized format for providing information about a page and classifying the page content. If you're new to structured data, you can learn more about how structured data works.
+
+Here's an overview of how to build, test, and release structured data. For a step-by-step guide on how to add structured data to a web page, check out the structured data codelab.
+
+    Add the required properties. Based on the format you're using, learn where to insert structured data on the page.
+    Using a CMS? It may be easier to use a plugin that's integrated into your CMS.
+    Using JavaScript? Learn how to generate structured data with JavaScript.
+    Follow the guidelines.
+    Validate your code using the Rich Results Test and fix any critical errors. Consider also fixing any non-critical issues that may be flagged in the tool, as they can help improve the quality of your structured data (however, this isn't necessary to be eligible for rich results).
+    Deploy a few pages that include your structured data and use the URL Inspection tool to test how Google sees the page. Be sure that your page is accessible to Google and not blocked by a robots.txt file, the noindex tag, or login requirements. If the page looks okay, you can ask Google to recrawl your URLs.
+    Note: Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it.
+    To keep Google informed of future changes, we recommend that you submit a sitemap. You can automate this with the Search Console Sitemap API.
+
+Guidelines
+
+For your page to be eligible for Learning Video rich results, you must follow these guidelines:
+Warning: If your site violates one or more of these guidelines, then Google may take manual action against it. Once you have remedied the problem, you can submit your site for reconsideration.
+
+    General structured data guidelines
+    Search Essentials
+    Video best practices
+    Video sitemap guidelines
+    Technical guidelines
+
+Technical guidelines
+
+    In addition to Learning Video markup, you must add the VideoObject required and recommended properties.
+    The video must be publicly available to watch without a subscription.
+    The total video duration must be a minimum of 30 seconds.
+    Learning Video markup must be added to a page where users can watch the video. It's a bad user experience to point users to a page where they can't watch the video.
+
+Structured data type definitions
+
+The full definition of VideoObject and LearningResource is available on schema.org VideoObject and LearningResource.
+
+You must include the required properties for your content to be eligible for display as a Learning Video rich results. You can also include the recommended properties to add more information about your content, which could provide a better user experience.
+Learning Video [VideoObject, LearningResource]
+
+Learning Video markup is intended to give more visibility into the educational contents of the video. The markup can hold information about the various concepts and skills taught in the video.
+
+Use the [VideoObject, LearningResource] type for Learning Videos. In addition to the VideoObject required and recommended properties, add the following properties for Learning Videos.
+Required properties
+educationalAlignment 	
+
+AlignmentObject
+You must provide at least one of the following properties: educationalLevel, educationalAlignment, or learningResourceType.
+
+The official standard code, class, or exam associated with the content. Only use this property if your content is aligned with a specific standard or exam. If not, only use the educationalLevel property. If you include the educationalAlignment property, add the following properties (as applicable):
+
+    educationalAlignment.educationalFramework
+    educationalAlignment.targetName
+    educationalAlignment.targetUrl
+
+While you may provide multiple educationalAlignment values, it is not guaranteed that all of these values will be used for Learning Video features. If multiple values are provided, and the feature can only use one educationalAlignment value, the feature uses the first value that you provide.
+
+Examples:
+
+"educationalAlignment":
+            {
+              "@type": "AlignmentObject",
+              "educationalFramework": "Common Core",
+              "targetName": "CCSS.MATH.CONTENT.7.SP.B.4",
+              "targetUrl": "https://www.corestandards.org/Math/Content/7/SP/B/4/"
+            }
+
+"educationalAlignment":
+            {
+              "@type": "AlignmentObject",
+              "educationalFramework": "NCERT",
+              "targetUrl": "https://ncert.nic.in/"
+            }
+
+educationalLevel 	
+
+Text
+You must provide at least one of the following properties: educationalLevel, educationalAlignment, or learningResourceType.
+
+The target education level for the video. Set the target education level to either a country-specific or generic value.
+
+Country-specific values:
+
+Each country has its own academic system. Set the educationalLevel to one of the supported level values, based on the applicable country for the video.
+
+Country 	Supported values
+Algeria 	
+
+    Lower Secondary School (DZ)
+    Grade 8 (DZ)
+    Grade 9 (DZ)
+    Upper Secondary School (DZ)
+    Grade 10 (DZ)
+    Grade 11 (DZ)
+    Grade 12 (DZ)
+    Higher Education (DZ)
+
+Argentina 	
+
+    Secondary (AR)
+    8th Grade (AR)
+    9th Grade (AR)
+    10th Grade (AR)
+    11th Grade (AR)
+    12th Grade (AR)
+    Higher Education (AR)
+
+Australia 	
+
+    Secondary School (AU)
+    Year 8 (AU)
+    Year 9 (AU)
+    Year 10 (AU)
+    Senior Secondary School (AU)
+    Year 11 (AU)
+    Year 12 (AU)
+    University (AU)
+
+Austria 	
+
+    Upper Secondary Level (AT)
+    9th Grade (AT)
+    10th Grade (AT)
+    11th Grade (AT)
+    12th Grade (AT)
+    Tertiary Level (AT)
+
+Azerbaijan 	
+
+    General Secondary Education (AZ)
+    8th Grade (AZ)
+    9th Grade (AZ)
+    Full Secondary Education (AZ)
+    10th Grade (AZ)
+    11th Grade (AZ)
+    Higher Education (AZ)
+
+Bahrain 	
+
+    Intermediate Stage (BH)
+    Grade 8 (BH)
+    Grade 9 (BH)
+    Secondary Stage (BH)
+    Grade 10 (BH)
+    Grade 11 (BH)
+    Grade 12 (BH)
+    Higher Education (BH)
+
+Bangladesh 	
+
+    Junior Secondary Education (BD)
+    Grade VIII (BD)
+    Secondary Education (BD)
+    Grade IX (BD)
+    Grade X (BD)
+    Higher Secondary Education (BD)
+    Grade XI (BD)
+    Grade XII (BD)
+    Tertiary Education (BD)
+
+Belarus 	
+
+    Compulsory Basic Education (BY)
+    Grade 8 (BY)
+    Grade 9 (BY)
+    General Upper Secondary Education (BY)
+    Grade 10 (BY)
+    Grade 11 (BY)
+    Grade 12 (BY)
+    Higher Education (BY)
+
+Belgium 	
+
+    Secondary Education (BE)
+    2nd Secondary (BE)
+    3rd Secondary (BE)
+    4th Secondary (BE)
+    5th Secondary (BE)
+    6th Secondary (BE)
+    Higher Education (BE)
+
+Bolivia 	
+
+    Lower Secondary Education (BO)
+    8th Grade (BO)
+    Upper Secondary Education (BO)
+    9th Grade (BO)
+    10th Grade (BO)
+    11th Grade (BO)
+    12th Grade (BO)
+    Higher Education (BO)
+
+Bosnia and Herzegovina 	
+
+    Primary Education (BA)
+    Grade 8 (BA)
+    Grade 9 (BA)
+    Secondary Education (BA)
+    Grade 10 (BA)
+    Grade 11 (BA)
+    Grade 12 (BA)
+    Grade 13 (BA)
+    Tertiary Education (BA)
+
+Brazil 	
+
+    Elementary School (BR)
+    8th Grade (BR)
+    High School (BR)
+    1st grade (High School) (BR)
+    2nd grade (High School) (BR)
+    3rd grade (High School) (BR)
+    Higher Education (BR)
+
+Bulgaria 	
+
+    Secondary Education (BG)
+    10th Grade (BG)
+    11th Grade (BG)
+    12th Grade (BG)
+    Higher Education (BG)
+
+Canada 	
+
+    Intermediate Education (CA)
+    Grade 8 (CA)
+    Grade 9 (CA)
+    Secondary Education (CA)
+    Grade 10 (CA)
+    Grade 11 (CA)
+    Grade 12 (CA)
+    Tertiary Education (CA)
+
+Chile 	
+
+    Secondary Education (CL)
+    9th Grade (CL)
+    10th Grade (CL)
+    11th Grade (CL)
+    12th Grade (CL)
+    Higher Education (CL)
+
+Colombia 	
+
+    Basic Secondary (CO)
+    9th Grade (CO)
+    High School Education (CO)
+    10th Grade (CO)
+    11th Grade (CO)
+    Tertiary (CO)
+
+Costa Rica 	
+
+    Secondary Education (CR)
+    Eighth Grade (CR)
+    Ninth Grade (CR)
+    Tenth Grade (CR)
+    Eleventh Grade (CR)
+    Twelfth Grade (CR)
+    Higher Education (CR)
+
+Croatia 	
+
+    Secondary education (HR)
+    10th Grade (HR)
+    11th Grade (HR)
+    12th Grade (HR)
+    Higher Education (HR)
+
+Cyprus 	
+
+    Secondary Education (CY)
+    Grade 9 (CY)
+    Grade 10 (CY)
+    Grade 11 (CY)
+    Grade 12 (CY)
+    Higher Education (CY)
+
+Czechia 	
+
+    Upper Secondary Education (CZ)
+    Grade 10 (CZ)
+    Grade 11 (CZ)
+    Grade 12 (CZ)
+    Higher Education (CZ)
+
+Denmark 	
+
+    Secondary Education (DK)
+    8th Grade (DK)
+    9th Grade (DK)
+    10th Grade (DK)
+    Upper Secondary Education (DK)
+    11th Grade (DK)
+    12th Grade (DK)
+    Higher Education (DK)
+
+Dominican Republic 	
+
+    Primary School (DO)
+    Grade 8 (DO)
+    Secondary School (DO)
+    Grade 1 (Secondary School) (DO)
+    Grade 2 (Secondary School) (DO)
+    Grade 3 (Secondary School) (DO)
+    Grade 4 (Secondary School) (DO)
+    Higher Education (DO)
+    Doctorate (DO)
+
+Ecuador 	
+
+    Secondary (EC)
+    Eighth Grade (EC)
+    Ninth Grade (EC)
+    Tenth Grade (EC)
+    Eleventh Grade (EC)
+    Twelfth Grade (EC)
+    Tertiary Education (EC)
+
+Egypt 	
+
+    Preparatory Stage (EG)
+    Grade 8 (EG)
+    Grade 9 (EG)
+    Secondary Education (EG)
+    Grade 10 (EG)
+    Grade 11 (EG)
+    Grade 12 (EG)
+    Higher Education (EG)
+
+El Salvador 	
+
+    3rd Cycle (SV)
+    7th Grade (SV)
+    8th Grade (SV)
+    9th Grade (SV)
+    Middle Education (SV)
+    10th Grade (SV)
+    11th Grade (SV)
+    Higher Education (SV)
+
+England 	
+
+    Key Stage 3 (GB-ENG)
+    Year 9 (GB-ENG)
+    Key Stage 4 (GB-ENG)
+    Year 10 (GB-ENG)
+    Year 11 (GB-ENG)
+    Key Stage 5 (GB-ENG)
+    Year 12 (GB-ENG)
+    Year 13 (GB-ENG)
+    Higher Education (GB-ENG)
+
+Estonia 	
+
+    Basic Education (EE)
+    7th Grade (EE)
+    8th Grade (EE)
+    9th Grade (EE)
+    Secondary Education (EE)
+    10th Grade (EE)
+    11th Grade (EE)
+    12th Grade (EE)
+    Higher Education (EE)
+
+Finland 	
+
+    Basic Education (FI)
+    7th Grade (FI)
+    8th Grade (FI)
+    9th Grade (FI)
+    Upper Secondary Education (FI)
+    10th Grade (FI)
+    11th Grade (FI)
+    12th Grade (FI)
+    Higher Education (FI)
+
+France 	
+
+    Lycée (FR)
+    Seconde (FR)
+    Première (FR)
+    Terminale (FR)
+
+Georgia 	
+
+    Basic Education (GE)
+    Grade 8 (GE)
+    Grade 9 (GE)
+    Secondary Education (GE)
+    Grade 10 (GE)
+    Grade 11 (GE)
+    Grade 12 (GE)
+    Tertiary Education (GE)
+
+Germany 	
+
+    Gymnasium (DE)
+    11th Grade (Gymnasium) (DE)
+    12th Grade (Gymnasium) (DE)
+    13th Grade (Gymnasium) (DE)
+    University (DE)
+
+Ghana 	
+
+    Junior Secodary School (GH)
+    Grade 8 (GH)
+    Grade 9 (GH)
+    Senior Secondary School (GH)
+    Grade 10 (GH)
+    Grade 11 (GH)
+    Grade 12 (GH)
+    Higher Education (GH)
+
+Greece 	
+
+    Upper Secondary School (GR)
+    1st Grade (Lyceum) (GR)
+    2nd Grade (Lyceum) (GR)
+    3rd Grade (Lyceum) (GR)
+    Tertiary Education (GR)
+
+Guatemala 	
+
+    Lower Secondary (GT)
+    Grade 7 (GT)
+    Grade 8 (GT)
+    Grade 9 (GT)
+    Upper Secondary (GT)
+    Grade 10 (GT)
+    Grade 11 (GT)
+    Grade 12 (GT)
+    Higher Education (GT)
+
+Honduras 	
+
+    Lower Secondary Education (HN)
+    8th Grade (HN)
+    9th Grade (HN)
+    Upper Secondary Education (HN)
+    10th Grade (HN)
+    11th Grade (HN)
+    12th Grade (HN)
+    Tertiary Education (HN)
+
+Hong Kong 	
+
+    Junior Secondary (HK)
+    Secondary 2 (HK)
+    Secondary 3 (HK)
+    Senior Secondary (HK)
+    Secondary 4 (HK)
+    Secondary 5 (HK)
+    Secondary 6 (HK)
+    University (HK)
+
+Hungary 	
+
+    Upper Secondary Education (HU)
+    11th Grade (HU)
+    12th Grade (HU)
+    13th Grade (HU)
+    Higher Education (HU)
+
+Iceland 	
+
+    Primary Education (IS)
+    Grade 8 (IS)
+    Grade 9 (IS)
+    Grade 10 (IS)
+    Upper Secondary Education (IS)
+    11th Grade (IS)
+    12th Grade (IS)
+    13th Grade (IS)
+    Higher Education (IS)
+
+India 	
+
+    Middle Stage (IN)
+    Class 8 (IN)
+    Secondary School (IN)
+    Class 9 (IN)
+    Class 10 (IN)
+    Senior Secondary School (IN)
+    Class 11 (IN)
+    Class 12 (IN)
+    Undergraduate college (IN)
+    Post-graduate college (IN)
+
+Indonesia 	
+
+    Middle School (ID)
+    8th Grade (ID)
+    9th Grade (ID)
+    High School (ID)
+    10th Grade (ID)
+    11th Grade (ID)
+    12th Grade (ID)
+    Tertiary Education (ID)
+
+Iraq 	
+
+    Intermediate Education (IQ)
+    Eighth Grade (IQ)
+    Ninth Grade (IQ)
+    Preparatory Education (IQ)
+    Tenth Grade (IQ)
+    Eleventh Grade (IQ)
+    Twelfth Grade (IQ)
+    Higher Education (IQ)
+
+Ireland 	
+
+    Senior Cycle (IE)
+    Transition Year (IE)
+    Fifth Year (IE)
+    Sixth Year (IE)
+    University (IE)
+
+Israel 	
+
+    Intermediate School (IL)
+    Grade 8 (IL)
+    Grade 9 (IL)
+    Secondary School (IL)
+    Grade 10 (IL)
+    Grade 11 (IL)
+    Grade 12 (IL)
+    University (IL)
+    Doctorate (IL)
+
+Italy 	
+
+    Upper Secondary Education (IT)
+    2nd upper (IT)
+    3rd upper (IT)
+    4th upper (IT)
+    5th upper (IT)
+    Higher Education (IT)
+
+Jamaica 	
+
+    Secondary Education (JM)
+    Grade 8 (JM)
+    Grade 9 (JM)
+    Grade 10 (JM)
+    Grade 11 (JM)
+    Grade 12 (JM)
+    Tertiary Education (JM)
+
+Japan 	
+
+    Lower Secondary School (JP)
+    Grade 2 (lower secondary) (JP)
+    Grade 3 (lower secondary) (JP)
+    Upper Secondary School (JP)
+    Grade 1 (upper secondary) (JP)
+    Grade 2 (upper secondary) (JP)
+    Grade 3 (upper secondary) (JP)
+    Higher Education (JP)
+
+Jordan 	
+
+    Basic Education (JO)
+    Grade 8 (JO)
+    Grade 9 (JO)
+    Grade 10 (JO)
+    Secondary Education (JO)
+    Grade 11 (JO)
+    Grade 12 (JO)
+    Higher Education (JO)
+    Doctorate (JO)
+
+Kazakhstan 	
+
+    Lower Secondary School (KZ)
+    Grade 7 (KZ)
+    Grade 8 (KZ)
+    Grade 9 (KZ)
+    Upper Secondary School (KZ)
+    Grade 10 (KZ)
+    Grade 11 (KZ)
+    Tertiary Institutions (KZ)
+
+Kenya 	
+
+    Upper Primary (KE)
+    Standard 8 (KE)
+    High School (KE)
+    Standard 9 (KE)
+    Standard 10 (KE)
+    Standard 11 (KE)
+    Standard 12 (KE)
+    Higher Education (KE)
+
+Kuwait 	
+
+    Intermediate Education (KW)
+    Grade 8 (KW)
+    Grade 9 (KW)
+    Secondary Education (KW)
+    Grade 10 (KW)
+    Grade 11 (KW)
+    Grade 12 (KW)
+    Higher Education (KW)
+
+Latvia 	
+
+    Primary Education (LV)
+    Grade 7 (LV)
+    Grade 8 (LV)
+    Senior Secondary Education (LV)
+    Grade 10 (LV)
+    Grade 11 (LV)
+    Grade 12 (LV)
+    Higher Education (LV)
+
+Lebanon 	
+
+    Intermediate Level (LB)
+    Grade 8 (LB)
+    Grade 9 (LB)
+    Secondary Education (LB)
+    Grade 10 (LB)
+    Grade 11 (LB)
+    Grade 12 (LB)
+    Tertiary Education (LB)
+
+Libya 	
+
+    Primary Education (LY)
+    Grade 8 (LY)
+    Grade 9 (LY)
+    Secondary Education (LY)
+    Grade 10 (LY)
+    Grade 11 (LY)
+    Grade 12 (LY)
+    Tertiary Education (LY)
+
+Liechtenstein 	
+
+    Middle School (LI)
+    7th Grade (LI)
+    8th Grade (LI)
+    9th Grade (LI)
+    High School (LI)
+    10th Grade (LI)
+    11th Grade (LI)
+    12th Grade (LI)
+    Tertiary Education (LI)
+
+Lithuania 	
+
+    Lower Secondary Education (LT)
+    Grade 8 (LT)
+    Grade 9 (LT)
+    Grade 10 (LT)
+    Upper Secondary Education (LT)
+    Grade 11 (LT)
+    Grade 12 (LT)
+    Higher Education (LT)
+
+Luxembourg 	
+
+    Upper Secondary Education (LU)
+    3 G (LU)
+    2 G (LU)
+    1 G (LU)
+    Higher Education (LU)
+
+Malaysia 	
+
+    Secondary (MY)
+    Form 2 (MY)
+    Form 3 (MY)
+    Form 4 (MY)
+    Form 5 (MY)
+    Pre-university (MY)
+    Lower Form 6 (MY)
+    Upper Form 6 (MY)
+    Post-secondary Education (MY)
+
+Malta 	
+
+    Secondary Education (MT)
+    Grade 9 (MT)
+    Grade 10 (MT)
+    Grade 11 (MT)
+    Post-Secondary Education (MT)
+    Tertiary Education (MT)
+    Postgraduate Education (MT)
+
+Mexico 	
+
+    Lower Secondary Education (MX)
+    Grade 8 (MX)
+    Grade 9 (MX)
+    Upper Secondary Education (MX)
+    Grade 10 (MX)
+    Grade 11 (MX)
+    Grade 12 (MX)
+    Tertiary Education (MX)
+
+Montenegro 	
+
+    Primary Education (ME)
+    Grade 8 (ME)
+    Grade 9 (ME)
+    Secondary Education (ME)
+    Grade 10 (ME)
+    Grade 11 (ME)
+    Grade 12 (ME)
+    Grade 13 (ME)
+    Higher Education (ME)
+
+Morocco 	
+
+    Lower Secondary (MA)
+    Grade 8 (MA)
+    Grade 9 (MA)
+    Upper Secondary (MA)
+    Grade 10 (MA)
+    Grade 11 (MA)
+    Grade 12 (MA)
+    Tertiary (MA)
+
+Nepal 	
+
+    Secondary (NP)
+    Year 9 (NP)
+    Year 10 (NP)
+    Senior Higher Secondary (NP)
+    Year 11 (NP)
+    Year 12 (NP)
+
+Netherlands 	
+
+    Secondary Education (NL)
+    5th Year (HAVO) (NL)
+    Higher Education (NL)
+
+New Zealand 	
+
+    Year 9-13 Secondary School (NZ)
+    Year 9 (NZ)
+    Year 10 (NZ)
+    Year 11 (NZ)
+    Year 12 (NZ)
+    Year 13 (NZ)
+    University (NZ)
+    Doctorate (NZ)
+
+Nicaragua 	
+
+    Lower Secondary Education (NI)
+    Grade 8 (NI)
+    Grade 9 (NI)
+    Higher Secondary Education (NI)
+    Grade 10 (NI)
+    Grade 11 (NI)
+    Tertiary Education (NI)
+
+Nigeria 	
+
+    Junior Secondary Education (NG)
+    Grade 8 (NG)
+    Grade 9 (NG)
+    Senior Secondary Education (NG)
+    Grade 10 (NG)
+    Grade 11 (NG)
+    Grade 12 (NG)
+    University (NG)
+    Doctorate (NG)
+
+North Macedonia 	
+
+    Primary Education (MK)
+    Grade 7 (MK)
+    Grade 8 (MK)
+    Secondary Education (MK)
+    Grade 9 (MK)
+    Grade 10 (MK)
+    Grade 11 (MK)
+    Grade 12 (MK)
+    Higher Education (MK)
+
+Northern Ireland 	
+
+    Key Stage 3 (GB-NIR)
+    Year 10 (GB-NIR)
+    Key Stage 4 (GB-NIR)
+    Year 11 (GB-NIR)
+    Year 12 (GB-NIR)
+    Key Stage 5 (GB-NIR)
+    Higher Education (GB-NIR)
+
+Norway 	
+
+    Lower Secondary School (NO)
+    8th Grade (NO)
+    9th Grade (NO)
+    10th Grade (NO)
+    Upper Secondary School (NO)
+    VG1 (NO)
+    VG2 (NO)
+    VG3 (NO)
+    Higher Education (NO)
+
+Oman 	
+
+    Basic Education (OM)
+    Grade 8 (OM)
+    Grade 9 (OM)
+    Grade 10 (OM)
+    Secondary Education (OM)
+    Grade 11 (OM)
+    Grade 12 (OM)
+    Higher Education (OM)
+    Doctorate (OM)
+
+Pakistan 	
+
+    Middle School (PK)
+    Class 8 (PK)
+    High School (PK)
+    Class 9 (PK)
+    Class 10 (PK)
+    Higher Secondary School (PK)
+    Class 11 (PK)
+    Class 12 (PK)
+    University (PK)
+
+Panama 	
+
+    First Step of Secondary Level (PA)
+    Grade Eight (PA)
+    Grade Nine (PA)
+    Second Step of Secondary Level (PA)
+    Grade Ten (PA)
+    Grade Eleven (PA)
+    Grade Twelve (PA)
+    Higher Education (PA)
+
+Papua New Guinea 	
+
+    Middle (PG)
+    Grade 7 (PG)
+    Grade 8 (PG)
+    Grade 9 (PG)
+    Grade 10 (PG)
+    Secondary (PG)
+    Grade 11 (PG)
+    Grade 12 (PG)
+    Tertiary (PG)
+
+Paraguay 	
+
+    Primary Education (PY)
+    8th Grade (PY)
+    9th Grade (PY)
+    Upper Secondary Education (PY)
+    10th Grade (PY)
+    11th Grade (PY)
+    12th Grade (PY)
+    Tertiary Education (PY)
+
+Peru 	
+
+    Secondary School (PE)
+    9th Grade (PE)
+    10th Grade (PE)
+    11th Grade (PE)
+    Higher Education (PE)
+
+Philippines 	
+
+    Junior High School (PH)
+    Grade 8 (PH)
+    Grade 9 (PH)
+    Grade 10 (PH)
+    Senior High School (PH)
+    Grade 11 (PH)
+    Grade 12 (PH)
+    Tertiary Education (PH)
+
+Poland 	
+
+    Upper Secondary Education (PL)
+    Grade 2 (high school) (PL)
+    Grade 3 (high school) (PL)
+    Grade 4 (high school) (PL)
+    Higher Education (PL)
+
+Portugal 	
+
+    Basic Education (PT)
+    8th Year (PT)
+    9th Year (PT)
+    Secondary Education (PT)
+    10th Year (PT)
+    11th Year (PT)
+    12th Year (PT)
+    Tertiary Education (PT)
+
+Puerto Rico 	
+
+    Junior High School (PR)
+    Eighth Grade (PR)
+    Ninth Grade (PR)
+    High School (PR)
+    Tenth Grade (PR)
+    Eleventh Grade (PR)
+    Twelfth Grade (PR)
+    Higher Education (PR)
+
+Qatar 	
+
+    Preparatory Education (QA)
+    Grade 8 (QA)
+    Grade 9 (QA)
+    Secondary Education (QA)
+    Grade 10 (QA)
+    Grade 11 (QA)
+    Grade 12 (QA)
+    University (QA)
+    Doctorate (QA)
+
+Romania 	
+
+    Secondary School (RO)
+    Class X (RO)
+    Class XI (RO)
+    Class XII (RO)
+    Higher Education (RO)
+
+Russia 	
+
+    Basic General Education (RU)
+    Eighth Grade (RU)
+    Ninth Grade (RU)
+    Secondary General Education (RU)
+    Tenth Grade (RU)
+    Eleventh Grade (RU)
+    Postsecondary and Tertiary Education (RU)
+
+Saudi Arabia 	
+
+    Intermediate Education (SA)
+    Grade 8 (SA)
+    Grade 9 (SA)
+    Secondary Education (SA)
+    Grade 10 (SA)
+    Grade 11 (SA)
+    Grade 12 (SA)
+    Tertiary Education (SA)
+
+Scotland 	
+
+    Secondary School (GB-SCT)
+    Second Year (S2) (GB-SCT)
+    Third Year (S3) (GB-SCT)
+    Fourth Year (S4) (GB-SCT)
+    Fifth Year (S5) (GB-SCT)
+    Higher Education (GB-SCT)
+    Doctorate (GB-SCT)
+
+Senegal 	
+
+    Lower Secondary Education (SN)
+    Grade 8 (SN)
+    Grade 9 (SN)
+    Grade 10 (SN)
+    Upper Secondary Education (SN)
+    Grade 11 (SN)
+    Grade 12 (SN)
+    Grade 13 (SN)
+    Tertiary Education (SN)
+
+Serbia 	
+
+    Secondary-High School (RS)
+    Year 2 (RS)
+    Year 3 (RS)
+    Year 4 (RS)
+    Higher Education (RS)
+
+Singapore 	
+
+    Secondary Education (SG)
+    Secondary 1 (SG)
+    Secondary 2 (SG)
+    Secondary 3 (SG)
+    Secondary 4 (SG)
+    Secondary 5 (SG)
+    Post-secondary Education (SG)
+
+Slovakia 	
+
+    High School (SK)
+    2nd Grade (High School) (SK)
+    3rd Grade (High School) (SK)
+    4th Grade (High School) (SK)
+    Post-Secondary Education (SK)
+
+Slovenia 	
+
+    Upper Secondary Education (SI)
+    Grade 11 (SI)
+    Grade 12 (SI)
+    Grade 13 (SI)
+    Tertiary Education (SI)
+
+South Africa 	
+
+    Senior Phase (ZA)
+    Grade 8 (ZA)
+    Grade 9 (ZA)
+    Further Education and Training (ZA)
+    Grade 10 (ZA)
+    Grade 11 (ZA)
+    Grade 12 (ZA)
+    Higher Education and Training (ZA)
+
+South Korea 	
+
+    Middle School (KR)
+    3rd Grade (KR)
+    High School (KR)
+    1st Grade (KR)
+    2nd Grade (KR)
+    3rd Grade (KR)
+    Higher Education (KR)
+
+Spain 	
+
+    Lower Secondary Education (ES)
+    Grade 9 (ES)
+    Grade 10 (ES)
+    Upper Secondary Education (ES)
+    Grade 11 (ES)
+    Grade 12 (ES)
+    Tertiary education (ES)
+
+Sri Lanka 	
+
+    Junior Secondary (LK)
+    Grade 9 (LK)
+    Senior Secondary (LK)
+    Grade 10 (LK)
+    Grade 11 (LK)
+    Collegiate (LK)
+    Grade 12 (LK)
+    Grade 13 (LK)
+    Tertiary Education (LK)
+
+Sweden 	
+
+    Comprehensive School (SE)
+    7th Grade (SE)
+    8th Grade (SE)
+    9th Grade (SE)
+    Upper Secondary Education (SE)
+    1st Grade (SE)
+    2nd Grade (SE)
+    3rd Grade (SE)
+    University (SE)
+
+Switzerland 	
+
+    Lower Secondary Level (CH)
+    Grade 8 (CH)
+    Grade 9 (CH)
+    Upper Secondary Level (CH)
+    Grade-1 (CH)
+    Grade-2 (CH)
+    Grade-3 (CH)
+    Tertiary Level (CH)
+
+Taiwan 	
+
+    Junior High School (TW)
+    8th Grade (TW)
+    9th Grade (TW)
+    Senior High School (TW)
+    10th Grade (TW)
+    11th Grade (TW)
+    12th Grade (TW)
+    Tertiary Education (TW)
+
+Tanzania 	
+
+    Primary Education (TZ)
+    Grade 7 (TZ)
+    Lower Secondary (TZ)
+    Grade 8 (TZ)
+    Grade 9 (TZ)
+    Grade 10 (TZ)
+    Grade 11 (TZ)
+    Grade 12 (TZ)
+    Upper Secondary (TZ)
+    University (TZ)
+    Doctorate (TZ)
+
+Thailand 	
+
+    Lower Secondary (TH)
+    Eighth Grade (TH)
+    Ninth Grade (TH)
+    Upper Secondary (TH)
+    Tenth Grade (TH)
+    Eleventh Grade (TH)
+    Twelfth Grade (TH)
+    Higher Education (TH)
+
+Tunisia 	
+
+    Basic Education (TN)
+    Eighth Grade (TN)
+    Ninth Grade (TN)
+    Secondary Education (TN)
+    Tenth Grade (TN)
+    Eleventh Grade (TN)
+    Twelfth Grade (TN)
+    Tertiary Education (TN)
+
+Türkiye 	
+
+    Primary Education (TR)
+    8th Grade (TR)
+    High School (TR)
+    9th Grade (TR)
+    10th Grade (TR)
+    11th Grade (TR)
+    12th Grade (TR)
+    Higher Education (TR)
+
+Uganda 	
+
+    Lower Secondary Education (UG)
+    Eighth Grade (UG)
+    Ninth Grade (UG)
+    Tenth Grade (UG)
+    Eleventh Grade (UG)
+    Upper Secondary Education (UG)
+    Twelfth Grade (UG)
+    Thirteenth Grade (UG)
+    Post-Secondary Education (UG)
+
+Ukraine 	
+
+    Secondary Base School (UA)
+    8th Grade (UA)
+    9th Grade (UA)
+    Secondary Last School (UA)
+    10th Grade (UA)
+    11th Grade (UA)
+    12th Grade (UA)
+    Higher Education (UA)
+
+United Arab Emirates 	
+
+    Intermediate Level (AE)
+    Grade 8 (AE)
+    Secondary Level (AE)
+    Grade 9 (AE)
+    Grade 10 (AE)
+    Grade 11 (AE)
+    Grade 12 (AE)
+    Higher Education (AE)
+
+United States 	
+
+    Middle School (US)
+    Eighth Grade (US)
+    High School (US)
+    Ninth Grade (US)
+    Tenth Grade (US)
+    Eleventh Grade (US)
+    Twelfth Grade (US)
+    College (US)
+    Graduate School (US)
+
+Venezuela 	
+
+    Middle Education (VE)
+    Grade 9 (VE)
+    Diversified Education (VE)
+    Grade 10 (VE)
+    Grade 11 (VE)
+    Grade 12 (VE)
+    Higher Education School (VE)
+
+Vietnam 	
+
+    Upper Secondary Education (VN)
+    Tenth Grade (VN)
+    Eleventh Grade (VN)
+    Twelfth Grade (VN)
+    Higher Education (VN)
+
+Wales 	
+
+    Key Stage 4 (GB-WLS)
+    Year 10 (GB-WLS)
+    Year 11 (GB-WLS)
+    Key Stage 5 (GB-WLS)
+    Year 12 (GB-WLS)
+    Year 13 (GB-WLS)
+    Higher Education (GB-WLS)
+
+Yemen 	
+
+    Basic Education (YE)
+    Grade 8 (YE)
+    Grade 9 (YE)
+    Secondary Education (YE)
+    Grade 10 (YE)
+    Grade 11 (YE)
+    Grade 12 (YE)
+    University Education (YE)
+
+Zimbabwe 	
+
+    Secondary Education (ZW)
+    Grade 8 (ZW)
+    Grade 9 (ZW)
+    Grade 10 (ZW)
+    Grade 11 (ZW)
+    Grade 12 (ZW)
+    Grade 13 (ZW)
+    Tertiary Education (ZW)
+
+Example:
+
+"educationalLevel": "10th Grade (AR)"
+
+Generic values:
+
+Only one of these generic values may be specified as educationalLevel.
+
+    Beginner: No prior knowledge is needed to understand the content
+    Intermediate: Some knowledge might be needed to understand the content
+    Advanced: This content is targeted towards advanced learners that have prior knowledge in the topic
+
+"educationalLevel": "Beginner"
+
+learningResourceType 	
+
+Text
+You must provide at least one of the following properties: educationalLevel, educationalAlignment, or learningResourceType.
+
+The type of contents in the video based on what the video tries to accomplish. This property can be used at the video level (if the video has only one content type) or at the clip level (if the video has more than one content type). The list below gives some examples of acceptable values. If your video doesn't fit in any of these values, you can create a new one, as we are considering new values to support. Note that if the value is not set to one listed below, the learning type information may not be used in any search features.
+
+        Concept overview: The video is explaining a topic or concept.
+        Problem walkthrough: The video shows the method or steps to solve an academic problem, such as a math or science word problem.
+        Real life example: The video shows how a concept is applied or used in real life.
+        Activity: The video shows a demonstration or application of a learning activity, such as an example, an improv game, a concept map, a peer review, or a forced debate.
+        Experiment: The video shows an experiment.
+        Lecture: The video shows a class, lecture, or webinar.
+        How-to: The video provides a method or series of steps to do something. For video that are solving procedural STEM problems, use the Problem walkthrough type.
+        Tips: The video is sharing tips and tricks.
+
+    "learningResourceType": "Problem walkthrough"
+
+Recommended properties
+educationalAlignment.educationalFramework 	
+
+Text
+
+The name of the official standard associated with the content.
+
+"educationalFramework": "Common Core"
+
+educationalAlignment.targetName 	
+
+Text
+
+The standard code or node (for example, CCSS.MATH.CONTENT.7.SP.B.4, AP physics A, CCSS.MATH).
+
+"targetName": "CCSS.MATH.CONTENT.7.SP.B.4"
+
+educationalAlignment.targetUrl 	
+
+Url
+
+The URL to the standard description.
+
+"targetUrl": "https://www.corestandards.org/Math/Content/8/EE/A/2/"
+
+hasPart 	
+
+Clip
+
+A list of clips in the video. Each clip must focus on a specific topic or problem.
+
+The list of required and recommended properties for the educational Clip object are listed in a separate table.
+
+Here's an example of a problem walkthrough clip:
+
+{
+  "@type": ["Clip","LearningResource"],
+  "learningResourceType": "Problem Walkthrough",
+  "name": "Example 1",
+  "text": "Consider a weight suspended from five wires as shown in Figure. Find the tension in one wire.",
+  "startOffset": 201,
+  "url": "https://www.example.com/example?t=201"
+}
+
+here's an example of a clip that gives an overview of a concept:
+
+{
+  "@type": ["Clip","LearningResource"],
+  "learningResourceType": "Concept Overview",
+  "name": "ABC Law",
+  "startOffset": 501,
+  "url": "https://www.example.com/example?t=501"
+}
+
+text 	
+
+Text
+
+The text of the question that's being solved in the video. This property must include the complete question, not just the title of the question.
+
+If your video solves more than one problem, you can use the same property but at the Clip level.
+
+"text": "Consider a weight suspended from two wires as shown in Figure. Find the tension in each wire."
+
+Learning Clip [Clip, LearningResource]
+
+Learning clips can be specified as part of the hasPart property in Learning Videos. Here is a list of recommended properties for clips.
+
+Tag the learning clips with the [Clip, LearningResource] type. In addition to the Clip required and recommended properties, add the following properties for Learning Clips.
+Recommended properties
+learningResourceType 	
+
+Text
+
+The type of contents in the clip based on what the clip tries to accomplish. If the clip has a step-by-step solution of a problem, the value can be set to "Problem walkthrough". If the clip has explanation of some concept, the value can be set to "Concept overview".
+
+The list below gives some examples of acceptable values. If your clip doesn't fit in any of these values, you can create a new one, as we are considering new values to support. Note that if the value is not set to one listed below, the information may not be used in any search features.
+
+Acceptable values:
+
+    Concept overview: The clip is explaining a topic or concept.
+    Problem walkthrough: The clip shows the method or steps to solve an academic problem, such as a math or science word problem.
+    Real life application: The clip shows how a concept is applied or used in real life.
+    Activity: The clip shows a demonstration or application of a learning activity, such as an example, an improv game, a concept map, a peer review, or a forced debate.
+    Science experiment: The clip shows a science experiment.
+    Lecture: The clip shows a class, lecture, or webinar.
+    How-to: The clip provides a method or series of steps to do something. For clips that are solving procedural STEM problems, use the Problem walkthrough type.
+    Tips: The clip is sharing tips and tricks.
+
+"learningResourceType": "Problem walkthrough"
+
+Problem Walkthrough Video [VideoObject, LearningResource]
+
+Problem Walkthrough Video is a sub-type of Learning Video that provides a step-by-step solution of a problem.
+
+Use the [VideoObject, LearningResource] type for problem walkthrough videos. In addition to the VideoObject required and recommended properties, add the following properties for problem walkthrough videos.
+Required properties
+learningResourceType 	
+
+Text
+
+The type of contents in the video based on what the video tries to accomplish. For Problem Walkthrough videos, this must be set to "Problem walkthrough".
+
+"learningResourceType": "Problem walkthrough"
+
+Recommended properties
+hasPart 	
+
+Clip
+
+A list of clips in the video. Each clip must focus on a specific problem.
+
+The list of required and recommended properties for the educational Clip object are listed in a separate table.
+
+Here's an example of a clip with a problem walkthrough:
+
+[
+  {
+    "@type": ["Clip","LearningResource"],
+    "learningResourceType": "Problem Walkthrough",
+    "name": "Example 1",
+    "text": "Consider a weight suspended from five wires as shown in Figure. Find the tension in one wire.",
+    "startOffset": 201,
+    "url": "https://www.example.com/example?t=201"
+  },
+  {
+    "@type": ["Clip","LearningResource"],
+    "learningResourceType": "Problem Walkthrough",
+    "name": "Example 2",
+    "text": "Consider two weights suspended from five wires as shown in Figure. Find the tension in all wires.",
+    "startOffset": 501,
+    "url": "https://www.example.com/example?t=501"
+  }
+]
+
+text 	
+
+Text
+
+The text of the question that's being solved in the video.
+
+If your video solves more than one problem, you can use the same property in the Clip level.
+
+"text": "Consider a weight suspended from two wires as shown in Figure. Find the tension in each wire."
+
+Problem Walkthrough Clip [Clip, LearningResource]
+
+Problem Walkthrough clips can be specified as part of the hasPart property in Learning Videos. Problem Walkthrough clip is a sub-type of Learning clip which has a step-by-step solution of a problem. Here is a list of required properties for Problem Walkthrough clips.
+
+Use the [Clip, LearningResource] type for learning clips. In addition to the Clip required and recommended properties, add the following properties for problem walkthrough clips.
+Required properties
+learningResourceType 	
+
+Text
+
+If the clip has a step-by-step solution of a problem, the value must be set to "Problem walkthrough".
+
+"learningResourceType": "Problem walkthrough"
+
+Recommended properties
+text 	
+
+Text
+
+The text of the question that's being solved in the clip.
+
+"text": "Consider a weight suspended from two wires as shown in Figure. Find the tension in each wire."
+
+Monitor rich results with Search Console
+
+Search Console is a tool that helps you monitor how your pages perform in Google Search. You don't have to sign up for Search Console to be included in Google Search results, but it can help you understand and improve how Google sees your site. We recommend checking Search Console in the following cases:
+
+    After deploying structured data for the first time
+    After releasing new templates or updating your code
+    Analyzing traffic periodically
+
+After deploying structured data for the first time
+
+After Google has indexed your pages, look for issues using the relevant Rich result status report. Ideally, there will be an increase of valid items, and no increase in invalid items. If you find issues in your structured data:
+
+    Fix the invalid items.
+    Inspect a live URL to check if the issue persists.
+    Request validation using the status report.
+
+After releasing new templates or updating your code
+When you make significant changes to your website, monitor for increases in structured data invalid items.
+
+    If you see an increase in invalid items, perhaps you rolled out a new template that doesn't work, or your site interacts with the existing template in a new and bad way.
+    If you see a decrease in valid items (not matched by an increase in invalid items), perhaps you are no longer embedding structured data in your pages. Use the URL Inspection tool to learn what is causing the issue.
+
+Warning: Don't use cached links to debug your pages. Instead, use the URL Inspection Tool because it has the most up-to-date version of your pages.
+Analyzing traffic periodically
+Analyze your Google Search traffic using the Performance Report. The data will show you how often your page appears as a rich result in Search, how often users click on it and what is the average position you appear on search results. You can also automatically pull these results with the Search Console API.
+Troubleshooting
+
+If you're having trouble implementing or debugging structured data, here are some resources that may help you.
+
+    If you're using a content management system (CMS) or someone else is taking care of your site, ask them to help you. Make sure to forward any Search Console message that details the issue to them.
+    Google does not guarantee that features that consume structured data will show up in search results. For a list of common reasons why Google may not show your content in a rich result, see the General Structured Data Guidelines.
+    You might have an error in your structured data. Check the list of structured data errors.
+    If you received a structured data manual action against your page, the structured data on the page will be ignored (although the page can still appear in Google Search results). To fix structured data issues, use the Manual Actions report.
+    Review the guidelines again to identify if your content isn't compliant with the guidelines. The problem can be caused by either spammy content or spammy markup usage. However, the issue may not be a syntax issue, and so the Rich Results Test won't be able to identify these issues.
+    Troubleshoot missing rich results / drop in total rich results.
+    Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it. For general questions about crawling and indexing, check the Google Search crawling and indexing FAQ.
+    Post a question in the Google Search Central forum.
+
+Content doesn't match the structured data
+
+error What caused the issue: A page includes content that doesn't match the structured data on the page. For example, the title of a video on the page doesn't match the value listed for the name property. There may also be spammy content, like click-baity titles and descriptions, or the markup isn't representative of the actual video. You may have received this Search Console message: "Structured data policy violation - Content on pages found to be different than structured data on the page".
+
+done Fix the issue
+
+    Verify that the structured data aligns with the actual content on the page.
+    Use the URL Inspection tool to make sure that the content is visible on the rendered page (the rendered page is how Google sees your page).
+    After you resolve the issue, submit your site for reconsideration.
+
+

@@ -1,0 +1,64 @@
+Marketplace Foundations
+ 
+Building a strong foundation to capture demand
+ 
+Increase your property’s appeal by catering to what travellers are searching for. Our Marketplace Foundations portfolio is a powerful toolkit to build demand. It focuses on what travellers want and provides you with actions to boost visibility and conversion, leading you to capture your share of bookings on our platform.
+
+What are Marketplace Foundations?
+
+Different travel segments have unique demand patterns that may vary from what you see on your website. The main decisive factors on our platform are a property’s location, features, price and reviews.
+ 
+Establishing a strong Marketplace Foundations portfolio should be your first step forward as a new partner on our platform – or if you’re new to the industry. It lets you tap into the most important search criteria and access set-up choices designed specifically for new partners to quickly achieve their first bookings.
+ 
+The Marketplace Foundations portfolio allows you to take action in the following areas:
+1. Your fundamentals: Your property’s basic setup that impacts the widest possible range of travellers on our platform, drawing them to your property page.
+2. Key audience customisation: How you adjust certain criteria to appeal to specific travel segments – such as families, couples, groups or solo travellers.
+3. Keeping up with traveller trends: We've identified certain travel trends that are growing on our platform. Tap into what guests are looking for to stay relevant.
+
+
+Make sure your fundamentals are in place
+
+Capture a wide range of demand by making sure your property’s features and facilities, pricing and flexibility, payment methods and time frames and availability are up to date. Our data shows that the more complete this information is, the more likely it is that travellers will book.
+ 
+Use this checklist to make sure you’ve covered your bases:
+1. Features and facilities: Let us match your property with travellers’ search criteria. Add photos, descriptions of facilities and features, room differences and other content. Tell us your property’s location so we can show its proximity to local attractions.
+2. Pricing and flexibility: Stand out in price-sensitive searches. Set an attractive base price to draw a wide range of potential guests in. Offer fully flexible and discounted non-refundable rates, and allow date changes to attract guests seeking flexibility.
+3. Payment methods: Give travellers more reasons to choose you. Provide clarity, choice and ease during the transactional step for an overall positive experience. Offer a wide range of globally known and trusted payment options through Online Payments.
+4. Time frames and availability: Be prepared for a return to pre-pandemic booking habits. Consider travellers searching for stays further in advance and for longer durations. Update your availability and ease your length of stay restrictions to meet these search criteria.
+ 
+Appeal to key traveller segments
+
+Our platform users comprise various travel segments from all across the globe. Families, long-stay guests, group and solo travellers, as well as couples all behave differently and have unique wants and needs. To appear in our search results in the most relevant manner, you need to take more than one set of actions.
+ 
+Show up in searches:
+1. Adjust your policies in the extranet or Connectivity API to show you accept these travel segments
+2. Update your occupancy settings in the extranet or Connectivity API to reflect you can accommodate families and groups
+
+
+Target relevant audiences:
+1. Offer tailored pricing to address deal breakers such as expensive pricing for more guests and multiple-night stays – our solutions include flexible children rates, pricing per guest and rate plans for long-stay guests, solo and group travellers and early bookers
+2. Specify that you can meet their needs – such as child-friendly activities, safety, cooking, storage, laundry and more – update your facilities and use the Room/Unit differentiation tool to show guests what’s in each room or unit
+
+Growing traveller trends
+
+The way people travel is constantly changing. How you address their shifting preferences can make or break how potential guests perceive your property. This portfolio enables you to adopt features that engage with growing traveller trends observed on our platform.
+
+70% want to travel more sustainably:
+1. Opt into our Travel Sustainable programme, designed to showcase your already existing sustainability practices
+2. Get support and guidance on enhancing your sustainability practices even further
+3. Be awarded the Travel Sustainable badge and appear in search results of travellers using the Travel Sustainable filter
+
+Provide a better digital experience:
+1. Guests expect a seamless digital experience, from booking to check-in
+2. Allow for online check-in to reduce your workload and increase guest satisfaction
+3. Find this feature through your Connectivity provider
+
+When to review your portfolio
+
+We recommend revisiting your Marketplace Foundations portfolio twice a year – even if you’ve been a partner for some time – given the ever-changing pattern of search demands on our platform. Doing so allows you to discover any new features we’ve developed.
+
+We also suggest reviewing it whenever structural changes happen in your business. For example, if you add a new property, new team members join, when your strategic direction changes or if you decide to target new travel segments.
+
+Strengthen your Marketplace Foundations
+
+Make the most of your Marketplace Foundations portfolio by applying it strategically with our other solutions. They allow you to stand out from your competitors and utilise guest feedback to drive your performance and revenue.

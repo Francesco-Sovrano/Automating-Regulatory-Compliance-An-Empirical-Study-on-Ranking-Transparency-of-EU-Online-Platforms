@@ -1,0 +1,324 @@
+
+
+Product (Product, Review, Offer) structured data
+Are you here because you got a message from Search Console? Check our troubleshooting resources.
+
+When you add structured data to your product pages, Google search results (including Google Images and Google Lens) can show product information in richer ways. Users can see price, availability, review ratings, shipping information, and more right in search results.
+Shopping experiences
+
+Here's how shopping experiences may appear in Google Search results. This list is not exhaustive—Google Search is constantly exploring new and better ways to help people find what they're looking for, and the experiences may change over time.
+Eligible pages are not guaranteed to receive these treatments.
+Result types
+
+There are two classes of result types: product snippets and merchant listing experiences.
+Product snippets in search results
+product snippet presentation in search results
+
+Product snippets are a richer form of presentation for snippets in search results than just text. They are used for products and product reviews, and can include additional information such as ratings, review information, price, and availability.
+Merchant listing experiences
+
+Merchant listing experiences rely on more specific data about a product, such as its price and availability. Only pages from which a shopper can purchase a product are eligible for merchant listing experiences, not pages with links to other sites that sell the product. Google may attempt to verify merchant listing product data before showing the information in search results.
+
+The merchant listing experiences are:
+Popular products
+
+Visually rich presentation of products for sale
+	popular products presentation in search results
+Shopping knowledge panel
+
+Detailed product information with a list of sellers (using details such as product identifiers)
+	shopping knowledge panel presentation in search results
+Google Images
+
+Annotated images of products available for sale
+	Google Images presentation in search results
+A product snippet for a page selling a product is also considered a merchant listing experience.
+Result enhancements
+
+If you provide additional product information beyond the required properties, your content may receive additional visual enhancements, helping your content to stand out in search results. See Structured data type definitions for all required and recommended product information.
+
+Search result enhancements are shown at the discretion of each experience, and may change over time. For this reason, it is recommended to provide as much rich product information as available, without concern for the exact experiences that will use it. Here are some examples of how merchant listing experiences may be enhanced:
+
+    Ratings: Enhance the appearance of your search result by providing customer reviews and ratings.
+    Pros and Cons: Identify pros and cons in your product review description so they can be highlighted in search results.
+    Shipping: Share shipping costs, especially free shipping, so shoppers understand the total cost.
+    Availability: Provide availability data to help customers know when you currently have a product in stock.
+    Price drop: Price drops are computed by Google by observing price changes for the product over time. Price drops are not guaranteed to be shown.
+    Returns: Share return information, such as your return policy, fees involved in returns, and how many days customers have to return a product.
+
+Providing product data to Google Search
+
+To provide rich product data to Google Search you can add Product structured data to your web pages, upload data feeds via Google Merchant Center and opt into free listings within the Merchant Center console, or both. This page focuses on the former.
+
+Providing both structured data on web pages and a Merchant Center feed will maximize your eligibility to experiences and help Google correctly understand and verify your data. Some experiences combine data from structured data and Google Merchant Center feeds if both are available. For example, product snippets may use pricing data from your merchant feed if not present in structured data on the page. The Google Merchant Center feed documentation includes additional recommendations and requirements for feed attributes.
+
+In addition to Google Search, learn more about eligibility to the Google Shopping tab by reading the data and eligibility requirements in Google Merchant Center.
+How to add structured data
+
+Structured data is a standardized format for providing information about a page and classifying the page content. If you're new to structured data, you can learn more about how structured data works.
+
+Here's an overview of how to build, test, and release structured data. For a step-by-step guide on how to add structured data to a web page, check out the structured data codelab.
+
+    Add the required properties. Based on the format you're using, learn where to insert structured data on the page.
+    Using a CMS? It may be easier to use a plugin that's integrated into your CMS.
+    Using JavaScript? Learn how to generate structured data with JavaScript.
+    Follow the guidelines.
+    Validate your code using the Rich Results Test and fix any critical errors. Consider also fixing any non-critical issues that may be flagged in the tool, as they can help improve the quality of your structured data (however, this isn't necessary to be eligible for rich results).
+    Deploy a few pages that include your structured data and use the URL Inspection tool to test how Google sees the page. Be sure that your page is accessible to Google and not blocked by a robots.txt file, the noindex tag, or login requirements. If the page looks okay, you can ask Google to recrawl your URLs.
+    Note: Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it.
+    To keep Google informed of future changes, we recommend that you submit a sitemap. You can automate this with the Search Console Sitemap API.
+
+Examples
+
+The following examples illustrate how to include structured data on your web pages for different situations.
+Product review page
+
+Here's an example of structured data on a product review page for product snippets treatment in search results.
+Shopping aggregator page
+
+Here's an example of a shopping aggregator page for product snippets treatment in search results.
+Pros and cons
+
+Here's an example of an editorial product review page with pros and cons for product snippets treatment in search results.
+Example of visual appearance of pros and cons in search results
+Product page with an offer
+
+Here's an example of a product page selling a product, with product reviews. It extends the earlier product review page example with structured data relevant for merchant listings. The page may be eligible for all merchant listing experiences, as it includes an Offer.
+Product with an offer and shipping details
+
+Here's an example of a product page with shipping details. This example would result in a shipping rate of $3.49 for all users that live in the US. For more examples, review the Shipping section.
+Indicating free shipping
+
+Here's an example of providing free shipping to buyers in the US state of New York.
+
+"shippingDetails": {
+  "@type": "OfferShippingDetails",
+  "shippingRate": {
+    "@type": "MonetaryAmount",
+    "value": "0",
+    "currency": "USD"
+  },
+  "shippingDestination": [
+    {
+      "@type": "DefinedRegion",
+      "addressCountry": "US",
+      "addressRegion": ["NY"]
+    }
+  ]
+}
+
+Pricing
+
+Here are two examples of encoding a price in JSON-LD.
+
+A price can be specified using the price property as follows:
+
+"offers": {
+  "@type": "Offer",
+  "price": 10.00,
+  "priceCurrency": "USD",
+  ...
+}
+
+Alternatively, a price can be specified using the priceSpecification property.
+
+"offers": {
+  "@type": "Offer",
+  "priceSpecification": {
+    "@type": "UnitPriceSpecification",
+    "price": 10.00,
+    "priceCurrency": "USD"
+  },
+  ...
+}
+
+If you choose to use both offers.price and offers.priceSpecification properties, and there's a conflict between the two (for example, a different price or priceCurrency), Google will use the price information that's provided at the offers.price level.
+Pricing with unit pricing measures
+
+Here is an example of how to specify a price for 4.5l of a product that is always sold in multiples of 750ml. This form of pricing is particularly important in the EU for products sold by volume or weight.
+
+When the unit pricing measure and unit pricing base measure are present, specify the price inside a UnitPriceSpecification.
+
+"priceSpecification": {
+  "@type": "UnitPriceSpecification",
+  "price": 81.00,
+  "priceCurrency": "EUR",
+  "referenceQuantity": {
+    "@type": "QuantitativeValue",
+    "value": "4.5",
+    "unitCode": "LTR",
+    "valueReference": {
+      "@type": "QuantitativeValue",
+      "value": "750",
+      "unitCode": "MLT"
+    }
+  }
+}
+
+Energy efficiency ratings
+
+The following example illustrates how to specify energy efficiency information using structured data. The example specifies the EU energy efficiency class "C" with scale "A+" to "F" for a water heater.
+
+Note that the minimum energy efficiency class value specifies the least efficient class on the energy consumption scale (in this case "F"), while the maximum energy efficiency class value specifies the most efficient class (in this case "A+").
+
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "sku": "1234-5678",
+  "image": "https://www.example.com/waterheater.jpg",
+  "name": "Water heater",
+  "description": "Large capacity water heater",
+  "gtin14": "12345678901231",
+  "mpn": "WH1234",
+  "brand": {
+    "@type": "Brand",
+    "name": "ExampleWaterHeaterBrand"
+  },
+  "hasEnergyConsumptionDetails": {
+    "@type": "EnergyConsumptionDetails",
+    "hasEnergyEfficiencyCategory": "https://schema.org/EUEnergyEfficiencyCategoryC",
+    "energyEfficiencyScaleMin": "https://schema.org/EUEnergyEfficiencyCategoryF",
+    "energyEfficiencyScaleMax": "https://schema.org/EUEnergyEfficiencyCategoryA1Plus"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.example.com/hotwaterheater",
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock",
+    "price": 1799.00,
+    "priceCurrency": "EUR"
+  }
+}
+
+Product with an offer and return details
+
+Here is an example of a product page with return details. The markup matches a return policy that requires products to be returned within 60 days, shipped to the US, and there are no return fees.
+Guidelines
+
+Product rich results provide users with information about a specific product, such as its price, availability, and reviewer ratings. For your Product markup to be eligible for rich treatment, you must follow these guidelines:
+
+    General structured data guidelines
+    Search Essentials
+    Technical guidelines
+    Content guidelines
+    Free listings guidelines (for merchant listing experiences)
+
+Technical guidelines
+
+    Use markup for a specific product, not a category or list of products. For example, "shoes in our shop" is not a specific product. Currently, product rich results only support pages that focus on a single product. This includes product variants where each product variant has a distinct URL. We recommend focusing on adding markup to product pages instead of pages that list products or a category of products.
+    When offering products for sale in multiple currencies, have a distinct URL per currency. For example, if a product is available for sale in Canadian and US dollars, use two distinct URLs, one per currency.
+    If you add pros and cons structured data, you must follow these guidelines:
+        Currently, only editorial product review pages are eligible for the pros and cons appearance in Search, not merchant product pages or customer product reviews.
+        The pros and cons must be visible to users on the page.
+
+Content guidelines
+
+    We don't allow content that promotes widely prohibited or regulated goods, services, or information that may facilitate serious, immediate, or long term harm to people. This includes content related to firearms and weapons, recreational drugs, tobacco and vaping products, and gambling-related products.
+
+Structured data type definitions
+
+This section lists the requirements for product snippet and merchant listing experiences in search results. Select the appropriate tab to see the required and recommended structured data properties for the two cases.
+
+For pages where customers can purchase products from you:
+
+    Follow the merchant listing structured data requirements to maximize the eligibility of your pages selling products in shopping experiences in search results.
+    Use the Merchant listings report in Search Console to help identify errors in your markup.
+
+For product pages where people can't directly purchase the product:
+
+    Follow the product snippets structured data requirements to maximize the eligibility of your pages for product snippets in search results for pages that are not selling products.
+    Use the Product snippets report in Search Console to help identify errors in your markup.
+
+Product snippet validation rules for pages selling products are included in both reports, so fixing problems for product snippets listed in the Merchant listings report will also resolve issues in the Product snippets report.
+Product information
+Product
+
+The full definition of Product is available at schema.org/Product. When you mark up your content for product information, use the following properties of the Product type:
+Product Reviews
+Review
+
+As reviews are shared by multiple structured data types (such as Recipe and Movie), the Review type is described separately in review properties. Also please see the Review snippet guidelines. The following properties are also available for product reviews.
+ItemList for Positive and Negative Notes
+
+Positive and negative notes (pros and cons) inside the Review type make use of the generic ItemList and ListItem types. This section describes how to use these types for positive and negative notes.
+Offer details
+Offer
+
+The full definition of Offer is available at schema.org/Offer. When marking up offers within a product, use the following properties of the schema.org Offer type.
+UnitPriceSpecification
+
+The full definition of UnitPriceSpecification is available at schema.org/UnitPriceSpecification. Use the following properties to capture more complex pricing schemes.
+QuantitativeValue (for unit pricing)
+
+This section talks about using QuantitativeValue for the referenceQuantity property of a unit pricing specification. (QuantitativeValue is also used for shipping durations, but with different rules.) The full definition of QuantitativeValue is available at schema.org/QuantitativeValue.
+AggregateOffer
+
+The full definition of AggregateOffer is available at schema.org/AggregateOffer. An AggregateOffer is a kind of Offer representing an aggregation of other offers. For example, it can be used for a product that is being sold by multiple merchants. (Do not use AggregateOffer to describe a set of product variants.) When marking up aggregate offers within a product, use the following properties of the schema.org AggregateOffer type:
+SizeSpecification
+
+The SizeSpecification type is used to indicate the size of a product. The full definition of the type is available at schema.org/SizeSpecification.
+PeopleAudience
+
+The full definition of PeopleAudience is available at schema.org/PeopleAudience.
+EnergyConsumptionDetails
+
+The full definition of EnergyConsumptionDetails is available at schema.org/EnergyConsumptionDetails.
+Shipping
+OfferShippingDetails
+DefinedRegion
+ShippingDeliveryTime
+QuantitativeValue (for shipping times)
+Returns
+MerchantReturnPolicy
+Alternative approach to configuring shipping and return settings with Google
+
+Retailer shipping policies can get complicated and may change frequently. If you're having trouble indicating and keeping your shipping and return details up-to-date with markup and have a Google Merchant Center account, consider configuring your shipping settings return policies in Google Merchant Center Help.
+If you choose to use both markup and settings in Merchant Center, Google will only use the information provided in Merchant Center for any products submitted in your Merchant Center product feeds, including automated feeds.
+Monitor rich results with Search Console
+
+Search Console is a tool that helps you monitor how your pages perform in Google Search. You don't have to sign up for Search Console to be included in Google Search results, but it can help you understand and improve how Google sees your site. We recommend checking Search Console in the following cases:
+
+    After deploying structured data for the first time
+    After releasing new templates or updating your code
+    Analyzing traffic periodically
+
+After deploying structured data for the first time
+
+After Google has indexed your pages, look for issues using the relevant Rich result status report. Ideally, there will be an increase of valid items, and no increase in invalid items. If you find issues in your structured data:
+
+    Fix the invalid items.
+    Inspect a live URL to check if the issue persists.
+    Request validation using the status report.
+
+After releasing new templates or updating your code
+When you make significant changes to your website, monitor for increases in structured data invalid items.
+
+    If you see an increase in invalid items, perhaps you rolled out a new template that doesn't work, or your site interacts with the existing template in a new and bad way.
+    If you see a decrease in valid items (not matched by an increase in invalid items), perhaps you are no longer embedding structured data in your pages. Use the URL Inspection tool to learn what is causing the issue.
+
+Warning: Don't use cached links to debug your pages. Instead, use the URL Inspection Tool because it has the most up-to-date version of your pages.
+Analyzing traffic periodically
+Analyze your Google Search traffic using the Performance Report. The data will show you how often your page appears as a rich result in Search, how often users click on it and what is the average position you appear on search results. You can also automatically pull these results with the Search Console API.
+
+There are two Search Console reports related to Product structured data under the Shopping section in the navigation bar:
+
+    Merchant listings — for pages where shoppers can buy products
+    Product snippets — for other product related pages such as product reviews and aggregator sites
+
+Shopping navigation menu for reports
+
+Both reports provide warnings and errors related to product structured data, but are separate due to the different requirements for the associated experiences. For example, the Merchant listings report includes checks for product snippets that include Offer structured data, so the Product snippets report only needs to be consulted for non-merchant listing pages.
+Troubleshooting
+
+If you're having trouble implementing or debugging structured data, here are some resources that may help you.
+
+    If you're using a content management system (CMS) or someone else is taking care of your site, ask them to help you. Make sure to forward any Search Console message that details the issue to them.
+    Google does not guarantee that features that consume structured data will show up in search results. For a list of common reasons why Google may not show your content in a rich result, see the General Structured Data Guidelines.
+    You might have an error in your structured data. Check the list of structured data errors.
+    If you received a structured data manual action against your page, the structured data on the page will be ignored (although the page can still appear in Google Search results). To fix structured data issues, use the Manual Actions report.
+    Review the guidelines again to identify if your content isn't compliant with the guidelines. The problem can be caused by either spammy content or spammy markup usage. However, the issue may not be a syntax issue, and so the Rich Results Test won't be able to identify these issues.
+    Troubleshoot missing rich results / drop in total rich results.
+    Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it. For general questions about crawling and indexing, check the Google Search crawling and indexing FAQ.
+    Post a question in the Google Search Central forum.
+
+

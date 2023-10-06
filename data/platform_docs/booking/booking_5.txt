@@ -1,0 +1,26 @@
+Search results, ranking and visibility
+
+The higher your ranking on our platform, the more visible you are to potential guests. 
+
+
+Search result ranking
+
+Search result ranking determines where available accommodations are displayed in our search results. These results are based on the unique preferences of the traveller performing the search, which are defined by their search behaviour, market dynamics and a property’s performance. These factors allow us to display properties that suit each traveller’s needs rather than presenting the same properties to everyone searching on our platform.
+
+You can improve your ranking by focusing on the following areas:
+1. Conversion – the percentage of bookings in relation to the number of page views
+2. Average Daily Rate (ADR) – your average room income per paid occupied room
+3. Cancellations – the percentage of booked rooms that were cancelled in the last 90 days
+4. Property page score – shows you how attractive your property page is by looking at content, pictures, descriptions and facilities
+5. Guest Review Score – how past guests rated their stay
+
+The ranking dashboard
+
+The ranking dashboard provides you with data to track and improve your ranking on our platform. You can find the ranking dashboard in the extranet by clicking Analytics, then selecting Ranking dashboard.
+
+You can check your performance over the last 30, 90 or 365 days in the following areas:
+1. Search results views – the number of times your property appeared in a search result
+2. Click-through rate – the percentage of clicks on your property in relation to the amount of search result views
+3. Property page views – the number of times your property page was viewed
+4. Bookings – the total number of bookings received, including cancellations 
+5. Search Results Score – your property’s performance in search results compared to other properties in your market

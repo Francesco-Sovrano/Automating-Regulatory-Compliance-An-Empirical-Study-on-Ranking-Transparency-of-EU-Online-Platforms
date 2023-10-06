@@ -1,0 +1,285 @@
+
+
+Carousel (ItemList) structured data
+
+A carousel is a list-like rich result that people can swipe through on mobile devices. It displays multiple cards from the same site (also known as a host carousel). To be eligible for a host carousel rich result for your site, add ItemList structured data in combination with one of the following supported content types:
+
+    Course
+    Movie
+    Recipe
+    Restaurant
+
+Here's how carousels can look in Google Search when you add ItemList markup in combination with a supported content type:
+An illustration of how a course host carousel can appear in Google Search. It shows 3 different courses from the same website in a carousel format that users can explore and select a specific course An illustration of how a movie host carousel can appear in Google Search. It shows 3 different movies from the same website in a carousel format that users can explore and select a specific movie
+Note: There are other carousel-like features on Google Search, like Top stories, that show results from different sites. You can't control those types of carousels with Carousel markup.
+Add structured data
+
+Structured data is a standardized format for providing information about a page and classifying the page content. If you're new to structured data, you can learn more about how structured data works.
+
+Here's an overview of how to add structured data to your site. For a step-by-step guide on how to add structured data to a web page, check out the structured data codelab.
+
+    Decide which page will contain the Carousel structured data. There are two options:
+        Summary page and multiple detail pages: The summary page has a short description of each item in the list, and each description points to a separate detail page that is focused entirely on one item. For example, a summary page that lists the best cookie recipes, and each description links out to the full recipe for each cookie.
+        A single, all-in-one-page list: A single page that contains all list information, including full text of each item. For example, a list of the top movies in 2020, all contained on one page.
+    Add the required properties. Based on the format you're using, learn where to insert structured data on the page.
+    Using a CMS? It may be easier to use a plugin that's integrated into your CMS.
+    Using JavaScript? Learn how to generate structured data with JavaScript.
+    Add the required and recommended properties for the specific content type that the Carousel is about:
+        Course
+        Movie
+        Recipe
+        Restaurant
+    Follow the guidelines.
+    Validate your code using the Rich Results Test.
+    Deploy a few pages that include your structured data and use the URL Inspection tool to test how Google sees the page. Be sure that your page is accessible to Google and not blocked by a robots.txt file, the noindex tag, or login requirements. If the page looks okay, you can ask Google to recrawl your URLs.
+    Note: Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it.
+    To keep Google informed of future changes, we recommend that you submit a sitemap. You can automate this with the Search Console Sitemap API.
+
+Summary page and multiple detail pages
+
+The summary page has a short description of each item in the list. Each description points to a separate details page that is focused entirely on one item.
+Summary page
+
+The summary page defines an ItemList, where each ListItem has only three properties: @type (set to ListItem), position (the position in the list), and url (the URL of a page with full details about that item).
+
+Here's an example of what the summary page looks like:
+
+
+  <head>
+    <title>Best cookie recipes</title>
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[
+        {
+          "@type":"ListItem",
+          "position":1,
+          "url":"https://example.com/peanut-butter-cookies.html"
+        },
+        {
+          "@type":"ListItem",
+          "position":2,
+          "url":"https://example.com/triple-chocolate-chunk.html"
+        },
+        {
+          "@type":"ListItem",
+          "position":3,
+          "url":"https://example.com/snickerdoodles.html"
+        }
+      ]
+    }
+    </script>
+  </head>
+  
+    
+      Here are the best cookie recipes of all time.
+    
+    <h2>
+      Peanut Butter Cookies
+    </h2>
+    
+      This <a href="https://example.com/peanut-butter-cookies.html">Peanut Butter Cookie recipe</a> is the tastiest one you'll find.
+    
+    <h2>
+      Triple Chocolate Chunk Cookies
+    </h2>
+    
+      This <a href="https://example.com/triple-chocolate-chunk.html">Triple Chocolate Chunk Cookies recipe</a> is the tastiest one you'll find.
+    
+    <h2>
+      Snickerdoodles
+    </h2>
+    
+      This <a href="https://example.com/snickerdoodles.html">Snickerdoodles recipe</a> is the tastiest one you'll find.
+    
+  
+
+
+Details page
+
+The details page defines the specific structured data type that the Carousel is about. For example, if the summary page is about the best cookie recipes, each detail page would contain Recipe structured data for a specific recipe.
+
+Here's an example of what the detail pages look like:
+Single, all-in-one-page list
+
+A single, all-in-one-page list contains all carousel information, including full text of each item. For example, a list of the top movies in 2020, all contained on one page. This page doesn't link out to other detail pages.
+
+Here's an example of a single, all-in-one-page:
+
+
+  <head>
+    <title>The Best Movies from the Oscars - 2018</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": "1",
+          "item": {
+            "@type": "Movie",
+            "url": "https://example.com/2019-best-picture-noms#a-star-is-born",
+            "name": "A Star Is Born",
+            "image": "https://example.com/photos/6x9/photo.jpg",
+            "dateCreated": "2018-10-05",
+            "director": {
+                "@type": "Person",
+                "name": "Bradley Cooper"
+              },
+            "review": {
+              "@type": "Review",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5"
+              },
+              "author": {
+                "@type": "Person",
+                "name": "John D."
+              },
+              "reviewBody": "Heartbreaking, inpsiring, moving. Bradley Cooper is a triple threat."
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "90",
+                "bestRating": "100",
+                "ratingCount": "19141"
+              }
+            }
+          },
+        {
+          "@type": "ListItem",
+          "position": "2",
+          "item": {
+            "@type": "Movie",
+            "name": "Bohemian Rhapsody",
+            "url": "https://example.com/2019-best-picture-noms#bohemian-rhapsody",
+            "image": "https://example.com/photos/6x9/photo.jpg",
+            "dateCreated": "2018-11-02",
+            "director": {
+                "@type": "Person",
+                "name": "Bryan Singer"
+              },
+            "review": {
+              "@type": "Review",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "3"
+              },
+              "author": {
+                "@type": "Person",
+                "name": "Vin S."
+              },
+              "reviewBody": "Rami Malek's performance is overrated, at best."
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "61",
+                "bestRating": "100",
+                "ratingCount": "21985"
+              }
+            }
+          },
+        {
+          "@type": "ListItem",
+          "position": "3",
+          "item": {
+            "@type": "Movie",
+            "name": "Black Panther",
+            "url": "https://example.com/2019-best-picture-noms#black-panther",
+            "image": "https://example.com/photos/6x9/photo.jpg",
+            "dateCreated": "2018-02-16",
+            "director": {
+                "@type": "Person",
+                "name": "Ryan Coogler"
+              },
+            "review": {
+              "@type": "Review",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "2"
+              },
+              "author": {
+                "@type": "Person",
+                "name": "Trevor R."
+              },
+              "reviewBody": "I didn't like the lighting and CGI in this movie."
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "96",
+                "bestRating": "100",
+                "ratingCount": "88211"
+              }
+            }
+          }
+      ]
+    }
+    </script>
+  </head>
+  
+  
+
+
+Guidelines
+
+In addition to the General structured data guidelines, the following guidelines apply to Carousel structured data:
+
+    All items in the list must be of the same type. For example, if a list is about recipes, only include Recipe items. Don't mix different types.
+    Make sure that the Carousel structured data is complete and contains all the items that are listed on the page.
+    The text visible to the user must be similar to the information contained in the structured data on the page.
+    Items shown in list format will be shown in the order specified by the position property.
+
+Validate and deploy structured data
+
+    Validate your code using the Rich Results Test. For a summary page, there are some things you need to verify yourself:
+        Check that itemListElement contains two or more ListItem elements.
+        Make sure that all of the ListItem elements are the same type (for example, they are all about recipes).
+        Validate each URL that's mentioned in the list using the Rich Results Test. Each page in the list must contain valid structured data, per the documentation for the supported content type that the list is about: Recipe, Course, Restaurant, Movie.
+    Deploy a few pages that include your structured data and use the URL Inspection tool to test how Google sees the page. Be sure that your page is accessible to Google and not blocked by a robots.txt file, the noindex tag, or login requirements. If the page looks okay, you can ask Google to recrawl your URLs.
+    Note: Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it.
+    To keep Google informed of future changes, we recommend that you submit a sitemap. You can automate this with the Search Console Sitemap API.
+
+Structured data type definitions
+
+To specify a list, define an ItemList that contains at least two ListItems. You must include the required properties for your content to be eligible for display as a rich result.
+ItemList
+
+ItemList is the container item that holds all elements in the list. If used on a summary page, all URLs in the list must point to different pages on the same domain. If used on an all-in-one-page list, all URLs must point to an anchor on the page that's hosting the list structured data.
+
+The full definition of ItemList is available at schema.org/ItemList.
+
+The Google-supported properties are the following:
+Required properties
+itemListElement 	
+
+ListItem
+
+List of items. All items must be of the same type. See ListItem for details.
+ListItem
+
+ListItem contains details about an individual item in the list.
+
+    If this is a summary page, include only the type, position, and url properties in the ListItem.
+    If this is an all-in-one-page list, include all the additional schema.org properties for the data type that it describes. The supported data types are:
+        Course
+        Movie
+        Recipe
+        Restaurant
+
+The full definition of ListItem is available at schema.org/ListItem.
+Troubleshooting
+
+If you're having trouble implementing or debugging structured data, here are some resources that may help you.
+
+    If you're using a content management system (CMS) or someone else is taking care of your site, ask them to help you. Make sure to forward any Search Console message that details the issue to them.
+    Google does not guarantee that features that consume structured data will show up in search results. For a list of common reasons why Google may not show your content in a rich result, see the General Structured Data Guidelines.
+    You might have an error in your structured data. Check the list of structured data errors.
+    If you received a structured data manual action against your page, the structured data on the page will be ignored (although the page can still appear in Google Search results). To fix structured data issues, use the Manual Actions report.
+    Review the guidelines again to identify if your content isn't compliant with the guidelines. The problem can be caused by either spammy content or spammy markup usage. However, the issue may not be a syntax issue, and so the Rich Results Test won't be able to identify these issues.
+    Troubleshoot missing rich results / drop in total rich results.
+    Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it. For general questions about crawling and indexing, check the Google Search crawling and indexing FAQ.
+    Post a question in the Google Search Central forum.
+
+

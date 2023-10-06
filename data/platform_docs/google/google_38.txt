@@ -1,0 +1,621 @@
+
+
+Estimated salary (Occupation) structured data
+Does your site publish job postings with actual salary information?
+Add JobPosting structured data instead of Estimated salary.
+
+Occupation structured data allows salary estimate providers to define salary ranges and region-based salary averages for job types, details about the occupation such as typical benefits, qualifications, and educational requirements. OccupationAggregationByEmployer structured data allows salary estimate providers to aggregate occupations by factors such as experience levels or hiring organization.
+
+Estimated salaries can appear in the job experience on Google Search and as a salary estimate rich result for a given occupation.
+Estimated salary information in the job experience on Google Search
+Note: The actual appearance in search results might be different. You can preview most features with the Rich Results Test.
+How to add structured data
+
+Structured data is a standardized format for providing information about a page and classifying the page content. If you're new to structured data, you can learn more about how structured data works.
+
+Here's an overview of how to build, test, and release structured data. For a step-by-step guide on how to add structured data to a web page, check out the structured data codelab.
+
+    Add the required properties. Based on the format you're using, learn where to insert structured data on the page.
+    Using a CMS? It may be easier to use a plugin that's integrated into your CMS.
+    Using JavaScript? Learn how to generate structured data with JavaScript.
+    Follow the guidelines.
+    Validate your code using the Rich Results Test and fix any critical errors. Consider also fixing any non-critical issues that may be flagged in the tool, as they can help improve the quality of your structured data (however, this isn't necessary to be eligible for rich results).
+    Deploy a few pages that include your structured data and use the URL Inspection tool to test how Google sees the page. Be sure that your page is accessible to Google and not blocked by a robots.txt file, the noindex tag, or login requirements. If the page looks okay, you can ask Google to recrawl your URLs.
+    Note: Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it.
+    To keep Google informed of future changes, we recommend that you submit a sitemap. You can automate this with the Search Console Sitemap API.
+
+Examples
+Occupation example
+
+The following JSON-LD example shows a simple Occupation with salary estimate data:
+
+
+  <head>
+    <title>Software Developer, Applications</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Occupation",
+      "name": "Software Developer, Applications",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "lastReviewed": "2017-07-23T14:20:00-05:00"
+      },
+      "description": "Develops information systems by designing, developing, and installing software solutions",
+      "estimatedSalary": [
+        {
+          "@type": "MonetaryAmountDistribution",
+          "name": "base",
+          "currency": "USD",
+          "duration": "P1Y",
+          "percentile10": "100000.5",
+          "percentile25": "115000",
+          "median": "120000.28",
+          "percentile75": "130000",
+          "percentile90": "150000"
+        }
+      ],
+      "occupationLocation": [
+        {
+          "@type": "City",
+          "name": "Mountain View"
+        }
+      ]
+    }
+    </script>
+  </head>
+  
+  
+
+
+Occupation Aggregation by Employer example
+
+The following JSON-LD example shows a more complex example of OccupationAggregationByEmployer with salary estimate data:
+
+
+  <head>
+    <title>App/Web App Developer</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.googleapis.com/",
+      "@type": "OccupationAggregationByEmployer",
+      "name": "App/Web App Developer",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "lastReviewed": "2017-07-23T14:20:00-05:00"
+      },
+      "description": "Develops information systems by designing, developing, and installing software solutions.",
+      "estimatedSalary": [
+        {
+          "@type": "MonetaryAmountDistribution",
+          "name": "base",
+          "currency": "USD",
+          "duration": "P1Y",
+          "percentile10": "100000.5",
+          "percentile25": "115000",
+          "median": "120000.28",
+          "percentile75": "130000",
+          "percentile90": "150000"
+        },
+        {
+          "@type": "MonetaryAmountDistribution",
+          "name": "bonus",
+          "currency": "USD",
+          "duration": "P1Y",
+          "percentile10": "10000",
+          "percentile25": "20000",
+          "median": "25000",
+          "percentile75": "27000",
+          "percentile90": "60000"
+        }
+      ],
+      "occupationLocation": [
+        {
+          "@type": "State",
+          "name": "Oregon"
+        },
+        {
+          "@type": "State",
+          "name": "Washington"
+        },
+        {
+          "@type": "State",
+          "name": "California"
+        }
+      ],
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Google LLC"
+      },
+      "sampleSize":1000,
+      "industry": "Technology",
+      "jobBenefits": "6 weeks paid vacation every year",
+      "yearsExperienceMin": 3,
+      "yearsExperienceMax": 7
+    }
+    </script>
+  </head>
+  
+  
+
+
+Guidelines
+
+You must follow the general structured data quality guidelines and technical guidelines. In addition, the following guidelines apply to Occupation structured data:
+If you violate these policies, your occupation may not be eligible to be displayed in search results. Learn more about Spammy Structured Markup.
+Technical guidelines
+
+    Occupation structured data is standalone data. It does not need to be associated with any other structured data that you provide to Google.
+    Add only a single Occupation or OccupationAggregationByEmployer to a web page. Don't add more than one of these type definitions per page.
+    Make sure your structured data is consistent with what you show on the page. Here are some examples:
+        You only show the median salary on your page to users, and your structured data only includes those values.
+        You round your yearly salary to the nearest five-thousandth on your page, and you provide the same granularity in the structured data.
+    Only specify properties once in a definition, unless otherwise specified.
+    For occupations with different characteristics based on location (for example, the salary range in the US Northeast might be different than one for the Mid-West), create separate web page, each with its own Occupation definition that specifies a different occupationLocation.
+    Don't add salary estimate structured data to listing pages (pages that show a list of occupations).
+    When your pages change, update your sitemaps on a daily basis.
+
+Content guidelines
+
+    Group similar occupation titles when all jobs have similar salary ranges and descriptions. Occupation titles must be specific, but not too specific that it becomes confusing. Here are some examples:
+        Don't be too broad:
+
+        Not recommended: "Clinical, Counseling, and School Psychologists"
+
+        Recommended: "School Counselor", "Clinical Psychologist", "Clinical Therapist", "Doctor of Psychology"
+        Don't be too specific:
+
+        Not recommended: "Home Health Registered Nurse" and "Registered Nurse (RN)" and "RN - Registered Nurse - Home Health - Travel Nurse"
+
+        Recommended: "Registered Nurse"
+
+Structured data type definitions
+
+This section describes the structured data types related to salary estimates.
+
+You must include the required properties for your content to be eligible for display the job experience on Google and rich results. You can also include the recommended properties to add more information about your content, which could provide a better user experience.
+Occupation
+
+The Occupation type defines information about a job, such as the estimated salary, skills required, and responsibilities. The full definition of Occupation is available at schema.org/Occupation.
+
+The Google-supported properties are the following:
+Required properties
+estimatedSalary 	
+
+Array of MonetaryAmountDistribution
+
+The estimated salary for this occupation in the given occupationLocation. Specify a salary range or salary estimates based on the percentile rank.
+
+The following example shows an estimated salary range:
+
+"estimatedSalary": [{
+  "@type": "MonetaryAmountDistribution",
+  "name": "base",
+  "currency": "USD",
+  "duration": "P1Y",
+  "minValue": "100000", // Inherited from QuantitativeValue
+  "maxValue": "150000", // Inherited from QuantitativeValue
+  "median": "124900" // Inherited from QuantitativeValueDistribution
+}]
+
+To account for base salary, bonuses, and other forms of monetary compensation, define multiple salaries within the estimatedSalary array. You must specify the base salary. Other types of compensation are optional.
+
+Here's an example with a bonus:
+
+"estimatedSalary": [
+  {
+    "@type": "MonetaryAmountDistribution",
+    "name": "base",
+    "currency": "USD",
+    "duration": "P1Y",
+    "minValue": "100000",
+    "maxValue": "150000",
+    "median": "124900"
+  }, {
+    "@type": "MonetaryAmountDistribution",
+    "name": "bonus",
+    "currency": "USD",
+    "duration": "P1Y",
+    "minValue": "0",
+    "maxValue": "34500",
+    "median": "4450"
+  }
+]
+
+estimatedSalary.duration 	
+
+Duration
+
+The period of time that it takes to earn the estimated salary in ISO 8601 date format. For example, if the estimated salary is earned over the course of one year, use P1Y for duration.
+Starting March 24, 2020, we updated the documentation to require duration instead of unitText. While we continue to support unitText, we require duration moving forward. We recommend that you switch over to using duration, if possible.
+estimatedSalary.name 	
+
+Text
+
+The type of value. You must specify the base salary. Other types of compensation are optional. For example, "Base", "Bonus", "Commission".
+name 	
+
+Text
+
+The title of the occupation. This property allows unstructured text. For example, "Software Engineer".
+
+Best practices:
+
+    This property must be the title of the occupation only.
+    Don't include job codes, addresses, dates, salaries, or company names in the name property.
+
+    Not recommended: Apply now for IT job -FRENCH speaker in Bucharest
+
+    Recommended: Market Specialist, French speaker
+    Provide concise, readable titles.
+    Don't overuse special characters such as ! and *. Abusing special characters might cause your markup to be considered as Spammy Structured Markup. Numbers and characters such as / and - are acceptable.
+
+    Not recommended: *** WAREHOUSE HIRING NOW!! ON A BUS ROUTE!! ***
+
+    Recommended: Shipping and Receiving Warehouse Associate
+
+occupationLocation 	
+
+Array of City, State, or Country
+
+The place for which this occupational description applies. Define the location at the city, state, or country level on the one Name property if specifying for a single location.
+
+Granular example (recommended)
+
+"occupationLocation": {
+  "@type": "City", // Maximum level of granularity (recommended)
+  "name": "Mountain View, CA, US" // City, State, and Country inputted on same property
+}
+
+Less granular examples
+
+Here are two examples with less granularity that are still acceptable:
+
+"occupationLocation": {
+  "@type": "State",
+  "name": "CA, US"
+}
+
+"occupationLocation": {
+  "@type": "Country",
+  "name": "US"
+}
+
+Best practices:
+
+    The location must not be any more specific than the city.
+    The State property accepts region names if your country does not specify a state.
+    The value of occupationLocation is the location in which the occupation actually takes place, not the location where the salary estimate listing was created.
+    If a single Occupation type has multiple locations, specify the locations in the occupationLocation array, as the following example shows.
+
+    "occupationLocation": [
+      {
+        "@type": "City",
+        "name": "Portland, Oregon, US" // Salary specified for multiple locations
+      }, {
+        "@type": "City",
+        "name": "Seattle, Washington, US"
+       }
+    ]
+
+    Data such as salary ranges, educational requirements, and qualifications for the occupation frequently varies based on location. To represent this, define multiple pages, each with its own Occupation definition and a different occupationLocation.
+
+Recommended properties
+description 	
+
+Text
+
+The description of the occupation.
+
+The description must be a complete representation of the job, including job responsibilities, qualifications, skills, working hours, education requirements, and experience requirements.
+
+Additional guidelines:
+
+    Include the description on all leaf pages that a user may land on, not just on the top-level page.
+    The description must uniquely identify the occupation and provide a specific description of what the occupation entails.
+
+    Not recommended: "Internship - An internship is a job training for white collar and professional careers."
+
+    Recommended: "Data Analyst Intern - An internship working with a data analyst. A data analyst extracts insights from data to help make data driven decisions."
+    The description can't be the same as the name.
+    Don't include the hiring organization in the description. Instead, use hiringOrganization.
+
+estimatedSalary.currency 	
+
+Text
+
+The ISO 4217 3-letter currency code for the value. For example, "USD" or "CAD".
+estimatedSalary.median 	
+
+Number
+
+The median (or "middle") value. For example, half of the salaries for this occupation are at or below this value.
+estimatedSalary.percentile10 	
+
+Number
+
+The 10th percentile value. For example, 10% of the salaries for this occupation are at or below this value.
+estimatedSalary.percentile25 	
+
+Number
+
+The 25th percentile value. For example, 25% of the salaries for this occupation are at or below this value.
+estimatedSalary.percentile75 	
+
+Number
+
+The 75th percentile value. For example, 75% of the salaries for this occupation are at or below this value.
+estimatedSalary.percentile90 	
+
+Number
+
+The 90th percentile value. For example, 90% of the salaries for this occupation are at or below this value.
+mainEntityOfPage 	
+
+WebPage
+
+The main thing being described on the page.
+mainEntityOfPage.lastReviewed 	
+
+Date
+
+The date when the estimated salary information was produced, in ISO 8601 format. For example:
+
+"mainEntityOfPage": {
+  "@type": "WebPage",
+  "lastReviewed": "2017-07-23T14:20:00-05:00"
+}
+
+OccupationAggregationByEmployer
+
+The OccupationAggregationByEmployer provides job-related data that is grouped by employer. For example, you can specify the industry and hiring organization for a group of occupations when they are aggregated by the employer.
+OccupationAggregationByEmployer is a new schema.org extension proposed by Google. It may not be available on schema.org yet.
+
+The Google-supported properties are the following:
+Required properties
+estimatedSalary 	
+
+Array of MonetaryAmountDistribution
+
+The estimated salary for this occupation in the given occupationLocation. Specify a salary range or salary estimates based on the percentile rank.
+
+The following example shows an estimated salary range:
+
+"estimatedSalary": [{
+  "@type": "MonetaryAmountDistribution",
+  "name": "base",
+  "currency": "USD",
+  "duration": "P1Y",
+  "minValue": "100000", // Inherited from QuantitativeValue
+  "maxValue": "150000", // Inherited from QuantitativeValue
+  "median": "124900" // Inherited from QuantitativeValueDistribution
+}]
+
+To account for base salary, bonuses, and other forms of monetary compensation, define multiple salaries within the estimatedSalary array. You must specify the base salary. Other types of compensation are optional.
+
+Example with a bonus
+
+"estimatedSalary": [
+  {
+    "@type": "MonetaryAmountDistribution",
+    "name": "base",
+    "currency": "USD",
+    "duration": "P1Y",
+    "minValue": "100000",
+    "maxValue": "150000",
+    "median": "124900"
+  }, {
+    "@type": "MonetaryAmountDistribution",
+    "name": "bonus",
+    "currency": "USD",
+    "duration": "P1Y",
+    "minValue": "0",
+    "maxValue": "34500",
+    "median": "4450"
+  }
+]
+
+estimatedSalary.duration 	
+
+Duration
+
+The period of time that it takes to earn the estimated salary in ISO 8601 date format. For example, if the estimated salary is earned over the course of one year, use P1Y for duration.
+Starting March 24, 2020, we updated the documentation to require duration instead of unitText. While we continue to support unitText, we require duration moving forward. We recommend that you switch over to using duration, if possible.
+estimatedSalary.name 	
+
+Text
+
+The type of value. You must specify the base salary. Other types of compensation are optional. For example, "Base", "Bonus", "Commission".
+hiringOrganization 	
+
+Organization
+
+The organization offering a position of this occupation. Set the @context to "https://schema.org/". The hiringOrganization must be the name of the company (for example, "Starbucks, Inc"), and not the specific address of the location that is hiring (for example, "Starbucks on Main Street"). For example:
+
+"hiringOrganization": {
+  "@context": "https://schema.org/",
+  "@type": "Organization",
+  "name": "Google LLC"
+}
+
+name 	
+
+Text
+
+The title of the occupation. This property allows unstructured text. For example, "Software Engineer".
+
+Best practices:
+
+    This property must be the title of the occupation only.
+    Don't include job codes, addresses, dates, salaries, or company names in the name property.
+
+    Not recommended: Apply now for IT job -FRENCH speaker in Bucharest
+
+    Recommended: Market Specialist, French speaker
+    Provide concise, readable titles.
+    Don't overuse special characters such as ! and *. Abusing special characters might cause your markup to be considered as Spammy Structured Markup. Numbers and characters such as "/" and "-" are acceptable.
+
+    Not recommended: *** WAREHOUSE HIRING NOW!! ON A BUS ROUTE!! ***
+
+    Recommended: Shipping and Receiving Warehouse Associate
+
+occupationLocation 	
+
+Array of City, State, or Country
+
+The place for which this occupational description applies. Define the location at the city, state, or country level on the one Name property if specifying for a single location.
+
+Granular example (recommended)
+
+"occupationLocation": {
+  "@type": "City", // Maximum level of granularity (recommended)
+  "name": "Mountain View, CA, US" // City, State, and Country inputted on same property
+}
+
+Less granular examples
+
+Here are two examples with less granularity that are still acceptable:
+
+"occupationLocation": {
+  "@type": "State",
+  "name": "CA, US"
+}
+
+"occupationLocation": {
+  "@type": "Country",
+  "name": "US"
+}
+
+Best practices:
+
+    The location must not be any more specific than the city.
+    The State property accepts region names if your country does not specify a state.
+    The value of occupationLocation is the location in which the occupation actually takes place, not the location where the salary estimate listing was created.
+    If a single Occupation type has multiple locations, specify the locations in the occupationLocation array, as the following example shows.
+
+    "occupationLocation": [
+      {
+        "@type": "City",
+        "name": "Portland, Oregon, US" // Salary specified for multiple locations
+      }, {
+        "@type": "City",
+        "name": "Seattle, Washington, US"
+       }
+    ]
+
+    Data such as salary ranges, educational requirements, and qualifications for the occupation frequently varies based on location. To represent this, define multiple pages, each with its own Occupation definition and a different occupationLocation.
+
+Recommended properties
+description 	
+
+Text
+
+The description of the occupation.
+
+The description must be a complete representation of the job, including job responsibilities, qualifications, skills, working hours, education requirements, and experience requirements.
+
+Additional guidelines:
+
+    Include the description on all leaf pages that a user may land on, not just on the top-level page.
+    The description must uniquely identify the occupation and provide a specific description of what the occupation entails.
+
+    Not recommended: "Internship - An internship is a job training for white collar and professional careers."
+
+    Recommended: "Data Analyst Intern - An internship working with a data analyst. A data analyst extracts insights from data to help make data driven decisions."
+    The description can't be the same as the name.
+    Don't include the hiring organization in the description. Instead, use hiringOrganization.
+
+estimatedSalary.currency 	
+
+Text
+
+The ISO 4217 3-letter currency code for the value. For example, "USD" or "CAD".
+estimatedSalary.median 	
+
+Number
+
+The median (or "middle") value. For example, half of the salaries for this occupation are at or below this value.
+estimatedSalary.percentile10 	
+
+Number
+
+The 10th percentile value. For example, 10% of the salaries for this occupation are at or below this value.
+estimatedSalary.percentile25 	
+
+Number
+
+The 25th percentile value. For example, 25% of the salaries for this occupation are at or below this value.
+estimatedSalary.percentile75 	
+
+Number
+
+The 75th percentile value. For example, 75% of the salaries for this occupation are at or below this value.
+estimatedSalary.percentile90 	
+
+Number
+
+The 90th percentile value. For example, 90% of the salaries for this occupation are at or below this value.
+industry 	
+
+Text
+
+The industry that's associated with the job position.
+jobBenefits 	
+
+Text
+
+The description of benefits that are associated with the job.
+mainEntityOfPage 	
+
+WebPage
+
+The main thing being described on the page.
+mainEntityOfPage.lastReviewed 	
+
+Date
+
+The date when the estimated salary information was produced, in ISO 8601 format. For example:
+
+"mainEntityOfPage": {
+  "@type": "WebPage",
+  "lastReviewed": "2017-07-23T14:20:00-05:00"
+}
+
+sampleSize 	
+
+Number
+
+The number of data points contributing to the aggregated salary data. For example:
+
+"sampleSize": 42
+
+yearsExperienceMax 	
+
+Number
+
+The maximum years of experience that are acceptable for this occupation. For example, a junior position might specify a maximum of 5 years of experience, as the following example shows:
+
+"yearsExperienceMax": 5
+
+yearsExperienceMin 	
+
+Number
+
+The minimum number of years of experience required for this occupation. For example, a senior position might require at least of 10 years of experience, as the following example shows:
+
+"yearsExperienceMin": 10
+
+Troubleshooting
+
+If you're having trouble implementing or debugging structured data, here are some resources that may help you.
+
+    If you're using a content management system (CMS) or someone else is taking care of your site, ask them to help you. Make sure to forward any Search Console message that details the issue to them.
+    Google does not guarantee that features that consume structured data will show up in search results. For a list of common reasons why Google may not show your content in a rich result, see the General Structured Data Guidelines.
+    You might have an error in your structured data. Check the list of structured data errors.
+    If you received a structured data manual action against your page, the structured data on the page will be ignored (although the page can still appear in Google Search results). To fix structured data issues, use the Manual Actions report.
+    Review the guidelines again to identify if your content isn't compliant with the guidelines. The problem can be caused by either spammy content or spammy markup usage. However, the issue may not be a syntax issue, and so the Rich Results Test won't be able to identify these issues.
+    Troubleshoot missing rich results / drop in total rich results.
+    Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it. For general questions about crawling and indexing, check the Google Search crawling and indexing FAQ.
+    Post a question in the Google Search Central forum.
+
+

@@ -1,0 +1,62 @@
+
+April82020
+Announcing new options for webmasters to control their snippets at Bing
+
+We’re excited to announce, webmasters will have more tools than ever to control the snippets that preview their site on the Bing results page.
+
+For a long time, the Bing search results page has shown site previews that include text snippets, image or video. These snippets, images or videos preview are to help users gauge if a site is relevant to what they’re looking to find out, or if there’s perhaps a more relevant search result for them to click on.
+
+The webmasters owning these sites have had some control over these text snippets; for example, if they think the information they’re providing might be fragmented or confusing when condensed into a snippet, they may ask search engines to show no snippet at all so users click through to the site and see the information in its full context. Now, with these new features, webmasters will have more control than ever before to determine how their site is represented on the Bing search results page.
+
+Letting Bing knows about your snippet and content preview preferences using robots meta tags.
+
+We are extending our support for robots meta tags in HTML or X-Robots-Tag tag in the HTTP Header to let webmasters tell Bing about their content preview preferences.
+
+    max-snippet:[number]
+
+    Specify the maximum text-length, in characters, of a snippet in search results.
+    Example :
+
+    <meta name="robots" content="max-snippet:400" />
+
+        If value = 0, we will not show a text snippet.
+        If value = -1, there is no snippet length limit.
+
+    max-image-preview:[value]Specify the maximum size of an image preview in search results.
+    Example:
+
+    <meta name="robots" content="max-image-preview:large" />  
+
+        If value = none, Bing will not show an image preview.
+        If value = standard, Bing may show a standard size image.
+        If value = large, Bing may show a standard or a large size optimized image.
+        If value is not none and not standard and not large, there is no image length limit.
+
+ 
+
+    max-video-preview:[number]
+    Specify the maximum number of seconds (integer) of a video preview in search results.
+    Example
+
+    <meta name="robots" content="max-video-preview:-1" />  
+
+        If value = 0, Bing may show a static image of the video.
+        If value = -1, you allow any preview length.
+
+Please note that the NOSNIPPET meta tag is still supported and the options above can be combined with other meta robots tags.
+
+Example by setting
+
+​<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1, noarchive" />
+
+ webmasters tell Bing that there is no snippet length limit, a large image preview may be shown, a long video preview may be shown and link to no cache page should be shown.
+
+Over the following weeks, we will start rolling out these new options first for web and news, then for images, videos and our Bing answers results. We will use these options as directive statement, not as hints.
+
+For more information, please read our documentation on meta tags.
+
+Please reach out to Bing webmaster tools support if you face any issues or questions.
+
+Fabrice Canel
+Principal Program Manager
+Microsoft - Bing

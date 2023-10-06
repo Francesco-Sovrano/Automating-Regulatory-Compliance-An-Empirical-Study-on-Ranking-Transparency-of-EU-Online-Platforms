@@ -1,0 +1,419 @@
+
+
+Video (VideoObject, Clip, BroadcastEvent) structured data
+Does your video give users step-by-step guidance to make food or drinks? Embed your video content within Recipe structured data.
+Or, does your video give users step-by-step guidance for some other task? Embed your video content within HowTo structured data.
+
+Google Search is an entry point for people to discover and watch videos. While Google tries to automatically understand details about your video, you can explicitly provide information, such as the description, thumbnail URL, upload date, and duration, by marking up your video with VideoObject. Videos can appear in Google Search results, video search results, Google Images, and Google Discover.
+A screenshot that shows video content in Google search results, the video tab, and Discover
+Note: The actual appearance in search results might be different. You can preview most features with the Rich Results Test.
+
+Based on how you mark up your content, your videos may also be eligible for the following video enhancements:
+Video enhancements
+
+LIVE badge: Get a LIVE badge added to your video by marking your video with BroadcastEvent. The LIVE badge can be applied to any public video that is live-streamed for any length of time. Here are a few examples:
+
+    Sporting events
+    Awards shows
+    Influencer videos
+    Live streaming video games
+
+Make sure you follow the LIVE badge guidelines and use the Indexing API to make sure Google crawls your page at the right time.
+	Video with a LIVE badge in search results
+
+Home activities: Help people find activities to do at home. When people search for activities to do at home, videos and online events appear in an immersive rich result. By adding Video structured data, your videos may already be eligible for this rich result, with no additional steps needed.
+
+For more information about feature availability, guidelines, and examples, see Home activities.
+	Home activities in search results
+
+Key moments
+
+The key moments feature is a way for users to navigate video segments like chapters in a book, which can help users engage more deeply with your content. Google Search tries to automatically detect the segments in your video and show key moments to users, without any effort on your part. Alternatively, you can manually tell Google about the important points of your video. We will prioritize key moments set by you, either through structured data or the YouTube description.
+
+    If your video is hosted on your web page, there are two ways that you can enable key moments:
+        Clip structured data: Specify the exact start and end point to each segment, and what label to display for each segment. This is supported in all languages where Google Search is available.
+        SeekToAction structured data: Tell Google where timestamps typically go in your URL structure, so that Google can automatically identify key moments and link users to those points within the video. This is currently supported for the following languages: English, Spanish, Portuguese, Italian, Chinese, French, Japanese, German, Turkish, Korean, Dutch, and Russian. We aim to extend this to more languages over time. Even in supported languagues, not all videos will have key moments identified, but we aim to improve this over time as well.
+    If your video is hosted on YouTube, you can specify the exact timestamps and labels in the video description on YouTube. Check out the best practices for marking timestamps in YouTube descriptions. This is supported in all languages where Google Search is available.
+
+    If you want to enable Video Chapters on YouTube, follow these additional guidelines.
+
+To opt out of the key moments feature completely (including any efforts Google may make to show key moments automatically for your video), use the nosnippet meta tag.
+	Video with key moments in search results
+Video host carousel (limited access): Enable users to explore your video gallery pages by adding ItemList structured data. >This feature is currently limited to a small set of providers. Google Search may automatically show a host carousel for your site without you having to add ItemList structured data.
+
+Learning Video: Help students and teachers find your educational videos by adding Learning Video structured data. For more information about feature availability, guidelines, and examples, refer to the Learning Video documentation.
+	Learning Video in search results
+How to add structured data
+
+Structured data is a standardized format for providing information about a page and classifying the page content. If you're new to structured data, you can learn more about how structured data works.
+
+Here's an overview of how to build, test, and release structured data. For a step-by-step guide on how to add structured data to a web page, check out the structured data codelab.
+
+    Add the required properties. Based on the format you're using, learn where to insert structured data on the page.
+    Using a CMS? It may be easier to use a plugin that's integrated into your CMS.
+    Using JavaScript? Learn how to generate structured data with JavaScript.
+    Follow the guidelines.
+    Validate your code using the Rich Results Test and fix any critical errors. Consider also fixing any non-critical issues that may be flagged in the tool, as they can help improve the quality of your structured data (however, this isn't necessary to be eligible for rich results).
+    Deploy a few pages that include your structured data and use the URL Inspection tool to test how Google sees the page. Be sure that your page is accessible to Google and not blocked by a robots.txt file, the noindex tag, or login requirements. If the page looks okay, you can ask Google to recrawl your URLs.
+    Note: Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it.
+    To keep Google informed of future changes, we recommend that you submit a sitemap. You can automate this with the Search Console Sitemap API.
+
+Examples
+Standard video rich result
+Example of standard video search results
+
+Here's an example of a single VideoObject.
+LIVE badge
+Example of a video in search results with a LIVE badge
+
+Here's an example of VideoObject and BroadcastEvent.
+Video host carousel (limited access)
+
+Here's an example of VideoObject and ItemList structured data. This feature is currently limited to a small set of providers.
+Clip
+Example of a video in search results with key moments
+
+Here's an example of VideoObject and Clip.
+SeekToAction
+
+Here's an example of a single VideoObject that includes the additional properties needed for SeekToAction markup.
+Guidelines
+
+To help Google better understand your video, make sure you follow the guidelines:
+Warning: If Google detects that some of the markup on your pages may be using techniques that are outside our structured data guidelines, your site may receive a manual action.
+
+    Search Essentials
+    General structured data guidelines
+    Video best practices
+    Video sitemap guidelines
+    Livestream guidelines (if applicable)
+    Carousel guidelines (if applicable)
+    Clip and SeekToAction guidelines (if applicable)
+    Best practices for marking timestamps on YouTube (if applicable)
+
+LIVE badge guidelines
+
+If you're adding BroadcastEvent to livestream videos, follow these guidelines:
+
+    Don't use vulgar or potentially offensive language in the structured data.
+    To make sure Google crawls your livestream video at the right time, use the Indexing API. Call the API for the following events:
+        When the video goes live
+        When the video has stopped streaming, and the page's markup has been updated to indicate the endDate
+        Whenever a change has happened in the markup and Google needs to be notified
+    The Indexing API only supports livestream videos.
+
+Best practices for marking timestamps on YouTube
+
+If your video is hosted on YouTube, Google Search may automatically enable key moments for your video based on the video description on YouTube, and you may not have to mark specific timestamps in your YouTube description. However, you can tell us more explicitly about the important points in your video and we will prefer that information. The following diagram shows how timestamps and labels in a YouTube video description can appear in search results:
+A video in search results with timestamps and labels
+1. Label: The name of the clip.
+2. Timestamp: When a clip starts.
+
+Keep in mind the following guidelines when formatting timestamps and labels for YouTube descriptions:
+
+    Format the timestamp in the following format: [hour]:[minute]:[second]. If there's no hour, you don't need to include it.
+    Specify the label of the timestamp on the same line as the timestamp.
+    Place each timestamp on a new line in the video description.
+    Link the timestamp to the specified point in the video.
+    Make sure the label contains at least one word.
+    List the timestamps in chronological order.
+
+If you want to enable Video Chapters on YouTube, follow these additional guidelines.
+Clip and SeekToAction guidelines
+
+If you're adding Clip or SeekToAction structured data to mark video segments, follow these guidelines:
+
+    The video must have the ability to deep link into some point other than the start point in the video URL. For example, https://www.example.com/example?t=30 starts 30 seconds into a video.
+    VideoObject structured data must be added to a page where users can watch the video. It's a bad user experience to point users to a page where they can't watch the video.
+    The total video duration must be a minimum of 30 seconds.
+    The video must include the required properties that are listed in the VideoObject structured data documentation.
+    For Clip structured data only: Make sure that no two clips on the same video defined on the same page share a start time.
+    For SeekToAction structured data only: Google must be able to fetch your video content files.
+
+Structured data type definitions
+
+This section describes the structured data types related to video features in Google Search. You must include the required VideoObject properties for your content to be eligible for display as a video rich result. You can also include the recommended properties to add more information about your content, which could provide a better user experience. In addition to VideoObject, you can add the following data types to enable video enhancements in Google Search:
+
+    BroadcastEvent: Mark up livestream videos to enable a LIVE badge on your video.
+    ItemList: Mark up pages with a list of videos to enable a video host carousel.
+    Clip: Manually mark important segments in your video to help users quickly navigate to specific points in a video.
+    SeekToAction: Enable key moments by indicating how your URL structure works, so that Google can automatically identify key moments and link users to those points within the video.
+    Learning Video: Help students and teachers find your educational videos by adding Learning Video structured data.
+
+Does your video teach users how to complete a task step-by-step? Embed your video content within HowTo.
+VideoObject
+
+The full definition of VideoObject is available at schema.org/VideoObject. If you don't include the required properties, Google may not be able to extract any information about the video. You can also include the recommended properties to add more information about your content, which could provide a better user experience.
+Required properties
+name 	
+
+Text
+
+The title of the video
+thumbnailUrl 	
+
+Repeated URL
+
+A URL pointing to the video thumbnail image file. Follow the thumbnail image guidelines.
+uploadDate 	
+
+Date
+
+The date the video was first published, in ISO 8601 format.
+Recommended properties
+contentUrl 	
+
+URL
+We recommend that your provide the contentUrl property, if possible. This is the most effective way for Google to fetch your video content files. If contentUrl isn't available, provide embedUrl as an alternative.
+
+A URL pointing to the actual video media file, in one of the supported encoding formats. Don't link to the page where the video lives; this must be the URL of the video media file itself.
+
+"contentUrl": "https://www.example.com/video/123/file.mp4"
+
+Make sure to follow our Video best practices.
+Tip: You can ensure that only Googlebot accesses your content by using a reverse DNS lookup.
+description 	
+
+Text
+
+The description of the video. HTML tags are ignored.
+duration 	
+
+Duration
+
+The duration of the video in ISO 8601 format. For example, PT00H30M5S represents a duration of "thirty minutes and five seconds".
+embedUrl 	
+
+URL
+We recommend that your provide the contentUrl property, if possible. This is the most effective way for Google to fetch your video content files. If contentUrl isn't available, provide embedUrl as an alternative.
+
+A URL pointing to a player for the specific video. Don't link to the page where the video lives; this must be the URL of the video player itself. Usually this is the information in the src attribute of an <embed> tag.
+
+"embedUrl": "https://www.example.com/embed/123"
+
+Make sure to follow our Video best practices.
+Tip: You can ensure that only Googlebot accesses your content by using a reverse DNS lookup.
+expires 	
+
+Date
+
+If applicable, the date after which the video will no longer be available, in ISO 8601 format. Don't supply this information if your video does not expire.
+hasPart 	
+
+If your video has important segments, nest the required Clip properties in your VideoObject. For example:
+
+
+interactionStatistic 	
+
+InteractionCounter
+
+The number of times the video has been watched. For example:
+
+"interactionStatistic":
+  {
+    "@type": "InteractionCounter",
+    "interactionType": { "@type": "WatchAction" },
+    "userInteractionCount": 12345
+  }
+
+Starting October 2019, we changed our documentation to recommend interactionStatistic instead of interactionCount. While we continue to support interactionCount, we recommend interactionStatistic moving forward.
+publication 	
+
+If your video is happening live and you want to be eligible for the LIVE badge, nest the BroadcastEvent properties in your VideoObject. For example:
+
+
+regionsAllowed 	
+
+Place
+
+The regions where the video is allowed. If not specified, then Google assumes the video is allowed everywhere. Specify the countries in ISO 3166 format. For multiple values, use a space or comma as a delimiter.
+BroadcastEvent
+
+To be eligible for display with a LIVE badge, nest the following properties in your VideoObject. While BroadcastEvent properties aren't required, you must add the following properties if you want your video to display with a LIVE badge.
+
+The full definition of BroadcastEvent is available at schema.org/BroadcastEvent.
+Required properties
+publication 	
+
+BroadcastEvent
+
+Describes when the video is to be streamed live. Can be a list or a single instance.
+publication.endDate 	
+
+DateTime
+
+Time and date of when the livestream ends or is expected to end, in ISO 8601 format.
+
+It is required to provide the endDate once the video has finished and is no longer live. If the expected endDate is unknown prior to the livestream starting, we recommend providing an approximate endDate.
+
+If endDate is in the past or present, it indicates stream actually ended and is no longer live. If endDate is in the future, it indicates stream is scheduled to end at that time.
+publication.isLiveBroadcast 	
+
+Boolean
+
+Set to true if the video is, has been, or will be streamed live.
+publication.startDate 	
+
+DateTime
+
+Time and date of when the livestream starts or is expected to start, in ISO 8601 format. If startDate is in the past or present, it indicates that the stream actually started. If startDate is in the future, it indicates stream is scheduled to start at that time.
+ItemList (limited access)
+
+To help Google better understand your video gallery pages, add the following ItemList properties in addition to VideoObject properties. For more information about carousels, see Carousel.
+
+The full definition of ItemList is available at schema.org/ItemList.
+Required properties
+itemListElement 	
+
+ListItem
+
+Annotation for a single item page. Each ListItem element must include VideoObject properties as well as ListItem properties.
+ListItem.position 	
+
+Integer
+
+Ordinal position of the item page in the list. For example:
+
+"itemListElement": [
+  {
+    "@type": "VideoObject",
+    "position": 1,
+    ... other VideoObject properties ...
+  }, {
+    "@type": "VideoObject",
+    "position": 2,
+    ... other VideoObject properties ...
+  }
+]
+
+ListItem.url 	
+
+URL
+
+The canonical URL of the item page. Every item must have a unique URL.
+Clip
+
+To manually tell Google what timestamp and label to use for the key moments feature, nest the following properties in your VideoObject. While Clip properties aren't required, you must add the following properties if you want Google to show the timestamps and labels that you specify for your video, instead of the video segments that Google may automatically show for your video.
+
+The full definition of Clip is available at schema.org/Clip.
+Required properties
+name 	
+
+Text
+
+A descriptive title for the content of the clip.
+startOffset 	
+
+Number
+
+The start time of the clip expressed as the number of seconds from the beginning of the work.
+url 	
+
+URL
+
+A URL that points to the start time of the clip.
+
+The clip URL must point to the same URL path as the video with additional query parameters that specify the time.
+
+For example, the following URL means the video starts at 2:00 minutes:
+
+"url": "https://www.example.com/example?t=120"
+
+Recommended properties
+endOffset 	
+
+Number
+
+The end time of the clip expressed as the number of seconds from the beginning of the work.
+SeekToAction
+
+To tell Google how your URL structure works (so that Google can display key moments that are automatically identified for your video), nest the following properties in your VideoObject. While SeekToAction properties aren't required, you must add the following properties if you want Google to understand how your URL structure works, so Google can link users to a point within the video.
+If you prefer to identify key moments in a video yourself, instead of letting Google automatically identify key moments, use Clip markup instead of SeekToAction.
+
+The full definition of SeekToAction is available at schema.org/SeekToAction.
+Required properties
+potentialAction 	
+
+SeekToAction
+
+Indicates a potential action. Include the following nested properties
+
+    potentialAction.startOffset-input
+    potentialAction.target
+
+For example:
+
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "potentialAction" : {
+    "@type": "SeekToAction",
+    "target": "https://video.example.com/watch/videoID?t={seek_to_second_number}",
+    "startOffset-input": "required name=seek_to_second_number"
+  }
+)
+
+potentialAction.startOffset-input 	
+
+Text
+
+The placeholder string that Google will identify as your timestamp structure and then replace with the number of seconds to skip to. Use the following value:
+
+"startOffset-input": "required name=seek_to_second_number"
+
+startOffset-input is an annotated property. See the Potential Actions page for more information.
+potentialAction.target 	
+
+EntryPoint
+
+The URL of the page that contains this VideoObject, including a placeholder in the URL structure that indicates where Google can insert the number of seconds to skip to in the video. This is how Google understands your URL structure and how you format your timestamps. Replace the timestamp part of the URL with the following placeholder string:
+
+{seek_to_second_number}
+
+For example, replace the timestamp part of the URL:
+
+"target": "https://video.example.com/watch/videoID?t=30"
+
+So that the timestamp now looks like this:
+
+"target": "https://video.example.com/watch/videoID?t={seek_to_second_number}"
+
+Monitor rich results with Search Console
+
+Search Console is a tool that helps you monitor how your pages perform in Google Search. You don't have to sign up for Search Console to be included in Google Search results, but it can help you understand and improve how Google sees your site. We recommend checking Search Console in the following cases:
+
+    After deploying structured data for the first time
+    After releasing new templates or updating your code
+    Analyzing traffic periodically
+
+After deploying structured data for the first time
+
+After Google has indexed your pages, look for issues using the relevant Rich result status report. Ideally, there will be an increase of valid items, and no increase in invalid items. If you find issues in your structured data:
+
+    Fix the invalid items.
+    Inspect a live URL to check if the issue persists.
+    Request validation using the status report.
+
+After releasing new templates or updating your code
+When you make significant changes to your website, monitor for increases in structured data invalid items.
+
+    If you see an increase in invalid items, perhaps you rolled out a new template that doesn't work, or your site interacts with the existing template in a new and bad way.
+    If you see a decrease in valid items (not matched by an increase in invalid items), perhaps you are no longer embedding structured data in your pages. Use the URL Inspection tool to learn what is causing the issue.
+
+Warning: Don't use cached links to debug your pages. Instead, use the URL Inspection Tool because it has the most up-to-date version of your pages.
+Analyzing traffic periodically
+Analyze your Google Search traffic using the Performance Report. The data will show you how often your page appears as a rich result in Search, how often users click on it and what is the average position you appear on search results. You can also automatically pull these results with the Search Console API.
+Troubleshooting
+
+If you're having trouble implementing or debugging structured data, here are some resources that may help you.
+
+    If you're using a content management system (CMS) or someone else is taking care of your site, ask them to help you. Make sure to forward any Search Console message that details the issue to them.
+    Google does not guarantee that features that consume structured data will show up in search results. For a list of common reasons why Google may not show your content in a rich result, see the General Structured Data Guidelines.
+    You might have an error in your structured data. Check the list of structured data errors.
+    If you received a structured data manual action against your page, the structured data on the page will be ignored (although the page can still appear in Google Search results). To fix structured data issues, use the Manual Actions report.
+    Review the guidelines again to identify if your content isn't compliant with the guidelines. The problem can be caused by either spammy content or spammy markup usage. However, the issue may not be a syntax issue, and so the Rich Results Test won't be able to identify these issues.
+    Troubleshoot missing rich results / drop in total rich results.
+    Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it. For general questions about crawling and indexing, check the Google Search crawling and indexing FAQ.
+    Post a question in the Google Search Central forum.
+
+

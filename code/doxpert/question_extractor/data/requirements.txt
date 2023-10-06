@@ -1,0 +1,11 @@
+transformers>=3.5.1
+nltk
+nlp
+torch>=1.7.0
+more_itertools
+
+python-Levenshtein # char-level string similarity
+sentence_transformers # sentence embedding
+simpleneighbors[annoy] # kNN
+
+#knowpy

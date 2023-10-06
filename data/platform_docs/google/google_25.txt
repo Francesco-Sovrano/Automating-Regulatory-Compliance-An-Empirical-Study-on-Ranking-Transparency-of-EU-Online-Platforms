@@ -1,0 +1,479 @@
+
+
+Local business (LocalBusiness) structured data
+
+When users search for businesses on Google Search or Maps, Search results may display a prominent Google knowledge panel with details about a business that matched the query. When users search for a type of business (for example, "best NYC restaurants"), they may see a carousel of businesses related to the query. With Local Business structured data, you can tell Google about your business hours, different departments within a business, reviews for your business, and more. If you want to help users to make a reservation or place an order directly in Search results, you can use the Maps Booking API to enable bookings, payments, and other actions.
+How to add structured data
+
+Structured data is a standardized format for providing information about a page and classifying the page content. If you're new to structured data, you can learn more about how structured data works.
+
+Here's an overview of how to build, test, and release structured data. For a step-by-step guide on how to add structured data to a web page, check out the structured data codelab.
+
+    Add the required properties. Based on the format you're using, learn where to insert structured data on the page.
+    Using a CMS? It may be easier to use a plugin that's integrated into your CMS.
+    Using JavaScript? Learn how to generate structured data with JavaScript.
+    Follow the guidelines.
+    Validate your code using the Rich Results Test and fix any critical errors. Consider also fixing any non-critical issues that may be flagged in the tool, as they can help improve the quality of your structured data (however, this isn't necessary to be eligible for rich results).
+    Deploy a few pages that include your structured data and use the URL Inspection tool to test how Google sees the page. Be sure that your page is accessible to Google and not blocked by a robots.txt file, the noindex tag, or login requirements. If the page looks okay, you can ask Google to recrawl your URLs.
+    Note: Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it.
+    To keep Google informed of future changes, we recommend that you submit a sitemap. You can automate this with the Search Console Sitemap API.
+
+Examples
+Simple local business listing
+
+Here's an example of a simple local business listing using JSON-LD.
+
+Local business listing on Google Search
+Note: The actual appearance in search results might be different. You can preview most features with the Rich Results Test.
+
+
+  <head>
+    <title>Dave's Steak House</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+       ],
+      "name": "Dave's Steak House",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "148 W 51st St",
+        "addressLocality": "New York",
+        "addressRegion": "NY",
+        "postalCode": "10019",
+        "addressCountry": "US"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Lillian Ruiz"
+        }
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.761293,
+        "longitude": -73.982294
+      },
+      "url": "https://www.example.com/restaurant-locations/manhattan",
+      "telephone": "+12122459600",
+      "servesCuisine": "American",
+      "priceRange": "$$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday"
+          ],
+          "opens": "11:30",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "11:30",
+          "closes": "23:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "16:00",
+          "closes": "23:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "16:00",
+          "closes": "22:00"
+        }
+      ],
+      "menu": "https://www.example.com/menu",
+      "acceptsReservations": "True"
+    }
+    </script>
+  </head>
+  
+  
+
+
+Restaurant carousel (limited access)
+
+Here's an example of a restaurant that meets the requirements of a details page (assuming there is also a summary page with Carousel markup). The Restaurant carousel is currently limited to a small set of restaurant providers. If you would like to participate, register your interest in our form.
+
+
+  <head>
+    <title>Trattoria Luigi</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Restaurant",
+      "name": "Trattoria Luigi",
+      "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+       ],
+       "priceRange": "$$$",
+       "servesCuisine": "Italian",
+       "address": {
+         "@type": "PostalAddress",
+         "streetAddress": "148 W 51st St",
+         "addressLocality": "New York",
+         "addressRegion": "NY",
+         "postalCode": "10019",
+         "addressCountry": "US"
+       }
+    }
+    </script>
+  </head>
+  
+  
+
+
+Business hours
+
+The following examples demonstrate how to mark up different types of business hours.
+We accept both the official schema.org notation for indicating dayOfWeek (canonical URLs for Monday, Tuesday), as well as a shorter form being discussed in the schema.org community. We expect to update this documentation to track the eventual outcome of those discussions, and to continue to accept both variations for backwards compatibility.
+Multiple departments
+
+For a business with departments, each with its own distinct properties such as opening hours or telephone numbers, you can mark up the department property with an element for each department. Define properties that differ from the main store individually in each respective department element.
+
+
+  <head>
+    <title>Dave's Department Store</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+       ],
+      "name": "Dave's Department Store",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1600 Saratoga Ave",
+        "addressLocality": "San Jose",
+        "addressRegion": "CA",
+        "postalCode": "95129",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.293058,
+        "longitude": -121.988331
+      },
+      "url": "https://www.example.com/store-locator/sl/San-Jose-Westgate-Store/1427",
+      "priceRange": "$$$",
+      "telephone": "+14088717984",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "08:00",
+          "closes": "23:59"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "08:00",
+          "closes": "23:00"
+        }
+      ],
+      "department": [
+        {
+          "@type": "Pharmacy",
+          "image": [
+        "https://example.com/photos/1x1/photo.jpg",
+        "https://example.com/photos/4x3/photo.jpg",
+        "https://example.com/photos/16x9/photo.jpg"
+       ],
+          "name": "Dave's Pharmacy",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1600 Saratoga Ave",
+            "addressLocality": "San Jose",
+            "addressRegion": "CA",
+            "postalCode": "95129",
+            "addressCountry": "US"
+          },
+          "priceRange": "$",
+          "telephone": "+14088719385",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "09:00",
+              "closes": "19:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Saturday",
+              "opens": "09:00",
+              "closes": "17:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Sunday",
+              "opens": "11:00",
+              "closes": "17:00"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  
+  
+
+
+Guidelines
+
+You must follow these guidelines to be eligible to appear in Local Business rich results.
+Warning: If your site violates one or more of these guidelines, then Google may issue a manual action against it. Once you have remedied the problem, you can submit your site for reconsideration.
+
+    Search Essentials
+    General structured data guidelines
+    Carousel guidelines (if applicable). The Restaurant carousel is currently limited to a small set of restaurant providers. If you would like to participate, register your interest in our form.
+
+Structured data type definitions
+
+The following tables list properties and usage for local business and business action types, based on the full definitions at schema.org/LocalBusiness.
+
+You must include the required properties for your content to be eligible for display as a rich result. You can also include the recommended properties to add more information about your content, which could provide a better user experience.
+
+You can add LocalBusiness structured data to any page on your site, though it may make more sense to put it on a page that contains information about your business.
+LocalBusiness
+
+The full definition of LocalBusiness is available at schema.org/LocalBusiness. Define each local business location as a LocalBusiness type. Use the most specific LocalBusiness sub-type possible; for example, Restaurant, DaySpa, HealthClub, and so on. If you have multiple types, specify them as an array (additionalType isn't supported). For example, if your business offers multiple services:
+
+{
+  "@context": "https://schema.org",
+  "@type": ["Electrician", "Plumber", "Locksmith"],
+  ....
+}
+
+The Google-supported properties are the following:
+Required properties
+address 	
+
+PostalAddress
+
+The physical location of the business. Include as many properties as possible. The more properties you provide, the higher quality the result is to users. For example:
+
+"address": {
+  "@type": "PostalAddress",
+  "streetAddress": "148 W 51st St Suit 42 Unit 7",
+  "addressLocality": "New York",
+  "addressRegion": "NY",
+  "postalCode": "10019",
+  "addressCountry": "US"
+}
+
+name 	
+
+Text
+
+The name of the business.
+Recommended properties
+aggregateRating 	
+
+AggregateRating
+
+For sites that capture reviews about other local businesses: The average rating of the local business based on multiple ratings or reviews. Follow the Review snippet guidelines and the list of required and recommended aggregate rating properties.
+department 	
+
+LocalBusiness
+
+A nested item for a single department. You can define any of the properties in this table for a department.
+
+Additional guidelines:
+
+    Include the store name with the department name in the following format: {store name} {department name}. For example, gMart and gMart Pharmacy.
+    If the department name is explicitly branded, specify a department name by itself. For example: Best Buy and Geek Squad.
+
+geo 	
+
+GeoCoordinates
+
+Geographic coordinates of the business.
+geo.latitude 	
+
+Number
+
+The latitude of the business location. The precision must be at least 5 decimal places.
+geo.longitude 	
+
+Number
+
+The longitude of the business location. The precision must be at least 5 decimal places.
+menu 	
+
+URL
+
+For food establishments, the fully-qualified URL of the menu.
+openingHoursSpecification 	
+
+Array or single object (both supported) of OpeningHoursSpecification
+
+Hours during which the business location is open.
+openingHoursSpecification.closes 	
+
+Time
+
+The time the business location closes, in hh:mm:ss format.
+openingHoursSpecification.dayOfWeek 	
+
+Text
+
+One or more of the following:
+
+    Monday
+    Tuesday
+    Wednesday
+    Thursday
+    Friday
+    Saturday
+    Sunday
+
+We accept both the official schema.org notation for indicating dayOfWeek (canonical URLs for Monday, Tuesday), as well as a shorter form being discussed in the schema.org community. We expect to update this documentation to track the eventual outcome of those discussions, and to continue to accept both variations for backwards compatibility.
+openingHoursSpecification.opens 	
+
+Time
+
+The time the business location opens, in hh:mm:ss format.
+openingHoursSpecification.validFrom 	
+
+Date
+
+The start date of a seasonal business closure, in YYYY-MM-DD format.
+openingHoursSpecification.validThrough 	
+
+Date
+
+The end date of a seasonal business closure, in YYYY-MM-DD format.
+priceRange 	
+
+Text
+
+The relative price range of a business, commonly specified by either a numerical range (for example, "$10-15") or a normalized number of currency signs (for example, "$$$").
+
+This field must be shorter than 100 characters. If it's longer than 100 characters, Google won't show a price range for the business.
+review 	
+
+Review
+
+For sites that capture reviews about other local businesses: A review of the local business. Follow the Review snippet guidelines and the list of required and recommended review properties.
+servesCuisine 	
+
+servesCuisine
+
+The type of cuisine the restaurant serves.
+telephone 	
+
+Text
+
+A business phone number meant to be the primary contact method for customers. Be sure to include the country code and area code in the phone number.
+url 	
+
+URL
+
+The fully-qualified URL of the specific business location. The URL must be a working link.
+Restaurant carousel (limited access)
+The Restaurant carousel is currently limited to a small set of restaurant providers. If you would like to participate, register your interest in our form.
+
+If you have multiple restaurants listed on your site, and you want them to be eligible for a host carousel, add the Carousel object. In addition to the standard Carousel properties, define the following properties in your Carousel object. While carousel properties aren't required, you must add the following properties if you want your restaurant list to be eligible for a host carousel.
+
+The Google-supported properties are the following:
+Required properties
+image 	
+
+Repeated URL or ImageObject
+
+One or more images of the restaurant.
+
+Additional image guidelines:
+
+    Every page must contain at least one image (whether or not you include markup). Google will pick the best image to display in Search results based on the aspect ratio and resolution.
+    Image URLs must be crawlable and indexable. To check if Google can access your URLs, use the URL Inspection tool.
+    Images must represent the marked up content.
+    Images must be in a file format that's supported by Google Images.
+    For best results, we recommend providing multiple high-resolution images (minimum of 50K pixels when multiplying width and height) with the following aspect ratios: 16x9, 4x3, and 1x1.
+
+For example:
+
+"image": [
+  "https://example.com/photos/1x1/photo.jpg",
+  "https://example.com/photos/4x3/photo.jpg",
+  "https://example.com/photos/16x9/photo.jpg"
+]
+
+name 	
+
+Text
+
+The name of the restaurant.
+Recommended properties
+address 	
+
+PostalAddress
+
+The physical location of the business. Include as many properties as possible. The more properties you provide, the higher quality the result is to users. For example:
+
+"address": {
+  "@type": "PostalAddress",
+  "streetAddress": "148 W 51st St",
+  "addressLocality": "New York",
+  "addressRegion": "NY",
+  "postalCode": "10019",
+  "addressCountry": "US"
+}
+
+servesCuisine 	
+
+servesCuisine
+
+The type of cuisine the restaurant serves.
+Troubleshooting
+
+If you're having trouble implementing or debugging structured data, here are some resources that may help you.
+
+    If you're using a content management system (CMS) or someone else is taking care of your site, ask them to help you. Make sure to forward any Search Console message that details the issue to them.
+    Google does not guarantee that features that consume structured data will show up in search results. For a list of common reasons why Google may not show your content in a rich result, see the General Structured Data Guidelines.
+    You might have an error in your structured data. Check the list of structured data errors.
+    If you received a structured data manual action against your page, the structured data on the page will be ignored (although the page can still appear in Google Search results). To fix structured data issues, use the Manual Actions report.
+    Review the guidelines again to identify if your content isn't compliant with the guidelines. The problem can be caused by either spammy content or spammy markup usage. However, the issue may not be a syntax issue, and so the Rich Results Test won't be able to identify these issues.
+    Troubleshoot missing rich results / drop in total rich results.
+    Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it. For general questions about crawling and indexing, check the Google Search crawling and indexing FAQ.
+    Post a question in the Google Search Central forum.
+
+

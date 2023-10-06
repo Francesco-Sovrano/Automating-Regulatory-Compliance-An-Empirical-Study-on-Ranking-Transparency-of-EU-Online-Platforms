@@ -1,0 +1,35 @@
+
+
+Home activities (VirtualLocation) structured data
+
+To help people discover activities that they can do from home, you can add structured data to your online event and video pages. When people search for activities to do at home, videos and online events appear in a rich result. People can click a video or class, and see more details, such as a description of the activity, how to register, or watch now.
+
+Here are some examples of home activity content types:
+
+    Upcoming video livestream
+    Already recorded video
+    An online event
+
+Home activities rich result
+Note: The actual appearance in search results might be different. You can preview most features with the Rich Results Test.
+Feature availability
+
+Home activity rich results are currently only available in English in the US. The feature is available on mobile devices. Currently, it only shows up for fitness-related searches (for example, "online exercise" or "yoga at home").
+Eligibility guidelines
+
+To be eligible to display as a Home Activities rich result, follow these guidelines:
+
+    Add Event or Video structured data, per the documentation. Event structured data typically makes sense for online events happening in the future, and Video structured data makes sense for published videos.
+    Events must be virtual events, not physical events. In the Event structured data, make sure to:
+        Set eventAttendanceMode to OnlineEventAttendanceMode.
+        Use the VirtualLocation type for the location property.
+        Add the location.url property.
+        Specify the correct timezone. Because there's no physical location to verify the correct time, setting the right timezone is critical for online events.
+    For videos, focus on adding the description and duration properties, as these help Google understand what the video is about. If your video is an upcoming live stream you can add both types of markup (Video and Event), but you don't have to. However, if you use Video markup for the live stream, we recommended adding the BroadcastEvent properties and following the LIVE badge guidelines.
+
+Examples
+Video
+
+Here's an example of a video page with Video structured data.
+Event 
+

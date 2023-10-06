@@ -1,0 +1,58 @@
+Our Approach to Content Integrity
+
+Every day, travelers from all over the world visit Tripadvisor for guidance in planning and taking trips. The platform is powered by the generosity of travelers who have memorable experiences — and then take the time to share them with others.
+
+Over the years, millions of travelers have shared their first-hand experiences on Tripadvisor in the form of traveler reviews. These reviews offer guidance about destinations and businesses all over the world, and so it is incredibly important that travelers feel confident about the information they provide. That is why every review has to follow a strict set of posting guidelines. These guidelines determine which reviews can be posted to Tripadvisor, and which cannot.
+
+But how does Tripadvisor decide what these guidelines should be? And how does it enforce the rules to ensure reviewers abide by them?
+
+Here we detail the principles that shape our posting guidelines, and the steps we take to ensure they are enforced...
+
+We believe the best travel advice comes from other travelers.
+
+At Tripadvisor, our members can submit reviews of their experiences at hotels, restaurants, and attractions all over the world. Over the past 20+ years we have received hundreds of millions of reviews and opinions of nearly 8 million businesses from our members, covering virtually every country in the world.
+
+We believe in "the right to write."
+
+The Tripadvisor community has a wealth of valuable travel experience, and every one of our hundreds of millions of monthly users should feel confident sharing their opinions. When you stay in a hotel, eat in a restaurant, or visit an attraction, you have a fundamental right to talk about that experience with others. We are immensely proud of the community we’ve built which helps travelers do just that.
+
+For that reason, we do not take lightly the decision to block or remove a review from our site. It might be easier to give in to censorship and remove reviews that a business owner disagrees with. But it goes against what we stand for, which is the right for genuine consumers to share their experiences.
+
+We believe every customer counts.
+
+Every customer has the right to share their experience, not just the ones who paid the bill.
+
+So while we do require reviewers to certify that they are reviewing their own experiences before they can submit their review to Tripadvisor, we don’t require reviewers to provide a receipt or a proof of purchase.
+
+We believe that everyone should play by the same rules.
+
+We have unique processes for moderating the reviews and content submitted to Tripadvisor, as well as proprietary algorithms that calculate a business' daily rank within our Traveler Ranking. Those processes and algorithms are applied in the same way to all content, complaints and properties. We never have and will never give our advertisers or anyone else preferential treatment when we moderate reviews.
+
+We believe that businesses who don't play by the rules should be penalized.
+
+Businesses know that travelers rely on reviews for travel guidance. Unfortunately, we know that there will always be a minority of unscrupulous businesses that will try to cheat in order to take advantage of that. We define “cheating” as any attempt to unfairly or dishonestly impact reviews or rankings for their own business or their competitors.
+
+These activities constitute review fraud. Attempting to post fake or dishonest reviews violates the Tripadvisor Terms of Use, as well as unfair competition and consumer protection laws in many countries. We invest massive amounts of time, effort and resources -both from an automated and human perspective - into identifying and stopping fraudulent activity from making it onto the Tripadvisor platform.
+
+How Tripadvisor identifies and blocks review fraud
+
+    Unlike on other social platforms, when a review is submitted by a traveler on Tripadvisor, it is not immediately posted to the site. Instead, it is assessed by our review analysis system. This system determines which reviews can be posted, which require further assessment by our team of moderators, and which can be blocked outright. This assessment of every review usually takes less than 24 hours.
+    Our review analysis system captures thousands of data points associated with every review submission, and matches that information to the data points we already know about millions of other reviews, reviewers and businesses on Tripadvisor. Our system is able to filter, analyze and categorize massive amounts of data quickly and thoroughly. This is how we identify patterns of review behavior.
+    We have over two decades of experience learning what normal review behavior tends to look like on our platform. We are experts at spotting patterns that don’t look normal, and which may indicate attempts at review fraud.
+    We have hundreds of staff all over the world working to assess reviews and to identify, block and remove fraud.
+    Once reviews are posted, we allow businesses and travelers to flag and report content if they believe it is fraudulent. All reports are assessed and analyzed by our advanced technology and team of experts, who can take action to remove any reviews that violate our posting guidelines.
+    We also have a team of highly qualified and trained investigators focused on stopping fake reviews. Among other activities, they proactively engage and catch companies and individuals trying to ‘sell’ reviews, as well as those businesses trying to buy them. We are constantly learning. 
+
+Fraudsters are always evolving the methods they use to submit reviews. But so are we. Every day, we are innovating, updating, and improving our system to stay one step ahead of anyone who would try to cheat the system.
+
+How Tripadvisor penalizes businesses engaged in review fraud
+
+    We block or remove the fake reviews.
+    Every fraudulent submission we identify has a negative impact on a business’s rank in our Traveler Ranking - whether the review was ever posted or not.
+    We may disqualify offending properties from our recognition and awards programs, such as our Travelers' Choice Awards.
+    We aggressively pursue companies or individuals that offer to boost a business' reputation by writing fake reviews on its behalf. When we catch them, we block or remove all of the fake reviews they've submitted, we penalize their clients, and in some cases we even help prosecutors send them to jail.
+    For businesses that repeatedly try to break the rules, we will post a warning notice on their Tripadvisor listing called a red penalty badge to warn travelers that they are not playing by the rules. We do not remove the listings of businesses that break the rules - because often that’s exactly what unscrupulous business owners want. They do not want travelers to benefit from the transparency that reviews provide. But we do. That is why we keep businesses listed on our platform if they are open and accepting customers.
+
+Finally, we believe it's important for our community to be informed.
+
+With over hundreds of millions of reviews and opinions on Tripadvisor, and millions of travelers using our site each month, we're confident that we're taking the right steps to keep our content fresh and useful.

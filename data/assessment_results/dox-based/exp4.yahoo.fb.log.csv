@@ -1,0 +1,82 @@
+Question,Compliance Score,Average DoX,Max Confidence,Final Answer,Answers Enumeration
+"Does the documentation explain how ""ranking"" is defined/define ""ranking""?",,,,,
+"Does the documentation explain how ""main parameter used for ranking"" is defined/define ""main parameter used for ranking""?",,,,,
+Does the documentation provide the main parameters used for determining ranking?,,,,"No, the documentation does not provide the main parameters used for determining ranking.","0. ""The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found."",
+1. ""Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking."",
+2. ""Get a higher website rank - Learn how to raise your rank in the Yahoo Search index.""
+3. ]
+
+<Valid Indexes> set()"
+Does the documentation provide the relative importance of the different main parameters used in determining ranking?,,,,"No, the documentation does not provide the relative importance of the different main parameters used in determining ranking.","0. ""Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking."",
+1. ""The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found.""
+2. ]
+
+<Valid Indexes> set()"
+Does the documentation explain how the ranking mechanism considers the characteristics of the goods and services offered to consumers?,,,,"No, I cannot answer.","0. ""The best way to improve your website's ranking is to publish unique content targeted to your audience."",
+1. ""Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.""
+2. ]
+
+<Valid Indexes> set()"
+Does the documentation explain the extent to which the ranking mechanism considers the characteristics of the goods and services offered to consumers?,,,,"No, the documentation does not explain the extent to which the ranking mechanism considers the characteristics of the goods and services offered to consumers.","0. ""The best way to improve your website's ranking is to publish unique content targeted to your audience."",
+1. ""Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.""
+2. ]
+
+<Valid Indexes> set()"
+"Does the documentation explain how the ranking mechanism considers the relevance of the characteristics of the goods and services, for consumers?",,,,"No, the documentation does not explain how the ranking mechanism considers the relevance of the characteristics of the goods and services, for consumers.","0. ""Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking."",
+1. ""The best way to improve your website's ranking is to publish unique content targeted to your audience.""
+2. ]
+
+<Valid Indexes> set()"
+"Does the documentation explain the extent to which the ranking mechanism considers the relevance of the characteristics of the goods and services, for consumers?",,,,"No, the documentation does not explain the extent to which the ranking mechanism considers the relevance of the characteristics of the goods and services, for consumers.","0. ""Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking."",
+1. ""The best way to improve your website's ranking is to publish unique content targeted to your audience.""
+2. ]
+
+<Valid Indexes> set()"
+Does the documentation explain how the ranking mechanism considers the design characteristics of the websites?,,,,"No, the documentation does not explain how the ranking mechanism considers the design characteristics of the websites.","0. ""The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found."",
+1. ""Get a higher website rank - Learn how to raise your rank in the Yahoo Search index."",
+2. ""Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking."",
+3. ""You can manage how your website appears in Yahoo Search by using meta tags and robots.txt. Yahoo Search results come from the Yahoo web crawler (Slurp) and Bing's web crawler. Visit Bing's Webmaster Help Center to review optimization tips."",
+4. ""You can manage how your website appears in Yahoo Search by using meta tags and robots.txt.""
+5. ]
+
+<Valid Indexes> set()"
+Does the documentation explain the extent to which the ranking mechanism considers the design characteristics of the websites?,,,,"No, the documentation does not explain the extent to which the ranking mechanism considers the design characteristics of the websites.","0. ""The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found."",
+1. ""Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking."",
+2. ""Get a higher website rank - Learn how to raise your rank in the Yahoo Search index.""
+3. ]
+
+<Valid Indexes> set()"
+Does the documentation explain the possibilities to influence ranking against direct or indirect payment (if any)?,,,,,
+"Does the documentation explain the effects of payments, on ranking (if any)?",,,,,
+"Does the documentation explain how the ranking mechanism works and, in particular, what the main parameters used are?",,,,"No, the documentation does not explain how the ranking mechanism works or what the main parameters used are.","0. ""The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found."",
+1. ""Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking."",
+2. ""Get a higher website rank - Learn how to raise your rank in the Yahoo Search index.""
+3. ]
+
+<Valid Indexes> set()"
+Does the documentation explain what is most important in determining ranking?,0.17,0.37,0.46,"Yes, the documentation explains that the most important factors in determining ranking are publishing unique content targeted to your audience (paragraph 0), creating meaningful cross-links between your website and other related websites (paragraph 1), and having a compelling title and description (paragraph 3).","0. ""The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found."",
+1. ""Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking."",
+2. ""Get a higher website rank - Learn how to raise your rank in the Yahoo Search index."",
+3. ""After the title, the description is the most important draw for users.""
+4. ]
+
+<Valid Indexes> {'3', '0', '1'}"
+Does the documentation explain why specific parameters were selected as the main factors in determining the ranking of goods or services?,,,,"No, I cannot answer.","0. ""Here are a variety of resources for webmasters looking to optimize for Yahoo Search:""
+1. ]
+
+<Valid Indexes> set()"
+Does the documentation explain the internal process conducted by the provider to determine the main parameters for the ranking of goods or services?,,,,"No, I cannot answer.","0. ""Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.""
+1. ]
+
+<Valid Indexes> set()"
+Does the documentation explain how users can improve the ranking of their goods or services?,0.19,0.39,0.5,"Yes, the documentation explains how users can improve the ranking of their goods or services. Users can improve their website's ranking by publishing unique content targeted to their audience (paragraph 0). Additionally, creating meaningful links between their website and other related websites and providers of relevant content can also boost their ranking (paragraph 1). The documentation also suggests learning how to raise your rank in the Yahoo Search index (paragraph 2).","0. ""The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found."",
+1. ""Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking."",
+2. ""Get a higher website rank - Learn how to raise your rank in the Yahoo Search index.""
+3. ]
+
+<Valid Indexes> {'0', '1', '2'}"
+"Does the documentation explain how users can alter the ranking of their products or services through direct or indirect payments to the provider, and what effect this has?",,,,"No, I cannot answer.","0. ""Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.""
+1. ]
+
+<Valid Indexes> set()"
+"Does the documentation explain what the business logic behind allowing users to affect the ranking of their products or services through payments is, and what the potential consequences of this are?",,,,,

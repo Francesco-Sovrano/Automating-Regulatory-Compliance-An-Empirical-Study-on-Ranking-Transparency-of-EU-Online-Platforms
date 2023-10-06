@@ -1,0 +1,49 @@
+
+
+Define a favicon to show in search results
+
+If your site has a favicon, it can be included in Google Search results for your site.
+
+Favicon
+Implementation
+
+Here's how to make your site eligible for a favicon in Google Search results:
+
+    Create a favicon that follows the guidelines.
+    Add a <link> tag to the header of your home page with the following syntax:
+
+    <link rel="icon" href="/path/to/favicon.ico">
+
+    To extract the favicon information, Google relies on the following attributes of the link element:
+    Attributes
+    rel 	
+
+    Set the rel attribute to one of the following strings:
+        icon
+        apple-touch-icon
+        apple-touch-icon-precomposed
+        shortcut icon
+    href 	
+
+    The URL of the favicon. The URL can be a relative path (/smile.ico) or absolute path (https://example.com/smile.ico).
+    Google looks for and updates your favicon whenever it crawls your home page. If you make changes to your favicon and want to inform Google about the changes, you can request indexing of your site's home page. Updates can take a few days or longer to appear in search results.
+
+Guidelines
+
+You must follow these guidelines to be eligible for a favicon in Google Search results.
+A favicon isn't guaranteed in Google Search results, even if all guidelines are met.
+
+    Google Search only supports one favicon per site, where a site is defined by the hostname. For example, https://www.example.com/ and https://code.example.com/ are two different hostnames, and therefore can have two different favicons. However, https://www.example.com/sub-site is a subdirectory of a site, and you can only set one favicon for https://www.example.com/, which applies to the site and its subdirectories.
+    Supported: https://example.com (this is a domain-level home page)
+    Supported: https://news.example.com (this is a subdomain-level home page)
+    Not supported: https://example.com/news (this is a subdirectory-level home page)
+    Both the favicon file and the home page must be crawlable by Google (that is, they cannot be blocked to Google).
+    To help people quickly identify your site when they scan through search results, make sure your favicon is visually representative of your website's brand.
+    Your favicon must be a multiple of 48px square, for example: 48x48px, 96x96px, 144x144px and so on. SVG files don't have a specific size. Any valid favicon format is supported.
+    The favicon URL must be stable (don't change the URL frequently).
+    Google won't show any favicon that it deems inappropriate, including pornography or hate symbols (for example, swastikas). If this type of imagery is discovered within a favicon, Google replaces it with a default icon.
+
+Google Favicon user agent
+
+Google Favicon is the user agent for downloading favicons defined by websites. It is a low-volume crawler: it may visit the home page of your site occasionally based on signals gathered during indexing, or triggered by a user request. To request that the Google Favicon user agent crawl your page, you can request indexing of your site's home page. Updates can take a few days or longer to appear in search results. 
+

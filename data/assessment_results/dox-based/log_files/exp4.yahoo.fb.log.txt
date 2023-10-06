@@ -1,0 +1,815 @@
+2023-09-29 20:02:01.452476: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2023-09-29 20:02:01.452523: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-09-29 20:02:02.283173: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2023-09-29 20:02:02.283221: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2023-09-29 20:02:02.283252: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (kyle): /proc/driver/nvidia/version does not exist
+Warming up PyWSD (takes ~10 secs)... took 4.340835332870483 secs.
+Assessing DoX of: Namespace(model_type='fb', checklist_pertinence_threshold=0.3, dox_answer_pertinence_threshold=0.3, synonymity_threshold=0.55, checklist_path='./data/experiment_4/checklist/checklist_for_search_engines.txt', open_question_path='./data/experiment_4/checklist/p2b_questions_for_search_engines.txt', explainable_information_path='./data/experiment_4/explainable_information/yahoo', cache_path='./cache/cache_exp4_yahoo')
+Loading cache <./cache/cache_exp4_yahoo/graph_clauses_lemma-False_avoidjumps-True.pkl>..
+server_interface sbert edu_amr_clause, with with_qa_dict_list: True
+Building Question Answerer..
+Loading cache <./cache/cache_exp4_yahoo/qa_dict_list_False.pkl>..
+qa_dict_list now has len 379
+Loading cache <./cache/cache_exp4_yahoo/cleaned_qa_dict_list_False.pkl>..
+qa_dict_list now has len 339
+Loading cache <./cache/cache_exp4_yahoo/filtered_qa_dict_list_False.pkl>..
+qa_dict_list now has len 287
+Loading cache <./cache/cache_exp4_yahoo/graph_edu_amr_lemma-False_paragraphs-False_avoidjumps-True.pkl>..
+Graph size: 4069
+Grammatical Clauses: 400
+Loading cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl>..
+Loading cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl.sentence_classifier.pkl>..
+Loading cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl.concept_classifier.pkl>..
+[
+    "How is \"ranking\" defined?",
+    "How is \"main parameter used for ranking\" defined?",
+    "What are the main parameters used for determining ranking?",
+    "What is the relative importance of the different main parameters used in determining ranking?",
+    "How does the ranking mechanism consider the characteristics of the goods and services offered to consumers?",
+    "What is the extent to which the ranking mechanism considers the characteristics of the goods and services offered to consumers?",
+    "How does the ranking mechanism consider the relevance of the characteristics of the goods and services, for consumers?",
+    "What is the extent to which the ranking mechanism considers the relevance of the characteristics of the goods and services, for consumers?",
+    "How does the ranking mechanism consider the design characteristics of the websites?",
+    "What is the extent to which the ranking mechanism considers the design characteristics of the websites?",
+    "What are the possibilities to influence ranking against direct or indirect payment (if any)?",
+    "What are the effects of payments, on ranking (if any)?",
+    "How does the ranking mechanism work and, in particular, what are the main parameters used?",
+    "What is most important in determining ranking?",
+    "Why were specific parameters selected as the main factors in determining the ranking of goods or services?",
+    "What is the internal process conducted by the provider to determine the main parameters for the ranking of goods or services?",
+    "How can users improve the ranking of their goods or services?",
+    "How can users alter the ranking of their products or services through direct or indirect payments to the provider, and what effect does this have?",
+    "What is the business logic behind allowing users to affect the ranking of their products or services through payments, and what are the potential consequences of this?"
+]
+{
+    "How is \"ranking\" defined?": [],
+    "How is \"main parameter used for ranking\" defined?": [],
+    "What are the main parameters used for determining ranking?": [
+        {
+            "abstract": "What is the best way to improve your website's ranking? unique content targeted to your audience",
+            "confidence": 0.3770331144332886,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.3770331144332886,
+            "sentence": "The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found.",
+            "triple": [
+                "my:good_way",
+                "my:be_{subj}_{obj}",
+                "my:ranking"
+            ],
+            "source_id": "_:yahoo_1.html_s6",
+            "source_sentence_uri": null
+        },
+        {
+            "abstract": "What add value to your ranking? meaningful cross-links",
+            "confidence": 0.3712141215801239,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.3712141215801239,
+            "sentence": "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+            "triple": [
+                "my:value",
+                "my:add_{subj}_to_{obj}",
+                "my:ranking"
+            ],
+            "source_id": "_:yahoo_1.html_s11",
+            "source_sentence_uri": "_:meaningful_cross-links_-_meaningful_links_between_your's_and_other_related_websites_and_providers_of_relevant_content_add_value_for_visitors_and_can_boost_your_ranking."
+        },
+        {
+            "abstract": "rank - Learn raise",
+            "confidence": 0.3166941702365875,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.3166941702365875,
+            "sentence": "Get a higher website rank - Learn how to raise your rank in the Yahoo Search index.",
+            "triple": [
+                "my:rank",
+                "my:{subj}_learn_{obj}",
+                "my:how_to_raise_rank_in_yahoo_search_index"
+            ],
+            "source_id": "_:yahoo_2.html_s3",
+            "source_sentence_uri": "_:get_a_higher_website_rank_-_learn_how_to_raise_your_rank_in_the_yahoo_search_index."
+        }
+    ],
+    "What is the relative importance of the different main parameters used in determining ranking?": [
+        {
+            "abstract": "What add value to your ranking? meaningful cross-links",
+            "confidence": 0.3851185441017151,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.3851185441017151,
+            "sentence": "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+            "triple": [
+                "my:value",
+                "my:add_{subj}_to_{obj}",
+                "my:ranking"
+            ],
+            "source_id": "_:yahoo_1.html_s11",
+            "source_sentence_uri": "_:meaningful_cross-links_-_meaningful_links_between_your's_and_other_related_websites_and_providers_of_relevant_content_add_value_for_visitors_and_can_boost_your_ranking."
+        },
+        {
+            "abstract": "The way to improve your website 's ranking",
+            "confidence": 0.3385474681854248,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.3385474681854248,
+            "sentence": "The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found.",
+            "triple": [
+                "my:good_way",
+                "my:{subj}_to_improve_website_s_{obj}",
+                "my:ranking"
+            ],
+            "source_id": "_:yahoo_1.html_s6",
+            "source_sentence_uri": null
+        }
+    ],
+    "How does the ranking mechanism consider the characteristics of the goods and services offered to consumers?": [
+        {
+            "abstract": "content targeted to your audience",
+            "confidence": 0.33126598596572876,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.33126598596572876,
+            "sentence": "The best way to improve your website's ranking is to publish unique content targeted to your audience.",
+            "triple": [
+                "my:unique_content",
+                "my:{subj}_target_to_{obj}",
+                "my:audience"
+            ],
+            "source_id": "_:yahoo_1.html_s6",
+            "source_sentence_uri": "_:the_best_way_to_improve_your_website's_ranking_is_to_publish_unique_content_targeted_to_your_audience."
+        },
+        {
+            "abstract": "What add value to your ranking? meaningful cross-links",
+            "confidence": 0.32841432094573975,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.32841432094573975,
+            "sentence": "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+            "triple": [
+                "my:value",
+                "my:add_{subj}_to_{obj}",
+                "my:ranking"
+            ],
+            "source_id": "_:yahoo_1.html_s11",
+            "source_sentence_uri": "_:meaningful_cross-links_-_meaningful_links_between_your's_and_other_related_websites_and_providers_of_relevant_content_add_value_for_visitors_and_can_boost_your_ranking."
+        }
+    ],
+    "What is the extent to which the ranking mechanism considers the characteristics of the goods and services offered to consumers?": [
+        {
+            "abstract": "content targeted to your audience",
+            "confidence": 0.3171383738517761,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.3171383738517761,
+            "sentence": "The best way to improve your website's ranking is to publish unique content targeted to your audience.",
+            "triple": [
+                "my:unique_content",
+                "my:{subj}_target_to_{obj}",
+                "my:audience"
+            ],
+            "source_id": "_:yahoo_1.html_s6",
+            "source_sentence_uri": "_:the_best_way_to_improve_your_website's_ranking_is_to_publish_unique_content_targeted_to_your_audience."
+        },
+        {
+            "abstract": "What add value to your ranking? meaningful cross-links",
+            "confidence": 0.3118246793746948,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.3118246793746948,
+            "sentence": "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+            "triple": [
+                "my:value",
+                "my:add_{subj}_to_{obj}",
+                "my:ranking"
+            ],
+            "source_id": "_:yahoo_1.html_s11",
+            "source_sentence_uri": "_:meaningful_cross-links_-_meaningful_links_between_your's_and_other_related_websites_and_providers_of_relevant_content_add_value_for_visitors_and_can_boost_your_ranking."
+        }
+    ],
+    "How does the ranking mechanism consider the relevance of the characteristics of the goods and services, for consumers?": [
+        {
+            "abstract": "What add value to your ranking? meaningful cross-links",
+            "confidence": 0.3741096258163452,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.3741096258163452,
+            "sentence": "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+            "triple": [
+                "my:value",
+                "my:add_{subj}_to_{obj}",
+                "my:ranking"
+            ],
+            "source_id": "_:yahoo_1.html_s11",
+            "source_sentence_uri": "_:meaningful_cross-links_-_meaningful_links_between_your's_and_other_related_websites_and_providers_of_relevant_content_add_value_for_visitors_and_can_boost_your_ranking."
+        },
+        {
+            "abstract": "content targeted to your audience",
+            "confidence": 0.34810197353363037,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.34810197353363037,
+            "sentence": "The best way to improve your website's ranking is to publish unique content targeted to your audience.",
+            "triple": [
+                "my:unique_content",
+                "my:{subj}_target_to_{obj}",
+                "my:audience"
+            ],
+            "source_id": "_:yahoo_1.html_s6",
+            "source_sentence_uri": "_:the_best_way_to_improve_your_website's_ranking_is_to_publish_unique_content_targeted_to_your_audience."
+        }
+    ],
+    "What is the extent to which the ranking mechanism considers the relevance of the characteristics of the goods and services, for consumers?": [
+        {
+            "abstract": "What add value to your ranking? meaningful cross-links",
+            "confidence": 0.3607768416404724,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.3607768416404724,
+            "sentence": "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+            "triple": [
+                "my:value",
+                "my:add_{subj}_to_{obj}",
+                "my:ranking"
+            ],
+            "source_id": "_:yahoo_1.html_s11",
+            "source_sentence_uri": "_:meaningful_cross-links_-_meaningful_links_between_your's_and_other_related_websites_and_providers_of_relevant_content_add_value_for_visitors_and_can_boost_your_ranking."
+        },
+        {
+            "abstract": "content targeted to your audience",
+            "confidence": 0.336576372385025,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.336576372385025,
+            "sentence": "The best way to improve your website's ranking is to publish unique content targeted to your audience.",
+            "triple": [
+                "my:unique_content",
+                "my:{subj}_target_to_{obj}",
+                "my:audience"
+            ],
+            "source_id": "_:yahoo_1.html_s6",
+            "source_sentence_uri": "_:the_best_way_to_improve_your_website's_ranking_is_to_publish_unique_content_targeted_to_your_audience."
+        }
+    ],
+    "How does the ranking mechanism consider the design characteristics of the websites?": [
+        {
+            "abstract": "The way to improve your website 's ranking",
+            "confidence": 0.4279635548591614,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.4279635548591614,
+            "sentence": "The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found.",
+            "triple": [
+                "my:good_way",
+                "my:{subj}_to_improve_website_s_{obj}",
+                "my:ranking"
+            ],
+            "source_id": "_:yahoo_1.html_s6",
+            "source_sentence_uri": null
+        },
+        {
+            "abstract": "your rank in the index",
+            "confidence": 0.38921940326690674,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.38921940326690674,
+            "sentence": "Get a higher website rank - Learn how to raise your rank in the Yahoo Search index.",
+            "triple": [
+                "my:rank",
+                "my:{subj}_in_{obj}",
+                "my:yahoo_search_index"
+            ],
+            "source_id": "_:yahoo_2.html_s3",
+            "source_sentence_uri": "_:get_a_higher_website_rank_-_learn_how_to_raise_your_rank_in_the_yahoo_search_index."
+        },
+        {
+            "abstract": "What add value to your ranking? meaningful cross-links",
+            "confidence": 0.3821788430213928,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.3821788430213928,
+            "sentence": "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+            "triple": [
+                "my:value",
+                "my:add_{subj}_to_{obj}",
+                "my:ranking"
+            ],
+            "source_id": "_:yahoo_1.html_s11",
+            "source_sentence_uri": "_:meaningful_cross-links_-_meaningful_links_between_your's_and_other_related_websites_and_providers_of_relevant_content_add_value_for_visitors_and_can_boost_your_ranking."
+        },
+        {
+            "abstract": "In what manner can you manage how your website appears? How your website appears in Yahoo Search",
+            "confidence": 0.3202967643737793,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.3202967643737793,
+            "sentence": "You can manage how your website appears in Yahoo Search by using meta tags and robots.txt. Yahoo Search results come from the Yahoo web crawler (Slurp) and Bing's web crawler. Visit Bing's Webmaster Help Center to review optimization tips.",
+            "triple": [
+                "my:website",
+                "my:how_{subj}_appear_in_{obj}",
+                "my:yahoo_search"
+            ],
+            "source_id": "_:yahoo_3.html_s5",
+            "source_sentence_uri": null
+        },
+        {
+            "abstract": "What is the reason you can manage how your website appears? by using meta tags and robots.txt",
+            "confidence": 0.3114543855190277,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.3114543855190277,
+            "sentence": "You can manage how your website appears in Yahoo Search by using meta tags and robots.txt.",
+            "triple": [
+                "my:reason",
+                "my:{subj}_can_manage_how_{obj}_appear",
+                "my:website"
+            ],
+            "source_id": "_:yahoo_3.html_s5",
+            "source_sentence_uri": "_:you_can_manage_how_your_website_appears_in_yahoo_search_by_using_meta_tags_and_robots.txt."
+        }
+    ],
+    "What is the extent to which the ranking mechanism considers the design characteristics of the websites?": [
+        {
+            "abstract": "The way to improve your website 's ranking",
+            "confidence": 0.38168537616729736,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.38168537616729736,
+            "sentence": "The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found.",
+            "triple": [
+                "my:good_way",
+                "my:{subj}_to_improve_website_s_{obj}",
+                "my:ranking"
+            ],
+            "source_id": "_:yahoo_1.html_s6",
+            "source_sentence_uri": null
+        },
+        {
+            "abstract": "What add value to your ranking? meaningful cross-links",
+            "confidence": 0.34868860244750977,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.34868860244750977,
+            "sentence": "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+            "triple": [
+                "my:value",
+                "my:add_{subj}_to_{obj}",
+                "my:ranking"
+            ],
+            "source_id": "_:yahoo_1.html_s11",
+            "source_sentence_uri": "_:meaningful_cross-links_-_meaningful_links_between_your's_and_other_related_websites_and_providers_of_relevant_content_add_value_for_visitors_and_can_boost_your_ranking."
+        },
+        {
+            "abstract": "your rank in the index",
+            "confidence": 0.3207659423351288,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.3207659423351288,
+            "sentence": "Get a higher website rank - Learn how to raise your rank in the Yahoo Search index.",
+            "triple": [
+                "my:rank",
+                "my:{subj}_in_{obj}",
+                "my:yahoo_search_index"
+            ],
+            "source_id": "_:yahoo_2.html_s3",
+            "source_sentence_uri": "_:get_a_higher_website_rank_-_learn_how_to_raise_your_rank_in_the_yahoo_search_index."
+        }
+    ],
+    "What are the possibilities to influence ranking against direct or indirect payment (if any)?": [],
+    "What are the effects of payments, on ranking (if any)?": [],
+    "How does the ranking mechanism work and, in particular, what are the main parameters used?": [
+        {
+            "abstract": "The way to improve your website 's ranking",
+            "confidence": 0.37561875581741333,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.37561875581741333,
+            "sentence": "The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found.",
+            "triple": [
+                "my:good_way",
+                "my:{subj}_to_improve_website_s_{obj}",
+                "my:ranking"
+            ],
+            "source_id": "_:yahoo_1.html_s6",
+            "source_sentence_uri": null
+        },
+        {
+            "abstract": "What add value to your ranking? meaningful cross-links",
+            "confidence": 0.3392637372016907,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.3392637372016907,
+            "sentence": "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+            "triple": [
+                "my:value",
+                "my:add_{subj}_to_{obj}",
+                "my:ranking"
+            ],
+            "source_id": "_:yahoo_1.html_s11",
+            "source_sentence_uri": "_:meaningful_cross-links_-_meaningful_links_between_your's_and_other_related_websites_and_providers_of_relevant_content_add_value_for_visitors_and_can_boost_your_ranking."
+        },
+        {
+            "abstract": "your rank in the index",
+            "confidence": 0.3283356726169586,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.3283356726169586,
+            "sentence": "Get a higher website rank - Learn how to raise your rank in the Yahoo Search index.",
+            "triple": [
+                "my:rank",
+                "my:{subj}_in_{obj}",
+                "my:yahoo_search_index"
+            ],
+            "source_id": "_:yahoo_2.html_s3",
+            "source_sentence_uri": "_:get_a_higher_website_rank_-_learn_how_to_raise_your_rank_in_the_yahoo_search_index."
+        }
+    ],
+    "What is most important in determining ranking?": [
+        {
+            "abstract": "What is the best way to improve your website's ranking? unique content targeted to your audience",
+            "confidence": 0.46221107244491577,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.46221107244491577,
+            "sentence": "The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found.",
+            "triple": [
+                "my:good_way",
+                "my:be_{subj}_{obj}",
+                "my:ranking"
+            ],
+            "source_id": "_:yahoo_1.html_s6",
+            "source_sentence_uri": null
+        },
+        {
+            "abstract": "What add value to your ranking? meaningful cross-links",
+            "confidence": 0.44913604855537415,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.44913604855537415,
+            "sentence": "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+            "triple": [
+                "my:value",
+                "my:add_{subj}_to_{obj}",
+                "my:ranking"
+            ],
+            "source_id": "_:yahoo_1.html_s11",
+            "source_sentence_uri": "_:meaningful_cross-links_-_meaningful_links_between_your's_and_other_related_websites_and_providers_of_relevant_content_add_value_for_visitors_and_can_boost_your_ranking."
+        },
+        {
+            "abstract": "rank - Learn raise",
+            "confidence": 0.36994680762290955,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.36994680762290955,
+            "sentence": "Get a higher website rank - Learn how to raise your rank in the Yahoo Search index.",
+            "triple": [
+                "my:rank",
+                "my:{subj}_learn_{obj}",
+                "my:how_to_raise_rank_in_yahoo_search_index"
+            ],
+            "source_id": "_:yahoo_2.html_s3",
+            "source_sentence_uri": "_:get_a_higher_website_rank_-_learn_how_to_raise_your_rank_in_the_yahoo_search_index."
+        },
+        {
+            "abstract": "In what case is the description the most important draw for users? After the title",
+            "confidence": 0.34117746353149414,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.34117746353149414,
+            "sentence": "After the title, the description is the most important draw for users.",
+            "triple": [
+                "my:description_most_important_draw_for_user",
+                "my:in_{obj}_be_{subj}",
+                "my:case"
+            ],
+            "source_id": "_:yahoo_1.html_s14",
+            "source_sentence_uri": "_:after_the_title,_the_description_is_the_most_important_draw_for_users."
+        }
+    ],
+    "Why were specific parameters selected as the main factors in determining the ranking of goods or services?": [
+        {
+            "abstract": "What is the reason for a variety of resources? looking to optimize for Yahoo Search",
+            "confidence": 0.30087417364120483,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.30087417364120483,
+            "sentence": "Here are a variety of resources for webmasters looking to optimize for Yahoo Search:",
+            "triple": [
+                "my:variety",
+                "my:{subj}_of_{obj}",
+                "my:resource"
+            ],
+            "source_id": "_:yahoo_2.html_s0",
+            "source_sentence_uri": "_:here_are_a_variety_of_resources_for_webmasters_looking_to_optimize_for_yahoo_search:"
+        }
+    ],
+    "What is the internal process conducted by the provider to determine the main parameters for the ranking of goods or services?": [
+        {
+            "abstract": "providers of content",
+            "confidence": 0.31120163202285767,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.31120163202285767,
+            "sentence": "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+            "triple": [
+                "my:provider",
+                "my:{subj}_of_{obj}",
+                "my:relevant_content"
+            ],
+            "source_id": "_:yahoo_1.html_s11",
+            "source_sentence_uri": "_:meaningful_cross-links_-_meaningful_links_between_your's_and_other_related_websites_and_providers_of_relevant_content_add_value_for_visitors_and_can_boost_your_ranking."
+        }
+    ],
+    "How can users improve the ranking of their goods or services?": [
+        {
+            "abstract": "What is the best way to improve? publish unique content targeted to your audience",
+            "confidence": 0.5022175312042236,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.5022175312042236,
+            "sentence": "The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found.",
+            "triple": [
+                "my:unique_content",
+                "my:{subj}_target_to_{obj}",
+                "my:audience"
+            ],
+            "source_id": "_:yahoo_1.html_s6",
+            "source_sentence_uri": null
+        },
+        {
+            "abstract": "What can boost your ranking? other related websites and providers of relevant content",
+            "confidence": 0.4648311734199524,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.4648311734199524,
+            "sentence": "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+            "triple": [
+                "my:other_relate_website",
+                "my:{subj}_of_{obj}",
+                "my:relevant_content"
+            ],
+            "source_id": "_:yahoo_1.html_s11",
+            "source_sentence_uri": "_:meaningful_cross-links_-_meaningful_links_between_your's_and_other_related_websites_and_providers_of_relevant_content_add_value_for_visitors_and_can_boost_your_ranking."
+        },
+        {
+            "abstract": "rank - Learn raise",
+            "confidence": 0.41151905059814453,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.41151905059814453,
+            "sentence": "Get a higher website rank - Learn how to raise your rank in the Yahoo Search index.",
+            "triple": [
+                "my:rank",
+                "my:{subj}_learn_{obj}",
+                "my:how_to_raise_rank_in_yahoo_search_index"
+            ],
+            "source_id": "_:yahoo_2.html_s3",
+            "source_sentence_uri": "_:get_a_higher_website_rank_-_learn_how_to_raise_your_rank_in_the_yahoo_search_index."
+        }
+    ],
+    "How can users alter the ranking of their products or services through direct or indirect payments to the provider, and what effect does this have?": [
+        {
+            "abstract": "What can boost your ranking? other related websites and providers of relevant content",
+            "confidence": 0.31493330001831055,
+            "syntactic_similarity": 0,
+            "semantic_similarity": 0.31493330001831055,
+            "sentence": "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+            "triple": [
+                "my:other_relate_website",
+                "my:{subj}_of_{obj}",
+                "my:relevant_content"
+            ],
+            "source_id": "_:yahoo_1.html_s11",
+            "source_sentence_uri": "_:meaningful_cross-links_-_meaningful_links_between_your's_and_other_related_websites_and_providers_of_relevant_content_add_value_for_visitors_and_can_boost_your_ranking."
+        }
+    ],
+    "What is the business logic behind allowing users to affect the ranking of their products or services through payments, and what are the potential consequences of this?": []
+}
+Build explicanda
+<Question> Does the documentation explain how "ranking" is defined/define "ranking"?
+No answer was found.
+<Question> Does the documentation explain how "main parameter used for ranking" is defined/define "main parameter used for ranking"?
+No answer was found.
+<Question> Does the documentation provide the main parameters used for determining ranking?
+<Answers> [
+    "The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found.",
+    "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+    "Get a higher website rank - Learn how to raise your rank in the Yahoo Search index."
+]
+Creating cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl>..
+<Final Answer> No, the documentation does not provide the main parameters used for determining ranking.
+<Valid Indexes> set()
+No valid answer was found.
+<Question> Does the documentation provide the relative importance of the different main parameters used in determining ranking?
+<Answers> [
+    "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+    "The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found."
+]
+Creating cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl>..
+<Final Answer> No, the documentation does not provide the relative importance of the different main parameters used in determining ranking.
+<Valid Indexes> set()
+No valid answer was found.
+<Question> Does the documentation explain how the ranking mechanism considers the characteristics of the goods and services offered to consumers?
+<Answers> [
+    "The best way to improve your website's ranking is to publish unique content targeted to your audience.",
+    "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking."
+]
+Creating cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl>..
+<Final Answer> No, I cannot answer.
+<Valid Indexes> set()
+No valid answer was found.
+<Question> Does the documentation explain the extent to which the ranking mechanism considers the characteristics of the goods and services offered to consumers?
+<Answers> [
+    "The best way to improve your website's ranking is to publish unique content targeted to your audience.",
+    "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking."
+]
+Creating cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl>..
+<Final Answer> No, the documentation does not explain the extent to which the ranking mechanism considers the characteristics of the goods and services offered to consumers.
+<Valid Indexes> set()
+No valid answer was found.
+<Question> Does the documentation explain how the ranking mechanism considers the relevance of the characteristics of the goods and services, for consumers?
+<Answers> [
+    "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+    "The best way to improve your website's ranking is to publish unique content targeted to your audience."
+]
+Creating cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl>..
+<Final Answer> No, the documentation does not explain how the ranking mechanism considers the relevance of the characteristics of the goods and services, for consumers.
+<Valid Indexes> set()
+No valid answer was found.
+<Question> Does the documentation explain the extent to which the ranking mechanism considers the relevance of the characteristics of the goods and services, for consumers?
+<Answers> [
+    "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+    "The best way to improve your website's ranking is to publish unique content targeted to your audience."
+]
+Creating cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl>..
+<Final Answer> No, the documentation does not explain the extent to which the ranking mechanism considers the relevance of the characteristics of the goods and services, for consumers.
+<Valid Indexes> set()
+No valid answer was found.
+<Question> Does the documentation explain how the ranking mechanism considers the design characteristics of the websites?
+<Answers> [
+    "The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found.",
+    "Get a higher website rank - Learn how to raise your rank in the Yahoo Search index.",
+    "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+    "You can manage how your website appears in Yahoo Search by using meta tags and robots.txt. Yahoo Search results come from the Yahoo web crawler (Slurp) and Bing's web crawler. Visit Bing's Webmaster Help Center to review optimization tips.",
+    "You can manage how your website appears in Yahoo Search by using meta tags and robots.txt."
+]
+Creating cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl>..
+<Final Answer> No, the documentation does not explain how the ranking mechanism considers the design characteristics of the websites.
+<Valid Indexes> set()
+No valid answer was found.
+<Question> Does the documentation explain the extent to which the ranking mechanism considers the design characteristics of the websites?
+<Answers> [
+    "The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found.",
+    "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+    "Get a higher website rank - Learn how to raise your rank in the Yahoo Search index."
+]
+Creating cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl>..
+<Final Answer> No, the documentation does not explain the extent to which the ranking mechanism considers the design characteristics of the websites.
+<Valid Indexes> set()
+No valid answer was found.
+<Question> Does the documentation explain the possibilities to influence ranking against direct or indirect payment (if any)?
+No answer was found.
+<Question> Does the documentation explain the effects of payments, on ranking (if any)?
+No answer was found.
+<Question> Does the documentation explain how the ranking mechanism works and, in particular, what the main parameters used are?
+<Answers> [
+    "The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found.",
+    "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+    "Get a higher website rank - Learn how to raise your rank in the Yahoo Search index."
+]
+Creating cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl>..
+<Final Answer> No, the documentation does not explain how the ranking mechanism works or what the main parameters used are.
+<Valid Indexes> set()
+No valid answer was found.
+<Question> Does the documentation explain what is most important in determining ranking?
+<Answers> [
+    "The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found.",
+    "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+    "Get a higher website rank - Learn how to raise your rank in the Yahoo Search index.",
+    "After the title, the description is the most important draw for users."
+]
+Creating cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl>..
+<Final Answer> Yes, the documentation explains that the most important factors in determining ranking are publishing unique content targeted to your audience (paragraph 0), creating meaningful cross-links between your website and other related websites (paragraph 1), and having a compelling title and description (paragraph 3).
+<Valid Indexes> {'3', '0', '1'}
+<Confidence> max: 0.46221107244491577, sum: 1.252524584531784, len: 3
+Important explicandum aspects: 20 [
+    "my:description",
+    "my:title",
+    "my:most_important_draw_for_user",
+    "my:most_important_draw",
+    "my:user",
+    "my:good_way",
+    "my:ranking",
+    "my:to_publish_unique_content_target_to_audience",
+    "my:unique_content",
+    "my:audience",
+    "my:page",
+    "my:guideline",
+    "my:meaningful_cros__links_meaningful_link",
+    "my:other_relate_website",
+    "my:provider_of_relevant_content",
+    "my:meaningful_cros__links_meaningful_link_between_s_other_relate_website_provider_of_relevant_content",
+    "my:value",
+    "my:visitor",
+    "my:provider",
+    "my:relevant_content"
+]
+server_interface sbert clause, with with_qa_dict_list: False
+Building Question Answerer..
+Graph size: 168
+Grammatical Clauses: 18
+Loading cache <./cache/cache_exp4_yahoo/qa_embedder-clause.pkl.sentence_classifier.pkl>..
+Loading cache <./cache/cache_exp4_yahoo/qa_embedder-clause.pkl.concept_classifier.pkl>..
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:00<00:02,  8.11it/s] 10%|█         | 2/20 [00:00<00:02,  8.93it/s] 15%|█▌        | 3/20 [00:00<00:02,  8.17it/s] 20%|██        | 4/20 [00:00<00:01,  8.39it/s] 25%|██▌       | 5/20 [00:00<00:01,  8.83it/s] 30%|███       | 6/20 [00:00<00:01,  8.95it/s] 35%|███▌      | 7/20 [00:00<00:01,  9.15it/s] 40%|████      | 8/20 [00:00<00:01,  8.46it/s] 45%|████▌     | 9/20 [00:01<00:01,  8.68it/s] 50%|█████     | 10/20 [00:01<00:01,  8.97it/s] 55%|█████▌    | 11/20 [00:01<00:00,  9.17it/s] 60%|██████    | 12/20 [00:01<00:00,  9.21it/s] 65%|██████▌   | 13/20 [00:01<00:00,  8.65it/s] 70%|███████   | 14/20 [00:01<00:00,  8.73it/s] 75%|███████▌  | 15/20 [00:01<00:00,  8.64it/s] 80%|████████  | 16/20 [00:01<00:00,  6.99it/s] 85%|████████▌ | 17/20 [00:02<00:00,  7.56it/s] 90%|█████████ | 18/20 [00:02<00:00,  8.07it/s] 95%|█████████▌| 19/20 [00:02<00:00,  8.48it/s]100%|██████████| 20/20 [00:02<00:00,  8.67it/s]100%|██████████| 20/20 [00:02<00:00,  8.52it/s]
+  0%|          | 0/20 [00:00<?, ?it/s] 70%|███████   | 14/20 [00:00<00:00, 135.29it/s]100%|██████████| 20/20 [00:00<00:00, 148.83it/s]
+<DoX> {
+    "Why {X}?": 0.45173874497413635,
+    "Instead of what is {X}?": 0.4387836456298828,
+    "What is the reason for {X}?": 0.4338999390602112,
+    "After what is {X}?": 0.4306632876396179,
+    "What is similar to {X}?": 0.4295124411582947,
+    "What is contrasted with {X}?": 0.4263094961643219,
+    "What is {X}?": 0.42151913046836853,
+    "In what manner is {X}?": 0.41447338461875916,
+    "How is {X}?": 0.40640753507614136,
+    "In what case is {X}?": 0.4062964916229248,
+    "What is an alternative to {X}?": 0.40136846899986267,
+    "Which {X}?": 0.3904063403606415,
+    "What is the result of {X}?": 0.3623446524143219,
+    "Who is {X}?": 0.35595089197158813,
+    "Despite what is {X}?": 0.35160645842552185,
+    "Whose {X}?": 0.3514775037765503,
+    "While what is {X}?": 0.3414149880409241,
+    "{X}, unless what?": 0.3373261094093323,
+    "What is an example of {X}?": 0.33254000544548035,
+    "Where is {X}?": 0.3305646777153015,
+    "Before what is {X}?": 0.3293415307998657,
+    "Except when it is {X}?": 0.3259199261665344,
+    "When is {X}?": 0.30095234513282776,
+    "Since when is {X}?": 0.2813682556152344,
+    "Until when is {X}?": 0.23916244506835938
+}
+<Average DoX> 0.37165394783020017
+<Compliance score> 0.1717825698049836
+<Question> Does the documentation explain why specific parameters were selected as the main factors in determining the ranking of goods or services?
+<Answers> [
+    "Here are a variety of resources for webmasters looking to optimize for Yahoo Search:"
+]
+Creating cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl>..
+<Final Answer> No, I cannot answer.
+<Valid Indexes> set()
+No valid answer was found.
+<Question> Does the documentation explain the internal process conducted by the provider to determine the main parameters for the ranking of goods or services?
+<Answers> [
+    "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking."
+]
+Creating cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl>..
+<Final Answer> No, I cannot answer.
+<Valid Indexes> set()
+No valid answer was found.
+<Question> Does the documentation explain how users can improve the ranking of their goods or services?
+<Answers> [
+    "The best way to improve your website's ranking is to publish unique content targeted to your audience. Following these guidelines can also help your pages be more easily found.",
+    "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking.",
+    "Get a higher website rank - Learn how to raise your rank in the Yahoo Search index."
+]
+Creating cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl>..
+<Final Answer> Yes, the documentation explains how users can improve the ranking of their goods or services. Users can improve their website's ranking by publishing unique content targeted to their audience (paragraph 0). Additionally, creating meaningful links between their website and other related websites and providers of relevant content can also boost their ranking (paragraph 1). The documentation also suggests learning how to raise your rank in the Yahoo Search index (paragraph 2).
+<Valid Indexes> {'0', '1', '2'}
+<Confidence> max: 0.5022175312042236, sum: 1.3785677552223206, len: 3
+Important explicandum aspects: 19 [
+    "my:good_way",
+    "my:ranking",
+    "my:to_publish_unique_content_target_to_audience",
+    "my:unique_content",
+    "my:audience",
+    "my:page",
+    "my:guideline",
+    "my:meaningful_cros__links_meaningful_link",
+    "my:other_relate_website",
+    "my:provider_of_relevant_content",
+    "my:meaningful_cros__links_meaningful_link_between_s_other_relate_website_provider_of_relevant_content",
+    "my:value",
+    "my:visitor",
+    "my:provider",
+    "my:relevant_content",
+    "my:rank",
+    "my:high_website",
+    "my:how_to_raise_rank_in_yahoo_search_index",
+    "my:yahoo_search_index"
+]
+server_interface sbert clause, with with_qa_dict_list: False
+Building Question Answerer..
+Graph size: 174
+Grammatical Clauses: 18
+Loading cache <./cache/cache_exp4_yahoo/qa_embedder-clause.pkl.sentence_classifier.pkl>..
+Loading cache <./cache/cache_exp4_yahoo/qa_embedder-clause.pkl.concept_classifier.pkl>..
+  0%|          | 0/19 [00:00<?, ?it/s]  5%|▌         | 1/19 [00:00<00:02,  8.79it/s] 11%|█         | 2/19 [00:00<00:01,  9.19it/s] 16%|█▌        | 3/19 [00:00<00:01,  8.43it/s] 21%|██        | 4/19 [00:00<00:01,  8.84it/s] 32%|███▏      | 6/19 [00:00<00:01,  9.73it/s] 42%|████▏     | 8/19 [00:00<00:01,  9.50it/s] 47%|████▋     | 9/19 [00:00<00:01,  9.52it/s] 53%|█████▎    | 10/19 [00:01<00:00,  9.43it/s] 58%|█████▊    | 11/19 [00:01<00:01,  7.76it/s] 68%|██████▊   | 13/19 [00:01<00:00,  8.79it/s] 79%|███████▉  | 15/19 [00:01<00:00,  9.39it/s] 89%|████████▉ | 17/19 [00:01<00:00,  9.76it/s] 95%|█████████▍| 18/19 [00:01<00:00,  8.96it/s]100%|██████████| 19/19 [00:02<00:00,  9.09it/s]100%|██████████| 19/19 [00:02<00:00,  9.12it/s]
+  0%|          | 0/19 [00:00<?, ?it/s] 89%|████████▉ | 17/19 [00:00<00:00, 165.52it/s]100%|██████████| 19/19 [00:00<00:00, 157.58it/s]
+<DoX> {
+    "Why {X}?": 0.5003908276557922,
+    "What is an alternative to {X}?": 0.49697089195251465,
+    "How is {X}?": 0.4764636158943176,
+    "What is similar to {X}?": 0.4566541016101837,
+    "Instead of what is {X}?": 0.45314255356788635,
+    "What is the reason for {X}?": 0.4470079243183136,
+    "In what manner is {X}?": 0.4244979918003082,
+    "Which {X}?": 0.41627928614616394,
+    "What is contrasted with {X}?": 0.40905049443244934,
+    "After what is {X}?": 0.4087040424346924,
+    "What is {X}?": 0.4079238176345825,
+    "Despite what is {X}?": 0.3978595435619354,
+    "What is the result of {X}?": 0.3966946303844452,
+    "{X}, unless what?": 0.39465001225471497,
+    "In what case is {X}?": 0.38758206367492676,
+    "Where is {X}?": 0.35874202847480774,
+    "While what is {X}?": 0.3503760099411011,
+    "Whose {X}?": 0.34495076537132263,
+    "Who is {X}?": 0.3355551064014435,
+    "What is an example of {X}?": 0.3270844519138336,
+    "Before what is {X}?": 0.3175897002220154,
+    "Except when it is {X}?": 0.30278176069259644,
+    "When is {X}?": 0.2955901324748993,
+    "Since when is {X}?": 0.265636146068573,
+    "Until when is {X}?": 0.2549329698085785
+}
+<Average DoX> 0.38508443474769594
+<Compliance score> 0.1933961541241618
+<Question> Does the documentation explain how users can alter the ranking of their products or services through direct or indirect payments to the provider, and what effect this has?
+<Answers> [
+    "Meaningful cross-links - Meaningful links between your's and other related websites and providers of relevant content add value for visitors and can boost your ranking."
+]
+Creating cache <./cache/cache_exp4_yahoo/qa_embedder-edu_amr_clause.pkl>..
+<Final Answer> No, I cannot answer.
+<Valid Indexes> set()
+No valid answer was found.
+<Question> Does the documentation explain what the business logic behind allowing users to affect the ranking of their products or services through payments is, and what the potential consequences of this are?
+No answer was found.
+Average compliance score: 0.019219932838376075

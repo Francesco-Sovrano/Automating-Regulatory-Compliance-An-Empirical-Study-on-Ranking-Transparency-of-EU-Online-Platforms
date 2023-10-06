@@ -1,0 +1,29 @@
+Announcing crawler improvements for Live Search
+
+Today we’re pleased to announce several improvements in the crawler for Live Search that should significantly improve the efficiency with which we crawl and index your web sites. We are always looking for ways to help webmasters, and we hope these features take us a few more steps in the right direction.
+
+    HTTP Compression: HTTP compression allows faster transmission time by compressing static files and application responses, reducing network load between your servers and our crawler. We support the most common compression methods: gzip and deflate as defined by RFC 2616 (see sections 14.11 and 14.39). Compression is currently supported by all major browsers and search engines. Use this online tool to check your server for HTTP compression support.
+
+    The following links provide configuration information for IIS, and Apache.
+        Configure Compression in IIS
+        Configure Apache using GZIP or using deflate
+
+    Conditional Get: We support conditional get as defined by RFC 2616 (Section 14.25), generally we will not download the page unless it has changed since the last time we crawled it. As per the standard, our crawler will include the “If-Modified-Since” header & time of last download in the GET request and when available, our crawler will include the “If-None-Match” header and the ETag value in the GET request. If the content hasn’t changed the web server will respond with a 304 HTTP response.
+
+    To check if your site already supports the “If-Modified-Since” HTTP header, you can use this online tool to check your server for HTTP Conditional Get support. Alternatively, you can check using Fiddler for Internet Explorer, or Live Headers for Firefox. Each of these tools allows you to create a custom GET request and send it to your server. You’ll want to make sure that your request includes the “If-Modified-Since” header like the following simplified sample:
+
+        GET /sa/3_12_0_163076/webmaster/webmaster_layout.css HTTP/1.1
+        Host: webmaster.live.com
+        If-Modified-Since: Tue, 22 Jan 2008 01:28:49 GMT 
+
+    You should receive a server response similar to the following simplified sample:
+
+        HTTP/1.x 304 Not Modified 
+
+    Check out MSDN for more information on using Fiddler for performance tuning.
+
+    If you have not yet configured conditional get on your site, we would strongly encourage you to do so, as it can significantly help reduce server load as most browsers and crawlers already support this feature (e.g. IIS, Apache).
+
+In addition to these two features there are many more improvements in performance that should help further optimize our crawling. As a result, we’ve also upgraded our user agent to reflect the changes, it is now “msnbot/1.1”. If you think you are experiencing any issues with MSNbot, or have any questions about the updates, please use our Crawler Feedback & Discussion form.
+
+— Fabrice Canel, Live Search Crawling Team

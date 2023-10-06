@@ -1,0 +1,25 @@
+bingbot Series: JavaScript, Dynamic Rendering, and Cloaking. Oh My!
+
+Last week, we posted the second blog of our bingbot Series: Optimizing Crawl Frequency.
+
+Today is Halloween and like every day, our crawler (also known as a "spider") is wandering outside, browsing the world wide web, following links, seeking to efficiently discover, index and refresh the best web content for our Bing users.
+bingbot, bings crawler
+ 
+
+Occasionally, bingbot encounters websites relying on JavaScript to render their content. Some of these sites link to many JavaScript files that need to be downloaded from the web server. In this setup, instead of making only one HTTP request per page, bingbot has to do several requests. Some some sites are spider traps, with dozens of HTTP calls required to render each page! Yikes. That's not optimal, now is it? 
+
+As we shared last week at SMX East, bingbot is generally able to render JavaScript. However, bingbot does not necessarily support all the same JavaScript frameworks that are supported in the latest version of your favorite modern browser. Like other search engine crawlers, it is difficult for bingbot to process JavaScript at scale on every page of every website, while minimizing the number of HTTP requests at the same time. 
+
+Therefore, in order to increase the predictability of crawling and indexing by Bing, we recommend dynamic rendering as a great alternative for websites relying heavily on JavaScript. Dynamic rendering is about detecting user agent and rendering content differently for humans and search engine crawlers. We encourage detecting our bingbot user agent, prerendering the content on the server side and outputting static HTML for such sites, helping us minimize the number of HTTP requests and ensure we get the best and most complete version of your web pages every time bingbot visits your site.
+Is using JavaScript for Dynamic Rendering considered Cloaking?
+
+When it comes to rendering content specifically for search engine crawlers, we inevitably get asked whether this is considered cloaking... and there is nothing scarier for the SEO community than getting penalized for cloaking, even during Halloween! The good news is that as long as you make a good faith effort to return the same content to all visitors, with the only difference being the content is rendered on the server for bots and on the client for real users, this is acceptable and not considered cloaking.
+
+So if your site relies a lot of JavaScript and you want to improve your crawling and indexing on Bing, look into dynamic rendering: you will certainly benefit immensely, receiving only treats and no tricks!
+
+Happy Halloween!
+
+Fabrice Canel and Frédéric Dubut
+Program Managers
+
+Microsoft - Bing

@@ -1,0 +1,278 @@
+
+
+COVID-19 announcement (SpecialAnnouncement) structured data (BETA)
+Note: We're currently developing support for COVID-19 announcements in Google Search, and you may see changes in requirements, guidelines, and how the feature appears in Google Search. Learn more about the feature's availability.
+
+Due to COVID-19, many organizations, such governments, health organizations, schools, and more, are publishing urgent announcements that affect schedules and other aspects of everyday life. This includes the closure of facilities, rescheduling of events, and new availability of medical facilities (for example, testing centers). Here are some examples of special announcements:
+
+    Announcement of a shelter-in-place directive
+    Closure notice (for example, closing a school or public transportation)
+    Announcement of government benefits (for example, unemployment support, paid leave, or one-time payments)
+    Quarantine guidelines
+    Travel restrictions
+    Notification of a new drive-through testing center
+    Announcement of an event transitioning from offline to online, or cancellation
+    Announcement of revised hours and shopping restrictions
+    Disease spread statistics and maps
+
+If you want to update your business hours, we recommend that you use LocalBusiness markup or Google My Business. Additionally, you can use SpecialAnnouncement to announce your new store hours. This may not show up in Google Search, but it does help Google understand the data behind COVID-19 announcements while we work on expanding support for more use cases.
+An example of a COVID-19 announcement in Google Search
+Note: The actual appearance in search results might be different. You can preview most features with the Rich Results Test.
+How to implement your COVID-19 announcements
+
+There are two ways that you can implement your COVID-19 announcements:
+
+    Add SpecialAnnouncement structured data to your web pages (recommended): Structured data is a standardized format for providing information about a page and classifying the page content. If you're new to structured data, you can learn more about how structured data works. To implement COVID-19 announcement structured data, follow these steps.
+    Submit announcements in Search Console: If you don't have access to your site's HTML, or you need to quickly submit the announcement (and you don't have time to implement structured data), you can submit the announcement in Search Console. The tool is only for short-lived announcements that are set to expire within a month of posting. Also, there is currently no way to update your announcement (with structured data, it's possible to update your announcement with more details or extend the date). Learn more.
+
+How to add structured data
+
+Structured data is a standardized format for providing information about a page and classifying the page content. If you're new to structured data, you can learn more about how structured data works.
+
+Here's an overview of how to build, test, and release structured data. For a step-by-step guide on how to add structured data to a web page, check out the structured data codelab.
+
+    Add the required properties. Based on the format you're using, learn where to insert structured data on the page.
+    Using a CMS? It may be easier to use a plugin that's integrated into your CMS.
+    Using JavaScript? Learn how to generate structured data with JavaScript.
+    Follow the guidelines.
+    Validate your code using the Rich Results Test and fix any critical errors. Consider also fixing any non-critical issues that may be flagged in the tool, as they can help improve the quality of your structured data (however, this isn't necessary to be eligible for rich results).
+    Deploy a few pages that include your structured data and use the URL Inspection tool to test how Google sees the page. Be sure that your page is accessible to Google and not blocked by a robots.txt file, the noindex tag, or login requirements. If the page looks okay, you can ask Google to recrawl your URLs.
+    Note: Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it.
+    To keep Google informed of future changes, we recommend that you submit a sitemap. You can automate this with the Search Console Sitemap API.
+
+Submit a COVID-19 announcement for your site in Search Console (BETA)
+
+Government agencies and official health organizations can submit an important COVID-19 announcement on their site, particularly if they are unable to use structured data. This includes the closure of facilities, rescheduling of events, and new availability of medical facilities (for example, testing centers). Google Search uses this information to better understand the content on your web page and show the important announcement to relevant people alongside your web page result.
+Open COVID-19 announcement submission tool
+Limitations of the tool: This is a beta version. We're currently developing the tool, and you may not see results in Google Search right away.
+
+    The tool requires that announcements expire within 1 month of posting, so this method is only for short-lived announcements.
+    If you don't set an expiration date, your announcement will default to expire 7 days from the time the announcement was posted.
+    The tool is focused on health and government organizations; it doesn't support news articles.
+
+Feature availability
+
+Due to the urgent nature of COVID-19, we are actively developing this feature and you may see changes in requirements or guidelines. We are focusing on announcements from health and government organizations. You may not see results in Google Search right away. You can provide structured data or submit your announcement in Search Console in advance, to ensure that your announcements are eligible when the feature becomes available. This helps Google understand the data behind COVID-19 announcements, while we work on expanding support for more use cases.
+Examples
+Shelter-in-place announcement
+
+Here's an example of a shelter-in-place announcement that affects multiple counties.
+Multiple updates on a single page
+
+Here's an example of an updates page that has multiple announcements.
+Government benefits announcement
+
+Here's an example of an announcement of a new government benefit for small businesses.
+School closure announcement
+
+Here's an example of a school closure announcement.
+COVID-19 testing facility announcement
+
+Here's an example of a COVID-19 testing facility announcement.
+Guidelines
+
+You must follow these guidelines to be eligible to appear in special announcements on Google Search.
+Warning: If your site abuses or fails to follow the guidelines, Google may take manual action to mark it ineligible to display as a rich result. If you receive a manual action, remedy the issue and submit your site for reconsideration.
+
+    General structured data guidelines
+    Search Essentials
+
+Structured data type definitions
+
+You must include the required properties for your content to be eligible for display as a special announcement on Google Search. We recommend that you also add the recommended properties if you have that information.
+SpecialAnnouncement
+
+The full definition of SpecialAnnouncement is provided on schema.org. You can start using SpecialAnnouncement even though it's still under development on Schema.org. The Google-supported properties are the following:
+Required properties
+datePosted 	
+
+DateTime
+
+The date that the COVID-19 announcement was published in ISO-8601 format.
+name 	
+
+Text
+
+The short title of the COVID-19 announcement. For example: "Stanford announces COVID-19 testing facility"
+Either text or a specific property that points to more info 	
+
+You must include either text, or one of the following properties that point to more info about the announcement, depending on the subject matter:
+
+    diseasePreventionInfo
+    diseaseSpreadStatistics
+    gettingTestedInfo
+    governmentBenefitsInfo
+    newsUpdatesAndGuidelines
+    publicTransportClosuresInfo
+    quarantineGuidelines
+    schoolClosuresInfo
+    travelBans
+
+Note: While only one property is required, we encourage you to include as much information that's applicable to the announcement. You can include multiple properties (for example, both quarantineGuidelines and diseasePreventionInfo, if it makes sense in the context of the announcement.
+Recommended properties
+announcementLocation 	
+
+LocalBusiness or CivicStructure
+
+The specific location that is associated with the SpecialAnnouncement. For example, a specific testing facility or business with special opening hours. For a larger geographic region, like a quarantine of an entire region, we recommend that you use spatialCoverage.
+
+{
+  "@context": "https://schema.org",
+  "@type": "SpecialAnnouncement",
+  "announcementLocation": {
+    "@type": "CivicStructure",
+    "name": "Palo Alto High School"
+    "url":   "https://example-school.org/"
+  }
+}
+
+announcementLocation.name 	
+
+Text
+
+The name of the location that is the focus of the announcement. For example, the name of the testing facility.
+announcementLocation.url 	
+
+URL
+
+The URL where people can learn more about the announcement location. For example, the URL for the testing facility that explains where it is, hours, and who is eligible.
+diseasePreventionInfo 	
+
+URL or WebContent
+
+Information about disease prevention, if applicable to the announcement.
+diseaseSpreadStatistics 	
+
+URL or WebContent or Dataset or Observation
+
+If applicable to the announcement, the statistical information about the spread of a disease, either as WebContent, or described directly as a Dataset, or the specific Observation in the dataset. When a WebContent URL is provided, the page indicated might also contain more markup.
+expires 	
+
+DateTime
+
+The date in which the content expires and is no longer useful or available in ISO-8601 format. Don't include this property if you don't know when the content will expire.
+gettingTestedInfo 	
+
+URL or WebContent
+
+Information about getting tested (for a MedicalCondition) in the context of COVID-19, if applicable to the announcement.
+governmentBenefitsInfo 	
+
+GovernmentService
+
+Information about new government benefits in the context of COVID-19, if applicable to the announcement. If you include governmentBenefitsInfo, you must add the following properties:
+
+    governmentBenefitsInfo.name
+    governmentBenefitsInfo.url
+
+For a full example of how these properties work, see the government benefits announcement example.
+governmentBenefitsInfo.name 	
+
+Text
+
+The name of the government benefits. For example: "Paycheck Protection Program"
+governmentBenefitsInfo.url 	
+
+URL
+
+The URL to more information about the government benefits.
+newsUpdatesAndGuidelines 	
+
+URL or WebContent
+
+A page with news updates and guidelines in the context of COVID-19, if applicable to the announcement. This could be (but is not required to be) the main page containing SpecialAnnouncement markup on a site.
+publicTransportClosuresInfo 	
+
+URL or WebContent
+
+Information about public transport closures in the context of COVID-19, if applicable to the announcement.
+quarantineGuidelines 	
+
+URL or WebContent
+
+Guidelines about quarantine rules in the context of COVID-19, if applicable to the announcement.
+schoolClosuresInfo 	
+
+URL or WebContent
+
+Information about school closures in the context of COVID-19, if applicable to the announcement.
+spatialCoverage 	
+
+Place
+
+The geographic region that is the focus of the special announcement, if applicable. For example, the announcement may be about a shelter-in-place that affects multiple regions. If the announcement affects both a region and a specific location (for example, a library closure that serves an entire region), use both spatialCoverage and announcementLocation.
+
+{
+  "@context": "https://schema.org",
+  "@type": "SpecialAnnouncement",
+  "spatialCoverage": [
+    {
+    "type": "AdministrativeArea",
+    "name": "San Francisco County, CA"
+    },
+    {
+    "type": "AdministrativeArea",
+    "name": "Marin County, CA"
+    },
+    {
+    "type": "AdministrativeArea",
+    "name": "Santa Clara County, CA"
+    }
+  ]
+}
+
+text 	
+
+Text
+
+The textual summary of the COVID-19 announcement. The text may contain HTML content such as links and lists. Valid HTML tags include: <h1> through <h6>, <br>, <ol>, <ul>, <li>, <a>, , <div>, <b>, <strong>, <i>, and <em>.
+
+For example:
+
+"Stanford Health Care's same-day primary care program is offering
+ drive-through testing, by appointment, for SARS-CoV-2, the coronavirus that causes COVID-19."
+
+travelBans 	
+
+URL or WebContent
+
+Information about travel bans in the context of COVID-19, if applicable to the announcement.
+Monitor rich results with Search Console
+
+Search Console is a tool that helps you monitor how your pages perform in Google Search. You don't have to sign up for Search Console to be included in Google Search results, but it can help you understand and improve how Google sees your site. We recommend checking Search Console in the following cases:
+
+    After deploying structured data for the first time
+    After releasing new templates or updating your code
+    Analyzing traffic periodically
+
+After deploying structured data for the first time
+
+After Google has indexed your pages, look for issues using the relevant Rich result status report. Ideally, there will be an increase of valid items, and no increase in invalid items. If you find issues in your structured data:
+
+    Fix the invalid items.
+    Inspect a live URL to check if the issue persists.
+    Request validation using the status report.
+
+After releasing new templates or updating your code
+When you make significant changes to your website, monitor for increases in structured data invalid items.
+
+    If you see an increase in invalid items, perhaps you rolled out a new template that doesn't work, or your site interacts with the existing template in a new and bad way.
+    If you see a decrease in valid items (not matched by an increase in invalid items), perhaps you are no longer embedding structured data in your pages. Use the URL Inspection tool to learn what is causing the issue.
+
+Warning: Don't use cached links to debug your pages. Instead, use the URL Inspection Tool because it has the most up-to-date version of your pages.
+Analyzing traffic periodically
+Analyze your Google Search traffic using the Performance Report. The data will show you how often your page appears as a rich result in Search, how often users click on it and what is the average position you appear on search results. You can also automatically pull these results with the Search Console API.
+Troubleshooting
+
+If you're having trouble implementing or debugging structured data, here are some resources that may help you.
+
+    If you're using a content management system (CMS) or someone else is taking care of your site, ask them to help you. Make sure to forward any Search Console message that details the issue to them.
+    Google does not guarantee that features that consume structured data will show up in search results. For a list of common reasons why Google may not show your content in a rich result, see the General Structured Data Guidelines.
+    You might have an error in your structured data. Check the list of structured data errors.
+    If you received a structured data manual action against your page, the structured data on the page will be ignored (although the page can still appear in Google Search results). To fix structured data issues, use the Manual Actions report.
+    Review the guidelines again to identify if your content isn't compliant with the guidelines. The problem can be caused by either spammy content or spammy markup usage. However, the issue may not be a syntax issue, and so the Rich Results Test won't be able to identify these issues.
+    Troubleshoot missing rich results / drop in total rich results.
+    Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it. For general questions about crawling and indexing, check the Google Search crawling and indexing FAQ.
+    Post a question in the Google Search Central forum.
+
+

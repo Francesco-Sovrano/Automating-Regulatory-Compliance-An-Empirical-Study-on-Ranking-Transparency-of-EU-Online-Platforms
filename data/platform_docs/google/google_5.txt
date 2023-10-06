@@ -1,0 +1,123 @@
+
+
+Provide a site name to Google Search
+
+When Google lists a page in search results, it shows the name of the site the page comes from. This is called the site name. Google uses a number of different sources to automatically determine the site name, and you can indicate your preference by adding WebSite structured data. Note that the site name is different from the per-page title links (title links are specific to each web page, whereas the site name is for the entire site).
+site name in google search results
+Feature availability
+
+Site names appear in Google Search results as follows:
+
+    For searches in English, French, German, and Japanese
+    For domain level sites on both mobile and desktop
+    For subdomain level sites on mobile
+
+How site names in Google Search are created
+
+Google's generation of site names on the Google Search results page is completely automated and takes into account both the content of a site and references to it that appear on the web. The goal of the site name is to best represent and describe the source of each result.
+
+Google Search uses a number of sources from a site's home page to automatically determine site names, including:
+
+    WebSite structured data
+    Content in <title> elements
+    Heading elements, such as <h1> elements
+    og:site_name 
+
+While we can't manually change site names for individual sites, we're always working to make them as accurate as possible. You can help improve the quality of the site name that's displayed for your page by adding WebSite structured data.
+How to add structured data
+
+Structured data is a standardized format for providing information about a page and classifying the page content. If you're new to structured data, you can learn more about how structured data works.
+
+Here's an overview of how to build, test, and release structured data. For a step-by-step guide on how to add structured data to a web page, check out the structured data codelab.
+
+    Follow the guidelines.
+    Add the required properties to the home page of your website, in either JSON-LD, RDFa, or microdata format. You don't need to include this markup on every page of your site; you only need to add this markup to the home page of your site.
+    Using a CMS? It may be easier to use a plugin that's integrated into your CMS.
+    Using JavaScript? Learn how to generate structured data with JavaScript.
+    If you want to provide an alternate version of your site name (for example, an acronym or shorter name), you can do this by adding the alternateName property. This is optional.
+    Use the URL Inspection tool to test how Google sees the page. Be sure that your home page is accessible to Google and not blocked by a robots.txt file, noindex, or login requirements. If the page looks okay, you can ask Google to recrawl your URL.
+    Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it.
+
+Guidelines
+
+To help Google better understand your site name, make sure you follow the Search Essentials, General structured data guidelines, and the following technical and content guidelines:
+Technical guidelines
+
+    Currently, Google Search only supports one site name per site, where a site is defined by the domain or subdomain. Google Search does not support site names at the subdirectory level. Note that subdomain names starting with www or m are generally considered as being equivalent.
+    Supported: https://example.com (this is a domain-level home page)
+    Supported: https://www.example.com (this is also considered to be a domain-level home page)
+    Supported: https://m.example.com (this is also considered to be a domain-level home page)
+    Supported: https://news.example.com (this is a subdomain-level home page)
+    Not supported: https://example.com/news (this is a subdirectory-level home page)
+    The WebSite structured data must be on the home page of the site. By home page, we mean the domain or subdomain level root URI. For example, https://example.com is the home page of the domain, while https://example.com/de/index.html isn't the home page. Note: If there's no structured data on the subdomain's home page, then the domain-level site name may be used for the subdomain as a fallback.
+    The home page must be crawlable by Google (that is, it can't be blocked to Google). If we don't have access to the content on your home page, we may not be able to generate a site name.
+    If you have duplicate home pages for the same content (for example, HTTP and HTTPS versions of your home page, or www and non-www), make sure that you're using the same structured data on all page duplicates, not just on the canonical page.
+    If you're already implementing WebSite structured data for the Sitelinks search box feature, make sure that you nest the site name properties in the same node. In other words, avoid creating an additional WebSite structured data block on your home page if you can help it. For example, here's how WebSite structured data would look like for both site name and sitelinks search box:
+
+Content guidelines
+
+    Choose a unique name that accurately reflects the identity of your site. Don't choose a name that is used by another site, as this might be misleading for users. The name you choose must follow Search content policies.
+    Use a concise, commonly-recognized name for your site (for example, "Google" instead of "Google, Inc"). While there's no limit to how long a site name can be, on some devices long site names may be truncated. If you have an alternate name that's commonly recognized, you can use the alternateName property to specify that name (for example, an acronym).
+    Use your site name consistently across your home page. Whatever you use as the site name in structured data should be consistent with what's on your home page, <title> elements, and other prominent sources where Google may derive the name of your site.
+
+Structured data type definitions
+
+To tell Google which site name you prefer, include the required properties on the home page of your site.
+WebSite
+
+The full definition of WebSite is available at schema.org/WebSite. The following tables detail the required and recommended properties that Google supports.
+Required properties
+name 	
+
+Text
+
+The name of the website. Make sure the name meets the content guidelines.
+url 	
+
+URL
+
+The URL of the home page of the site. Set this to the canonical home page of your site's domain or subdomain. For example, https://example.com/ or https://news.example.com/.
+Recommended properties
+alternateName 	
+
+Text
+
+The alternate name of the website (for example, if there's a commonly recognized acronym or shorter name for your site), if applicable. Make sure the name meets the content guidelines.
+Troubleshooting common issues
+
+Here are the most common issues we see with site names in search results.
+Why the site name in search results might differ from the page's schema.org markup: If we've detected an issue on the page, we may try to generate an improved site name from other sources.
+Common issues
+Site name is incorrect or has incorrect formatting
+	
+
+For example, "Andorid" instead of "Android".
+
+Verify that the site name provided in your markup on your home page is the preferred name for your site, and follows our guidelines. Confirm that other sources on your home page also use the preferred name for your site.
+
+If you have multiple versions of your site, for example HTTP and HTTPS, make sure that you're using the same site name consistently.
+URL is displayed instead of site name
+	
+
+For example, "android.com" or "news.android.com" instead of "Android".
+
+If Search isn't able to confidently determine a site name based on your home page's metadata and other signals, the abbreviated URL may be displayed instead. Double-check that the site name meets the content guidelines and is implemented correctly with structured data.
+Result redirects to another page
+	
+
+If your page redirects to a page that's visible to Googlebot, the site name will reflect the redirect target. If your page redirects to a page that's not visible to Googlebot, the site name will reflect that of the source page.
+
+Make sure your redirects are working as intended and that Googlebot can access the redirect target page, and then request a recrawl of that page.
+Troubleshooting structured data issues
+
+If you're having trouble implementing or debugging structured data, here are some resources that may help you.
+
+    If you're using a content management system (CMS) or someone else is taking care of your site, ask them to help you. Make sure to forward any Search Console message that details the issue to them.
+    Google does not guarantee that features that consume structured data will show up in search results. For a list of common reasons why Google may not show your content in a rich result, see the General Structured Data Guidelines.
+    You might have an error in your structured data. Check the list of structured data errors.
+    Review the guidelines again to identify if your content isn't compliant with the guidelines. The problem can be caused by either spammy content or spammy markup usage.
+    Troubleshoot missing rich results / drop in total rich results.
+    Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it. For general questions about crawling and indexing, check the Google Search crawling and indexing FAQ. 
+
+If you have tried the troubleshooting steps above and still find issues, please post a question in the Google Search Central Help Community thread. This will help us look for potential improvements to make in our systems. 
+

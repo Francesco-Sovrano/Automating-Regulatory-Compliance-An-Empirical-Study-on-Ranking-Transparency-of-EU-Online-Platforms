@@ -1,0 +1,44 @@
+
+Blocking adult content with SafeSearch or blocking Chat
+
+SafeSearch helps keep adult content out of your search results. There are different ways you can turn on SafeSearch:
+1. For individual accounts, choose SafeSearch options on the Settings page.
+2. At a network level, map www.bing.com to strict.bing.com.
+3. For an individual PC, map www.bing.com to strict.bing.com.
+4. For the Microsoft Edge sidebar, map edgeservices.bing.com to strict.bing.com.
+
+We'll go into more details below about how to implement SafeSearch using each of the above methods. (Some features and functionality described here may not be available in your country or region.)
+
+On the Settings page, click one of the SafeSearch filters:
+1. Strict filters adult text, images, and videos out of your search results.
+2. Moderate filters adult images and videos, but not text, out of your search results. This is the default setting.
+3. Off doesn't filter adult content.
+4. Click Save.
+
+SafeSearch: If you want to guarantee strict SafeSearch results for all users on your network, in your router or proxy server map www.bing.com to strict.bing.com. Strict.bing.com will guarantee that strict SafeSearch results are returned for all queries to this IP and the SafeSearch controls are disabled. If you use the Microsoft Edge browser, there is a search app in the browser sidebar. To guarantee strict SafeSearch in the Edge sidebar, map edgeservices.bing.com to strict.bing.com.
+
+We recommend this method as the best way for schools that don’t participate in the Bing in the Classroom program to guarantee strict SafeSearch results. Home users or businesses who also want to guarantee strict SafeSearch results are also welcome to use this method.
+
+To force SafeSearch for your network, you’ll need to update your DNS configuration. Set the DNS entry for www.bing.com to be a CNAME for strict.bing.com. You’ll want to use a CNAME rather than the strict.bing.com IP as the CNAME will continue to work even if the IP for strict.bing.com changes. By making the DNS change, results will continue to appear to your users as normal results from www.bing.com but strict SafeSearch results are guaranteed. Similarly, set edgeservices.bing.com to be the CNAME for strict.bing.com to force SafeSearch in the Edge sidebar.
+
+Chat: If you want to guarantee Chat is turned off for all users on your network, in your router or proxy server map www.bing.com to nochat.bing.com. If you want to guarantee Chat is turned off for all users on your network plus all users are set to strict SafeSearch, in our router or proxy server map www.bing.com to nochatstrict.bing.com. The above settings will guarantee that strict SafeSearch results and/or Chat, as applicable, are returned or turned off for all queries to this IP and the SafeSearch controls are disabled. Similarly, mapping edgeservices.bing.com to the same subdomain forces the same policies in the Edge sidebar.
+
+In either scenario, we do not recommend blocking the www.bing.com IP as this could have the adverse impact of blocking other Microsoft domains.
+
+SafeSearch: If you wish to guarantee strict safe search results for a given PC, you can do so by mapping www.bing.com to strict.bing.com. For example, if you’re a parent and want to guarantee safe search results on your child’s PC, this method will work. Only users who are administrators on the PC can undo this change. If you are using the Microsoft Edge browser, please map edgeservices.bing.com to strict.bing.com to guarantee SafeSearch in the Edge sidebar.
+
+To make this change:
+1. In Windows, click the Windows key and type “Notepad.”
+2. Right click on Notepad and choose Run as Administrator.
+3. Click Yes when Windows asks if you want this program to make changes.
+4. Open your hosts file. In most Windows installations, this is located at: C:\Windows\System32\drivers\etc\hosts
+5. Click the Windows key, type “cmd,” and then hit enter.
+6. Type "ping strict.bing.com" and note the resulting IP. This will look something like this: 204.79.197.220
+7. Create an entry at the end of hosts file that looks like this: 204.79.197.220 www.bing.com. Create another entry if you are using the Microsoft Edge browser like this: 204.79.197.220 edgeservices.bing.com.
+8. Save the file. Windows will now use strict.bing.com to guarantee strict SafeSearch results on this PC.
+
+If Windows is installed in a different location on your PC, you can find the hosts file by typing the following at the command prompt: cd /d %systemroot%\system32\drivers\etc.
+
+Important: The hosts file needs the actual IP for strict.bing.com rather than a CNAME. If the CNAME is used, the hosts file will not redirect to the strict.bing.com IP.
+
+Chat: If you wish to guarantee Chat is turned off for a given PC, you can do so by mapping www.bing.com to either Nochat.bing.com (which will lock Chat as turned off for the given PC) or Nochatstrict.bing.com (which will lock Chat as turned off for the given PC and the SafeSearch setting as locked to strict), by following the same steps as outlined above but in step 6, pinging either “nochat.bing.com” or “nochatstrict.bing.com.” Make the same mapping for edgeservices.bing.com to force the same policies in the Edge sidebar.

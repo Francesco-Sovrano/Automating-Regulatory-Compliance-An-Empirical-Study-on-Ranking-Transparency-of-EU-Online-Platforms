@@ -1,0 +1,63 @@
+
+
+Discover and your website
+
+Discover shows users content related to their interests, based on their Web and App Activity.
+How Discover may look like on a phone
+How Discover is different from Search
+
+With Search, users enter a search term to find helpful information related to their query, but Discover takes a different approach. Instead of showing results in response to a query, Discover surfaces content primarily based on what Google's automated systems believe to be a good match with a user's interests.
+
+As a highly personalized feed, Discover actively tunes itself to a user's interests and displays content that aligns with those interests. The content in Discover is automatically refreshed as new content is published, however Discover is designed to show all types of helpful content from across the web, not just newly published content.
+
+We are always improving Discover to serve personalized, helpful content to users. Given the serendipitous nature of Discover, traffic from Discover is less predictable or dependable when compared to Search, and is considered supplemental to your Search traffic. Our ongoing work to improve Discover's user experience means sites may see changes in their traffic unrelated to the quality or publishing frequency of their content.
+How content appears in Discover
+
+Content is automatically eligible to appear in Discover if it is indexed by Google and meets Discover's content policies. No special tags or structured data are required. Please note that being eligible to appear in Discover is not a guarantee of appearing.
+If your site violates one or more Discover content policies, Discover manual actions may appear in your Search Console under Security and Manual actions. Learn more about the types of violations and how to fix them.
+
+As part of Google Search, Discover makes use of many of the same signals and systems used by Search to determine what is helpful, people-first content. Given this, those looking for success with Discover should review our advice on creating helpful, reliable, people-first content.
+
+To increase the likelihood of your content appearing in Discover, we recommend the following:
+
+    Use page titles that capture the essence of the content, but in a non-clickbait fashion.
+    Include compelling, high-quality images in your content, especially large images that are more likely to generate visits from Discover. Large images need to be at least 1200 px wide and enabled by the max-image-preview:large setting, or by using AMP. Avoid using a site logo as your image.
+    Avoid tactics to artificially inflate engagement by using misleading or exaggerated details in preview content (title, snippets, or images) to increase appeal, or by withholding crucial information required to understand what the content is about.
+    Avoid tactics that manipulate appeal by catering to morbid curiosity, titillation, or outrage.
+    Provide content that's timely for current interests, tells a story well, or provides unique insights.
+
+To deliver a good user experience, Discover seeks to present content that's suitable for interest-based feeds, such as articles and videos, as well as filter out content that's not desired or that might confuse readers. For example, Discover might not recommend job applications, petitions, forms, code repositories, or satirical content without any context. Discover makes use of SafeSearch but beyond that filters out content that might be seen as shocking or unexpected.
+The Follow feature and your website
+
+The Follow feature lets people follow a website and get the latest updates from that website in the Following tab within Discover in Chrome. Currently, the Follow button is a feature that's available to signed-in users in English in the US, New Zealand, South Africa, UK, Canada, and Australia that are using Chrome Android. It's also available to signed in users in English in the US that are using Chrome iOS.
+Follow button in Chrome and the Following tab within Discover
+
+By default, the Follow feature uses RSS or Atom feeds on your website. If you don't have an RSS or Atom feed on your website, Google automatically generates a feed for your entire domain based on our view of your site. If you have one or more feeds on your website, you can optimize your Follow experience by explicitly telling Google which feed you want people to follow for a given page on your site.
+Optimize your web pages for the Follow feature
+
+To help Google understand which feed that you want people to follow for a given page, link your RSS or Atom feed in the <head> section of your hub and leaf pages:
+
+For example, this <link> element would be on the Google Search Central Blog landing page (the hub page), and on each individual blog post page (the leaf page).
+Feed guidelines
+
+To make sure Google can find and understand your RSS or Atom feed, follow these guidelines:
+
+    Don't block your feed with your robots.txt file.
+    Make sure that your feed is up-to-date, like you would for sitemap files.
+    The most important content for the Follow feature is your feed <title> element and your per item <link> elements. Make sure your feed includes these elements.
+    Use a brief but descriptive title for your RSS feed, just like you would for a web page.
+    Recommended: Google Search Central Blog
+    Not recommended: RSS Feed or Central Blog
+    You can host your feed somewhere other than your domain; Google supports this.
+    If you redirect your feed, use a 3xx (redirects) HTTP status code so that Google can follow it.
+
+Specifying multiple feeds
+
+If you have multiple feeds on your website (for example, a news website with RSS feeds for the front page, business section, and technology), we recommend that you add a <link> element to a single feed that makes sense for that page. A single feed is easier to maintain, and is a better user experience when people are subscribing to your content. For example, if the article is about technology, specify the technology feed in the <link> element.
+
+Alternatively, you can add multiple feeds in order of your preference. For example, you might prefer that people follow the feed for the front page, then the business section, then technology, in that order. Google uses this information to understand more about how multiple feeds are used across your site.
+
+Monitor your performance on Discover
+
+If you have content on Discover, you can monitor your performance using the Performance report for Discover. This report shows impressions, clicks, and CTR for any of your content that has appeared on Discover in the last 16 months, as long as your data reaches a minimum threshold of impressions. The Discover performance report includes traffic from Chrome, and fully tracks a site's Discover traffic across all surfaces where users interact with Discover. This includes impressions and clicks from the Following tab.
+

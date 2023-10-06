@@ -1,0 +1,309 @@
+
+
+Review snippet (Review, AggregateRating) structured data
+Are you here because you got a message from Search Console? Check our troubleshooting resources.
+
+A review snippet is a short excerpt of a review or a rating from a review website, usually an average of the combined rating scores from many reviewers. When Google finds valid reviews or ratings markup, we may show a rich snippet that includes stars and other summary info from reviews or ratings. In addition to the text of the review, a rating is an evaluation described on a numeric scale (such as 1 to 5). Review snippets may appear in rich results or Google Knowledge Panels. You can supply ratings for the following content types (and subtypes):
+Review snippet on Google Search
+Note: The actual appearance in search results might be different. You can preview most features with the Rich Results Test.
+
+    Book
+    Course
+    Event
+    How-to
+    Local business (only for sites that capture reviews about other local businesses; see the guidelines about self-serving reviews)
+    Movie
+    Product
+    Recipe
+    Software App
+
+Google also supports reviews for the following schema.org types (and their subtypes):
+
+    CreativeWorkSeason
+    CreativeWorkSeries
+    Episode
+    Game
+    MediaObject
+    MusicPlaylist
+    MusicRecording
+    Organization (only for sites that capture reviews about other organizations; see the guidelines about self-serving reviews)
+
+Does your site provide reviews about other employers? Use EmployerAggregateRating structured data.
+Does your site review claims made by others? Use Fact check structured data.
+How to add structured data
+
+Structured data is a standardized format for providing information about a page and classifying the page content. If you're new to structured data, you can learn more about how structured data works.
+
+Here's an overview of how to build, test, and release structured data. For a step-by-step guide on how to add structured data to a web page, check out the structured data codelab.
+
+    Add the required properties. Based on the format you're using, learn where to insert structured data on the page.
+    Using a CMS? It may be easier to use a plugin that's integrated into your CMS.
+    Using JavaScript? Learn how to generate structured data with JavaScript.
+    Follow the guidelines.
+    Validate your code using the Rich Results Test and fix any critical errors. Consider also fixing any non-critical issues that may be flagged in the tool, as they can help improve the quality of your structured data (however, this isn't necessary to be eligible for rich results).
+    Deploy a few pages that include your structured data and use the URL Inspection tool to test how Google sees the page. Be sure that your page is accessible to Google and not blocked by a robots.txt file, the noindex tag, or login requirements. If the page looks okay, you can ask Google to recrawl your URLs.
+    Note: Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it.
+    To keep Google informed of future changes, we recommend that you submit a sitemap. You can automate this with the Search Console Sitemap API.
+
+Examples
+
+There are several ways you can add Review structured data to a page:
+
+    Add a simple review.
+    Nest a review into another schema.org type using its review property.
+    Add aggregate ratings. You can omit the rating for an individual review if your marked-up content contains both an author and a review date. For aggregate reviews, you must supply the average rating for the rich snippet to display.
+    Nest aggregate ratings into another schema.org type using its aggregateRating property.
+
+Simple review
+
+Here's an example of a simple review.
+Nested review
+
+Here's an example of a review that's nested in a Product. You can copy and paste the example to your own HTML page.
+Aggregate rating
+
+Here's an example of an aggregate rating.
+Nested aggregate rating
+
+Here's an example of an aggregate rating that's nested in a Product. You can copy and paste the example to your own HTML page.
+Guidelines
+
+Your content must follow these guidelines to be eligible to appear as a rich result.
+Warning: If your site violates one or more of these guidelines, then Google may take manual action against it. Once you have remedied the problem, you can submit your site for reconsideration.
+
+    Technical guidelines
+    Search Essentials
+    General structured data guidelines
+
+Technical guidelines
+
+    Make sure to mark up an aggregate evaluation of an item by many people with schema.org/AggregateRating. Google may display aggregate ratings as rich snippets or, for certain types of items, answers in search results.
+    Refer clearly to a specific product or service by nesting the review within the markup of another schema.org type, such as schema.org/Book or schema.org/Recipe, or by using a schema.org type as a value for the itemReviewed property.
+    Make sure the reviews and ratings you mark up are readily available to users from the marked-up page. It must be immediately obvious to users that the page has review content.
+    Provide review information about a specific item, not about a category or a list of items.
+    If you include multiple individual reviews, also include an aggregate rating of the individual reviews.
+    Don't aggregate reviews or ratings from other websites.
+    If the review snippet is for a local business or an organization, you must follow these additional guidelines:
+        If the entity that's being reviewed controls the reviews about itself, their pages that use LocalBusiness or any other type of Organization structured data are ineligible for star review feature. For example, a review about entity A is placed on the website of entity A, either directly in their structured data or through an embedded third-party widget (for example, Google Business reviews or Facebook reviews widget).
+        For more information, check out our blog post on why we added this guideline and our FAQ about the change.
+        Ratings must be sourced directly from users.
+        Don't rely on human editors to create, curate, or compile ratings information for local businesses.
+
+Structured data type definitions
+
+You must include the required properties for your structured data to display in search results. You can also include the recommended properties to add more information to your structured data, which could provide a better user experience.
+Review
+
+The full definition of Review is available at schema.org/Review.
+
+The Google-supported properties are the following:
+Required properties
+author 	
+
+Person or Organization
+
+The author of the review. The reviewer's name must be a valid name. For example, "50% off until Saturday" is not a valid name for a reviewer.
+
+This field must be shorter than 100 characters. If it's longer than 100 characters, your page won't be eligible for an author-based review snippet.
+
+To help Google best understand authors across various features, consider following the author markup best practices.
+itemReviewed 	
+
+One of the valid types
+
+The item that is being reviewed. However, if the review is nested into another schema.org type using the review property, you can omit the itemReviewed property.
+
+The valid types for the reviewed item are:
+
+    Book
+    Course
+    CreativeWorkSeason
+    CreativeWorkSeries
+    Episode
+    Event
+    Game
+    HowTo
+    LocalBusiness
+    MediaObject
+    Movie
+    MusicPlaylist
+    MusicRecording
+    Organization
+    Product
+    Recipe
+    SoftwareApplication
+
+itemReviewed.name 	
+
+Text
+
+The name of the item that is being reviewed. If the review is nested into another schema.org type using the review property, you still need to provide the name of the thing that is being reviewed. For example:
+
+{
+  "@context": "https://schema.org/",
+  "@type": "Game",
+  "name": "Firefly",
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "John Doe"
+    }
+  }
+}
+
+reviewRating 	
+
+Rating
+
+The rating given in this review. The rating can be a nested Rating or more specific subtype. The most typical subtype is AggregateRating.
+reviewRating.ratingValue 	
+
+Number or Text
+
+A numerical quality rating for the item, either a number, fraction, or percentage (for example, 4, 60%, or 6 / 10). Google understands the scale for fractions and percentages, since the scale is implied in the fraction itself or the percentage. The default scale for numbers is a 5-point scale, where 1 is the lowest value and 5 is the highest value. If another scale is intended, use bestRating and worstRating.
+
+For decimal numbers, use a dot instead of a comma to specify the value (for example 4.4 instead of 4,4). In Microdata and RDFa, you can use content attributes to override the visible content. That way, you can show the user whatever style convention you want, while also satisfying the dot requirement for structured data. For example:
+
+<span itemprop="ratingValue" content="4.4">4,4</span> stars
+
+Recommended properties
+datePublished 	
+
+Date
+
+The date that the review was published, in ISO 8601 date format.
+reviewRating.bestRating 	
+
+Number
+
+The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+reviewRating.worstRating 	
+
+Number
+
+The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+AggregateRating
+
+The full definition of AggregateRating is available at schema.org/AggregateRating.
+
+The Google-supported properties are the following:
+Required properties
+itemReviewed 	
+
+One of the valid types
+
+The item that is being rated. However, if the aggregate rating is nested into another schema.org type using the aggregateRating property, you can omit the itemReviewed property.
+
+The valid types for the reviewed item are:
+
+    Book
+    Course
+    CreativeWorkSeason
+    CreativeWorkSeries
+    Episode
+    Event
+    Game
+    HowTo
+    LocalBusiness
+    MediaObject
+    Movie
+    MusicPlaylist
+    MusicRecording
+    Organization
+    Product
+    Recipe
+    SoftwareApplication
+
+itemReviewed.name 	
+
+Text
+
+The name of the item that is being reviewed. If the review is nested into another schema.org type using the review property, you still need to provide the name of the thing that is being reviewed. For example:
+
+{
+  "@context": "https://schema.org/",
+  "@type": "Game",
+  "name": "Firefly",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "88",
+    "bestRating": "100",
+    "ratingCount": "20"
+  }
+}
+
+ratingCount 	
+
+Number
+
+The total number of ratings for the item on your site. At least one of ratingCount or reviewCount is required.
+reviewCount 	
+
+Number
+
+Specifies the number of people who provided a review with or without an accompanying rating. At least one of ratingCount or reviewCount is required.
+ratingValue 	
+
+Number or Text
+
+A numerical quality rating for the item, either a number, fraction, or percentage (for example, 4, 60%, or 6 / 10). Google understands the scale for fractions and percentages, since the scale is implied in the fraction itself or the percentage. The default scale for numbers is a 5-point scale, where 1 is the lowest value and 5 is the highest value. If another scale is intended, use bestRating and worstRating.
+
+For decimal numbers, use a dot instead of a comma to specify the value (for example 4.4 instead of 4,4). In Microdata and RDFa, you can use content attributes to override the visible content. That way, you can show the user whatever style convention you want, while also satisfying the dot requirement for structured data. For example:
+
+<span itemprop="ratingValue" content="4.4">4,4</span> stars
+
+Recommended properties
+bestRating 	
+
+Number
+
+The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+worstRating 	
+
+Number
+
+The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+Monitor rich results with Search Console
+
+Search Console is a tool that helps you monitor how your pages perform in Google Search. You don't have to sign up for Search Console to be included in Google Search results, but it can help you understand and improve how Google sees your site. We recommend checking Search Console in the following cases:
+
+    After deploying structured data for the first time
+    After releasing new templates or updating your code
+    Analyzing traffic periodically
+
+After deploying structured data for the first time
+
+After Google has indexed your pages, look for issues using the relevant Rich result status report. Ideally, there will be an increase of valid items, and no increase in invalid items. If you find issues in your structured data:
+
+    Fix the invalid items.
+    Inspect a live URL to check if the issue persists.
+    Request validation using the status report.
+
+After releasing new templates or updating your code
+When you make significant changes to your website, monitor for increases in structured data invalid items.
+
+    If you see an increase in invalid items, perhaps you rolled out a new template that doesn't work, or your site interacts with the existing template in a new and bad way.
+    If you see a decrease in valid items (not matched by an increase in invalid items), perhaps you are no longer embedding structured data in your pages. Use the URL Inspection tool to learn what is causing the issue.
+
+Warning: Don't use cached links to debug your pages. Instead, use the URL Inspection Tool because it has the most up-to-date version of your pages.
+Analyzing traffic periodically
+Analyze your Google Search traffic using the Performance Report. The data will show you how often your page appears as a rich result in Search, how often users click on it and what is the average position you appear on search results. You can also automatically pull these results with the Search Console API.
+Troubleshooting
+
+If you're having trouble implementing or debugging structured data, here are some resources that may help you.
+
+    If you're using a content management system (CMS) or someone else is taking care of your site, ask them to help you. Make sure to forward any Search Console message that details the issue to them.
+    Google does not guarantee that features that consume structured data will show up in search results. For a list of common reasons why Google may not show your content in a rich result, see the General Structured Data Guidelines.
+    You might have an error in your structured data. Check the list of structured data errors.
+    If you received a structured data manual action against your page, the structured data on the page will be ignored (although the page can still appear in Google Search results). To fix structured data issues, use the Manual Actions report.
+    Review the guidelines again to identify if your content isn't compliant with the guidelines. The problem can be caused by either spammy content or spammy markup usage. However, the issue may not be a syntax issue, and so the Rich Results Test won't be able to identify these issues.
+    Troubleshoot missing rich results / drop in total rich results.
+    Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it. For general questions about crawling and indexing, check the Google Search crawling and indexing FAQ.
+    Post a question in the Google Search Central forum.
+
+

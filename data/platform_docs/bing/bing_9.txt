@@ -1,0 +1,30 @@
+Keyword research
+
+Keyword research is the first step for content creators, looking for popular topics trending on the internet to write on. A detailed keyword research allows you to check the phrases and keywords that searchers are looking for, and their corresponding search volumes. Higher search volume means more people are looking for information on that topic and creating content on that topic is a smart way to attract traffic to your site.
+
+The keyword research tool is specially designed to assist webmasters and content creators with their tasks. The tool gives you keyword ideas and stats of how frequently these keywords are searched for, and the associated trend – reflecting how those volumes have changed over time. It segregates keywords to show the ones which have become relevant recently and lists the questions that these keywords have appeared in if any.
+
+Content creators can use the details as input while writing the content. Bing indexes and ranks unique, high-quality content that is well-researched and relevant to searchers. We recommend that you focus on creating content around your area of expertise, rather than just focusing on top trending topics.
+Using the tool
+
+The keyword research tool takes a root keyword as input to suggest matching and other relevant keywords. The tool has a search box on top where you can input the root keyword that you want to research. By default, the tool also lists a set of keywords that are bringing traffic to websites and the corresponding search volume trend. Clicking on any of these keywords will trigger a search, with that keyword as the root keyword.
+Keyword Research suggestions
+
+As a user, you can apply filters based on country, language, and devices to get details for specific scenarios. You can also get results for any timeframe in the last six months. By default, these filters can fetch results for all countries, languages, and devices and for a duration of the previous 3 months.
+Understanding the results
+
+Keyword research gives information on the search volume and trends for that keyword. The research also provides the Global breakdown of the search volume; it gives a clear picture of the countries where more users are searching for that keyword.
+Keyword Research overview
+
+All filters are applicable on all data points, as shown above, but the country filter is not applicable on the Global breakdown.
+
+The tool recommends keyword ideas under three list of keywords:
+
+    Related keywords – This is a set of different keyword ideas that Bing feels are related to the root keyword. These are sorted by relevance to the root keyword by default.
+    Question keywords – This set contains specific questions that were asked by the users, based on keyword ideas in Related keywords. This section provides you with the specific information that people are looking for around those keyword ideas.
+    Newly discovered – This is a subset of the Related keywords that have only qualified for being relevant to the root keyword in the last 30 days. Note that these are not new keywords that searchers have started looking for in the last 30 days.
+
+Keyword Research related keywords
+URLs and topics
+
+Bing’s Keyword Research tool also gives a list of the top 10 URLs appearing in the search results for the root keyword and their associated topics. Topics are determined by Bing's content processing logic and denote the area that Bing considers relevant. Since these results also appear for the root keyword, the associated topic can act as a new root keyword to get more ideas in case users want to broaden their scope. 

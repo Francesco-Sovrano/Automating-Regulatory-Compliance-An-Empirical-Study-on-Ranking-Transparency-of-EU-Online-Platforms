@@ -1,0 +1,62 @@
+April 20, 2018
+
+Everything You Need to Know About the Tripadvisor Popularity Ranking
+How the Popularity Ranking works
+
+The Popularity Ranking is based on the quality, recency and quantity of reviews that a business receives from users — and the consistency of those reviews over time.
+Quality
+
+The bubble ratings that users provide as part of their reviews are used to rank the quality of the experience at each business. All other things being equal, a business with more 5-bubble ratings will rank higher than a business with lower bubble ratings.
+Recency
+
+Recent reviews are more valuable than older reviews. They give a more accurate representation of the current experience at the business. This means reviews — good or bad — that are older will not count as much towards a business’s ranking as a review written more recently. Although older reviews do not have as much weight in the ranking, they are still visible in the Overview section of each listing and in the business’s review history.
+Quantity
+
+The number of reviews is a critical indicator to Tripadvisor users about a business. Tripadvisor users typically read multiple reviews to help form a balanced opinion on a business and have more confidence in their decisions when they see agreement across a large set of fellow users’ reviews.
+
+When we talk about review quantity, it’s important to note that a business just needs to have enough reviews to provide statistical significance and allow for a confident comparison to other businesses. Just having more reviews doesn’t mean that a business will be ranked higher than its competitors. For example, a business with 1,000 reviews isn’t necessarily going to be rated higher than one with 500 reviews that were received in roughly the same period of time. This is because they both have enough reviews to make us confident in the potential travel experience they can deliver.
+
+The Popularity Ranking algorithm is designed to provide a statistical measure of confidence about the current experience at a business. As we accumulate more reviews on a business over time, we have more insight into the potential experience consumers can expect. Once we’ve reached a critical mass of reviews, we’re able to more accurately predict that business’s ranking.
+
+Consistency: putting it all together
+
+In summary:
+1. Good reviews are better than poor reviews
+2. Recent reviews are given more weight than older reviews
+3. More reviews help build confidence faster
+
+These factors interact over time to determine a business’s Popularity Ranking. For example, the quality and quantity of reviews over time provide us with a view of each business’s consistency. A business that has consistently good reviews will rank higher than one with a similar number of good and poor reviews. Similarly, recency and quantity are closely linked — a large number of recent reviews will be valued higher than ones that are several years old.
+How has the Popularity Ranking evolved?
+
+Over time, we continue to optimize and enhance the Popularity Ranking to improve our site experience for users and businesses alike. We know how important ranking on Tripadvisor is to businesses. Any changes we make are not undertaken lightly. They are carefully designed and tested to improve our rankings algorithm in very specific ways, while maintaining the accurate standings of existing businesses on Tripadvisor.
+
+Recent changes, in 2016 and 2018, have focused on promoting more consistency in the rankings. The goal with each change has been to more accurately reflect a business’s performance relative to others in its location over time, regardless of its size or the rate at which it collects reviews.
+How can you improve your business’s Popularity Ranking
+
+Because the Popularity Ranking is based on user feedback, consistently collecting new, high-quality reviews — that reflect levels of service and value that meet expectations — is the best way for businesses to improve their position over time.
+
+It is important to note that the Popularity Ranking takes into account a business’s performance, in relation to the performance of other businesses in the area. As one business moves up in the ranking, it impacts others directly around it. Movements in the Popularity Ranking may be a result of reviews on one particular business — or reviews that have come in for other businesses in the area.
+
+To help with review collection, Tripadvisor offers a variety of tools like Review Express and review reminder tools, as well as Review Collection Partnerships. Businesses who use review collection tools can consistently measure their performance and make improvements based on the feedback they receive.
+Some questions and answers
+Why is Business A above Business B?
+
+In most cases, this is because A has a statistically better set of reviews (based on quality, quantity, and recency) than B.
+I received a bad review. Is my Popularity Ranking going to be badly impacted?
+
+Positions in the ranking are not necessarily influenced by a single review — positive or negative. Businesses may notice changes in their positions depending on their own performance, or based on how other businesses around them perform. Since our algorithm takes into account the overall quality of the reviews you receive over time, regularly collecting feedback from users is the best way to maintain or improve your business’s position over time, relative to the performance of other businesses in the area.
+Do Management Responses factor into the Popularity Ranking?
+
+Management Responses are not factored into Popularity Ranking. However, research shows that when an owner responds promptly and professionally to a review, addressing any specific complaints as well as the positive comments, it can make a big impact on prospective customers. A Phocuswright1 study shows that 85% of users say that a thoughtful response to a review improves their impression of a hotel and 65% are more likely to book a hotel that responds to reviews versus a comparable hotel that doesn’t.
+Does having a commercial relationship with Tripadvisor impact my Popularity Ranking?
+
+No. A business’s commercial relationship with Tripadvisor has absolutely no impact on the Popularity Ranking. While it’s helpful to be able show users whether you have availability for their search dates and help them book, or provide a website link or phone number, these have never been part of the Popularity Ranking algorithm.
+How often is the Popularity Ranking calculated?
+
+The ranking is re-calculated daily based on all published reviews, including those new reviews received that day.
+Do the sub-ratings (cleanliness, service, etc.) impact my ranking?
+
+Sub-ratings do not factor into the ranking calculation. However, they do provide users with valuable information on your business.
+How do fraud penalties impact the Popularity Ranking?
+
+Fraud penalties exist on Tripadvisor to protect the integrity of the content on the site. We employ a number of penalization methods for companies that try to manipulate our system which may impact a business’s position in the Popularity Rankings, and ultimately could lead to the publication of a red alert warning to users.

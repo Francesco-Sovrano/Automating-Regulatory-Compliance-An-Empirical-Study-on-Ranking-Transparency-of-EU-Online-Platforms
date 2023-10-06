@@ -1,0 +1,96 @@
+
+Microsoft Start and MSN feedback – frequently asked questions
+Microsoft Start MSN
+
+We value feedback from our users and every message we receive is passed on to our editorial and product teams. If you have a question, please check the FAQ below to see if the answer is there.
+Replying to your feedback 
+
+Microsoft takes your privacy seriously. Your personal data is not collected when you submit feedback, so we do not record your email address and you won't receive an individual reply.
+Advertising  
+
+Microsoft Start believes a free, well-funded press plays a critical role in society. Every day we deliver content from thousands of the world’s most respected publishers, free of charge. 
+
+The money we accrue from advertising is shared with those publishers in order to help sustain a free press, and to pay the costs of providing the content to you. 
+
+That shouldn’t happen, but if it does, please help us fix it by sending a message through our feedback tool. You can access the feedback tool via a button in the bottom right-hand corner of any Microsoft Start or MSN page, and also through the settings cog  at the top right-hand corner of the MSN homepage. Describe the problem in as much detail as possible, because without that detail it is hard to track down something that is impacting individuals among millions of users. 
+
+Please provide: 
+
+    The page where you are seeing the problem – is it the homepage, an article, a gallery, or a video?
+
+    The URL of the page the ad takes you to
+
+    The brand or product the ad is for
+
+    It also really helps us if you describe what the issue is (for example: ad has overlapping words, content has disappeared, ad cannot be closed).
+
+We will always be clear about what is an ad, and what is not. Some ads, such as sponsored stories and native advertising, sit alongside editorially programmed stories and are marked with an Ad label. Other types of ads, called display ads, sit separate from content. These are also marked with an Ad label, and in some countries, you will see an additional “Ad Choices” label. 
+
+Browsing, search and other online activity data associated with your Microsoft account is used to show you ads that may be tailored to your interests. 
+
+You can adjust how your data is used through your Ad Settings. 
+
+Here you can remove and restore interests to enhance the relevance of ads that you’re seeing. You can also turn off personalized ads completely, but please note that ads may be less relevant if you do this.  
+Editorial 
+
+The content we publish - stories, galleries and videos - is created by thousands of the world's best-known publishing brands. Their original work usually is not changed or altered in any way by our content teams or algorithms. However, if we find there are factual or any other significant errors impacting the quality of the content, we immediately notify the publisher and request corrections. To check who created the content, look for the prominent publisher logo at the top of every article, gallery or video, just above the headline.
+
+We collect data about how you interact with Microsoft Start and MSN services, such as usage frequency and articles viewed, to provide you with relevant content. Some Microsoft Start and MSN services provide an enhanced experience when you sign in with your Microsoft account, including allowing you to customize your interests and favorites.
+
+To find out more about personalizing your feed, see the question How do I personalize my content? in the Functionality section below. 
+
+To learn more about how collect your data, read the Microsoft Privacy Statement.
+
+Balancing conflicting viewpoints is a challenging issue and we care deeply about getting it right. What one person sees as biased may be balanced to someone else.
+
+We believe that trustworthy and diverse perspectives matter, and we are constantly working to develop content experiences that will allow us to feature all sides of a story. We also carefully select content partners who provide a range of perspectives that help us tell the whole story and give the big picture. 
+
+To hide stories from a specific source, select  on a new story and choose Hide stories from... 
+
+To manage your hidden publishers, select Blocked list in the My Interests page on Microsoft Start. 
+
+If you believe a mistake has been made, please tell us by sending a message through the feedback tool which can be found at the lower right corner of your screen as you are reading a piece of content.
+
+Explain what the problem is and provide either the headline of the article, video or gallery, or the URL where it can be found.
+
+All feedback is read by our content team, and we will work diligently to ensure the issue is resolved. Please note we do not record your email address, so we are unable to reply to your feedback.
+Functionality
+
+If you are using Microsoft Start, click on  Personalize in the navigation menu.
+
+This will take you to a page where you can select and deselect topics that interest you. Your feed will adjust to reflect your preferences, although news deemed important by our editors will still display prominently so that you don't miss out on need-to-know information. 
+
+If you are using Microsoft Edge, you can  find the ‘Personalize’ option in the navigation menu on the default homepage or on the new tab page. Not using Edge? You can download it here.
+
+When you sign in with your Microsoft Account on MSN, your account preferences are used to personalize the content seen on MSN and the personalization will stay throughout the browsing session.
+
+    When you access Microsoft Start from the taskbar, content you see will use the Microsoft account signed in to Windows to personalize the experience.
+
+    When you access Microsoft Start through the Microsoft Edge new tab page, content you see will use the Microsoft account signed in to Microsoft Edge to personalize the experience.
+
+To opt out of user authentication or prevent the tracking of preferences and actions in a specific account, sign out from your Edge  Settings > Profile, or use InPrivate mode in Microsoft Edge.
+
+On both the Microsoft Edge default homepage or new tab page, and MSN.com, click on  in the top right-hand corner. You will be presented with an option to ‘Select Language and Content’. Choose the country and language that suits you – we have over 60 editions.  
+
+On the Settings page, tap Edition and select the country and language of your choice.  In the desktop app, select in the bottom left-hand corner of the page and use the Edition box to change markets.  
+
+On Microsoft Edge, the weather typically displays in a card in the top right-hand corner of the news feed. Click next to the location on your weather card, and then click Edit. You can ask us to detect your location, or otherwise specify your location or city. You can also set the temperature to display in Celsius or Fahrenheit.  
+
+On MSN.com, the weather displays near the left-hand side of the navigation bar, just above the main stories of the day. Click on the pencil icon next to the location and temperature to trigger a pop-up screen, where you can set your default location and select Fahrenheit or Celsius. 
+
+Your weather settings control your local news experience. You can change your local news location by changing your weather settings, as described above. Please note that local news is not available in all areas, or in every country, although we are continuing to expand our coverage.   
+
+Edge users can also add local news from any available area as an Interest. After you’ve accessed the Interest page by clicking on Personalize on the Edge homepage, select Local category and choose your desired area. You can follow more than one local Interest.  See the question How do I personalize my content? for more detail on selecting Interests.  
+
+Yes, although we’d prefer to keep bringing you the news. Please note there are many ways that you can personalize your news feed so that you see content that’s relevant to you. See above for how to personalize your feed. Also, please send us feedback on how to do better. 
+
+If you are using the latest version of Microsoft Edge (you can download it here), you can hide the news feed by selecting ‘Focused’ mode using the settings cog  in the right-hand corner of the Microsoft Edge default homepage. The news feed will still be available if you scroll down.
+
+If you would like to turn off the news feed entirely, select Custom mode and choose the Content Off setting.
+
+Note: If you are using an older version of Microsoft Edge, you can use the Hide Feed link, located at the top right-hand corner of the Edge default homepage, next to . This will take you to a page where you can customize your feed settings. To turn off your news feed, select either ‘Top Sites’ or ‘A Blank Page’ under Page Display Settings. To re-enable your news feed, select ‘Top Sites and My Feed’.  
+General Microsoft help 
+
+You can find detailed help for problems with Outlook.com - including locked accounts, fixes for common problems and email sync issues - at the Get Help with Outlook.com page.
+
+Updates help your device run smoothly and securely. You can find out more about Windows updates, including how to schedule more convenient update start times in Windows, in the Windows Update FAQ. 

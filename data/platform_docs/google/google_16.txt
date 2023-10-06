@@ -1,0 +1,164 @@
+
+
+Structured data markup that Google Search supports
+
+Google uses structured data to understand the content on the page and show that content in a richer appearance in search results, which is called a rich result. To make your site eligible for appearance as one of these rich results, follow the guide to learn how to implement structured data on your site. If you're just getting started, visit Understand how structured data works.
+Note: The actual appearance in search results might be different. You can preview most features with the Rich Results Test.
+Choose a category that describes your website
+Structured data features
+
+Article
+
+A news, sports, or blog article displayed in various rich result features, such as the title of the article and larger-than-thumbnail images.
+Get started 	article example in search results
+
+Book
+
+Book actions that enable users to buy the book that they find directly from Search results.
+Get started 	book example in search results
+
+Breadcrumb
+
+Navigation that indicates the page's position in the site hierarchy.
+Get started 	breadcrumb example in search results
+
+Carousel
+
+Rich results that display in a sequential list or gallery from a single site. This feature must be combined with one of the following features: Recipe, Course, Restaurant, Movie.
+Get started 	An illustration of how a recipe host carousel can appear in Google Search. It shows 3 different recipes from the same website in a carousel format that users can explore and select a specific recipe
+
+Course
+
+Educational courses that appear in a provider-specific list. Courses can include the course title, provider, and a short description.
+Get started 	course example in search results
+
+Dataset
+
+Large data sets that appear in Google Dataset Search.
+Get started 	dataset example in search results
+
+Education Q&A
+
+Education-related questions and answers that help students discover flashcards on Google Search.
+Get started 	Education Q&A carousel in search results
+
+EmployerAggregateRating
+
+An evaluation of a hiring organization compiled from many users that's displayed in the job search experience on Google.
+Get started 	employer aggregate rating example in search results
+
+Estimated salary
+
+Salary estimate information, such as salary ranges and region-based salary averages for job types, displayed in the job search experience on Google.
+Get started 	salary estimate example in search results
+
+Event
+
+An interactive rich result that shows a list of organized events, such as concerts or art festivals, that people may attend at a particular time and place.
+Get started 	event example in search results
+
+Fact Check
+
+A summarized version of a credible site's evaluation of a claim made by others.
+Get started 	fact check example in search results
+
+FAQ
+
+A Frequently Asked Question (FAQ) page contains a list of questions and answers pertaining to a particular topic.
+Get started 	FAQ example in search results
+
+Home Activities
+
+An interactive rich result where people can discover online activities that they can do from home.
+Get started 	Home activities example in search results
+
+How-to
+
+A How-to walks users through a set of steps to successfully complete a task, featuring video, images, and text.
+Get started 	How-to example in search results
+
+Image Metadata
+
+When you specify image metadata, Google Images can show more details about the image, such as who the creator is, how people can use an image, and credit information.
+Get started 	An example of Image Metadata in Google Images
+
+JobPosting
+
+An interactive rich result that allows job seekers to find a job. The job search experience on Google can feature your logo, reviews, ratings, and job details.
+Get started 	job posting example in search results
+
+Learning Video
+
+Help students and teachers discover and watch educational videos by adding Learning Video structured data to your educational videos.
+Get started 	Example of a Learning Video rich result
+
+Local Business
+
+Business details displayed in the Google knowledge panel, including open hours, ratings, directions, and actions to book appointments or order items.
+Get started 	local business example in search results
+
+Logo
+
+Your organization's logo in search results and Google knowledge panel.
+Get started 	logo example in search results
+
+Math solvers
+
+Help students, teachers, and others with math problems by adding structured data to indicate the type of math problems and step-by-step walkthroughs for specific math problems.
+Get started 	math solvers in search results
+
+Movie
+
+The movie carousel helps users explore lists of movies on Google Search (for example, "best movies of 2023"). You can provide details about the movies, such as the title of each movie, director information, and images.
+Get started 	An illustration of how a movie rich result can appear in Google Search. It shows 3 different movies from the same website in a carousel format that users can explore and select a specific movie
+
+Practice problems
+
+Help students, teachers, and parents with education by adding structured data to your practice problems in math and science subjects.
+Get started 	practice problems in search results
+
+Product
+
+Information about a product, including price, availability, and review ratings.
+Get started 	product example in search results
+
+Q&A
+
+Q&A Pages are web pages that contain data in a question and answer format, which is one question followed by its answers.
+Get started 	question answer page example in search results
+
+Recipe
+
+Recipes that display as an individual rich result or part of a host carousel.
+Get started 	An illustration of how a recipe host carousel can appear in Google Search. It shows 3 different recipes from the same website in a carousel format that users can explore and select a specific recipe
+
+Review snippet
+
+A short excerpt of a review or a rating from a review website, usually an average of the combined rating scores from reviewers. A review snippet can be about Book, Recipe, Movie, Product, Software App, and Local business.
+Get started 	review snippet example in search results
+
+Sitelinks Search box
+
+A search box that is scoped to your website when it appears as a search result.
+Get started 	sitelink searchbox example in search results
+
+Software App
+
+Information about a software app, including rating information, a description of the app, and a link to the app.
+Get started 	software app example in search results
+
+Speakable
+
+Allow search engines and other applications to identify news content to read aloud on Google Assistant-enabled devices using text-to-speech (TTS).
+Get started 	speakable example that shows a conversation with the Google Home. A person asks Google Home what's the latest news with Nasa. Google Home responds with a list of three news articles.
+
+Subscription and paywalled content
+
+Indicate paywalled content on your site to help Google differentiate paywalled content from the practice of cloaking, which violates our spam policies.
+Get started 	A New York Times paywall example that shows a reader has reached the limit of articles
+
+Video
+
+Video information in search results, with the option to play the video, specify video segments, and live-stream content.
+Get started 	video example in search results
+

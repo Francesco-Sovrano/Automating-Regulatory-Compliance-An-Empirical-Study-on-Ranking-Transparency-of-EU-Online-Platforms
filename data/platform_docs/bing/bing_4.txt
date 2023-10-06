@@ -1,0 +1,18 @@
+Crawl control
+
+The Crawl control feature allows you to control the speed at which Bingbot makes requests for pages and resources on your website. You can tell Bingbot to crawl your site faster or slower than the normal crawl rate, for each of the 24 hours in the day. This way you can limit Bingbot’s activity on your site when there are more visitors on your site, and allow Bingbot to crawl more during quieter hours.
+noteNOTE
+If we find a crawl-delay directive in your robots.txt file, then it will always take precedence over the information from this feature.
+How to set a crawl pattern using a preset
+Use a preset crawl pattern
+
+The easiest way to set a crawl pattern that optimizes the bandwidth for your visitors is by using a preset listed under the “Time when your site receives most of the traffic”. You can use these presets to indicate the busiest time of the day on your site, based on your local time. When you select any of the presets, you automatically optimize the crawl pattern by telling Bingbot to crawl more slowly during those hours and faster during the other hours. Just click Save changes at the bottom of the page to store this setting.
+
+The following example shows a site that opted for the 9 AM – 5 PM local time preset as the busiest time for the site, resulting in an inverse crawl pattern, allowing Bingbot faster crawl speeds outside of those hours:
+Crawl Control Hourly Crawl Speed Pattern
+
+By default, the system time is taken into consideration while determining the time zone. If you are working in another country and would like to modify Bingbot's crawl rate hours based on some other time zone, you can choose the relevant time zone from the Time zone dropdown and modify the crawl pattern accordingly.
+Crawl Control Hourly Crawl Speed Pattern
+Set custom crawl pattern
+
+You can also customize the hourly crawl pattern by moving your mouse over the cubes, holding the left mouse button down and dragging it to the desired number of quadrants for the timeline denoted on the x-axis. More blue quadrants indicate more visits from Bingbot (faster crawl), fewer quadrants mean the opposite (slower crawl). The default is 5 quadrants for each time slice, i.e., 5 blue quadrants represent the algorithmically determined baseline crawl rate for your site. Moving them up or down, increases or decreases the crawl rate based on the baseline crawl rate, determined automatically for your site. When you are happy with your pattern, simply click Save changes to store the setting. 

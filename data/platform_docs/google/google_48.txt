@@ -1,0 +1,88 @@
+
+
+Structured data for subscription and paywalled content (CreativeWork)
+
+This page describes how to use schema.org JSON-LD to indicate paywalled content on your site with CreativeWork properties. This structured data helps Google differentiate paywalled content from the practice of cloaking, which violates spam policies. Learn more about subscription and paywalled content.
+This guide only applies to content that you want crawled and indexed. If you don't want to have your paywalled content indexed, you can stop reading now.
+Example
+
+Here's an example of NewsArticle structured data with paywalled content.
+
+
+Guidelines
+
+You must follow the general structured data guidelines and technical guidelines for your page to be eligible to appear in search results. In addition, the following guidelines apply to paywalled content:
+Note: If you violate these policies, your page might not be eligible to be displayed in Search results. Read about Spammy Structured Markup to learn more.
+
+    JSON-LD and microdata formats are accepted methods for specifying structured data for paywalled content.
+    Don't nest content sections.
+    Only use .class selectors for the cssSelector property.
+
+Add markup to paywalled content
+
+If you offer any subscription-based access to your website content, or if users must register for access to any content you want to be indexed, follow these steps. The following example applies to NewsArticle structured data. Make sure to follow these steps for all versions of your page (including AMP and non-AMP).
+
+    Add a class name around each paywalled section of your page. For example:
+
+    Add NewsArticle structured data.
+    Add the highlighted JSON-LD structured data to your NewsArticle structured data.
+    Note: The cssSelector references the class name that you added in Step 1.
+
+
+Multiple paywalled sections
+
+If you have multiple paywalled sections on a page, add the class names as an array.
+
+Here's an example of the paywalled sections on a page:
+
+Here's an example of NewsArticle structured data with multiple paywalled sections.
+
+Supported types
+
+This markup is supported for the CreativeWork type or one of the following more specific types of CreativeWork:
+
+    Article
+    NewsArticle
+    Blog
+    Comment
+    Course
+    HowTo
+    Message
+    Review
+    WebPage
+
+Multiple schema.org types can be used, such as the following:
+
+"@type": ["Article", "LearningResource"]
+AMP considerations
+
+Here's a list of considerations to keep in mind if you use AMP pages:
+
+    If you have an AMP page with paywalled content, use amp-subscriptions where appropriate.
+    Make sure that your authorization endpoint grants access to content to the appropriate bots from Google and others. This is different per publisher.
+    Ensure that your bot access policy is the same for AMP and non-AMP pages, otherwise this can result in content mismatch errors that appear in Search Console.
+
+Make sure Google can crawl and index your pages
+
+If you want Google to crawl and index your content, including the paywalled sections, make sure Googlebot, and Googlebot-News if applicable, can access your page.
+
+Use the URL Inspection tool to test how Google crawls and renders a URL on your site.
+Control what information is shown in search results
+
+To prevent Google from showing a cached link for your page, use the noarchive robots meta tag.
+
+To exclude certain sections of your content from appearing in search result snippets, use the data-nosnippet HTML attribute. You can also limit how many characters a search result snippet may have by using the max-snippet robots meta tag.
+Troubleshooting
+
+If you're having trouble implementing or debugging structured data, here are some resources that may help you.
+
+    If you're using a content management system (CMS) or someone else is taking care of your site, ask them to help you. Make sure to forward any Search Console message that details the issue to them.
+    Google does not guarantee that features that consume structured data will show up in search results. For a list of common reasons why Google may not show your content in a rich result, see the General Structured Data Guidelines.
+    You might have an error in your structured data. Check the list of structured data errors.
+    If you received a structured data manual action against your page, the structured data on the page will be ignored (although the page can still appear in Google Search results). To fix structured data issues, use the Manual Actions report.
+    Review the guidelines again to identify if your content isn't compliant with the guidelines. The problem can be caused by either spammy content or spammy markup usage. However, the issue may not be a syntax issue, and so the Rich Results Test won't be able to identify these issues.
+    Troubleshoot missing rich results / drop in total rich results.
+    Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it. For general questions about crawling and indexing, check the Google Search crawling and indexing FAQ.
+    Post a question in the Google Search Central forum.
+
+

@@ -1,0 +1,83 @@
+
+
+Overview of Search appearance topics
+
+The topics in this section describe how you can change how your website appears in Search and other Google properties.
+
+    Visual Elements gallery
+    Influencing your title links in search results
+    Control your snippets in search results
+    Featured snippets and your website
+    Provide a publication date to Google Search
+    Define a favicon to show in search results
+    Translated results
+
+
+
+    Google Discover
+    Site names
+    Sitelinks
+    Enable Web Stories on Google
+    Enriched Search Results
+    Flexible Sampling general guidance
+    Top Places List
+
+Using structured data
+
+Google uses structured data to understand the content on the page. You can help us by providing specific information about your site, which can help your site display in richer features in search results.
+
+    List of structured data markup that Google Search supports
+    Understand how structured data works
+
+
+
+    General structured data appearance
+    Generate structured data with JavaScript
+
+Features that use structured data
+
+Here's a list of the features that use structured data:
+
+    Article
+    Book
+    Breadcrumb
+    Carousel
+    Course
+    COVID-19 announcements
+    Dataset
+    Education Q&A
+    Employer Aggregate Rating
+    Estimated salary
+    Event
+    Fact Check
+    FAQ
+    Home Activities
+    How-to
+    Image Metadata
+
+
+
+    Job Posting
+    Learning Video
+    Local Business
+    Logo
+    Math solvers
+    Movie
+    Practice problems
+    Product
+    Q&A
+    Recipe
+    Review snippet
+    Sitelinks search box
+    Software App
+    Speakable
+    Subscription and paywalled content
+    Video
+
+Early Adopters Program
+
+To ensure the best experience for users, Google pilots some features with a limited number of organizations. Here are the features that are currently in the Early Adopters Program:
+
+    Package tracking
+
+

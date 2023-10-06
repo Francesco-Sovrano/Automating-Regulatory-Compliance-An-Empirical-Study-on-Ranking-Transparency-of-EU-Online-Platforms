@@ -1,0 +1,91 @@
+
+
+Logo (Organization) structured data
+
+Specify the image Google Search uses for your organization's logo in Search results and in the Google knowledge panel. Google Search uses the markup in the use case example to recognize the image to use as the organization's logo. This ensures that, when possible, the image appears in search results about the company. Markup like this is a strong signal to Google Search algorithms to show this image in knowledge panels.
+Logo in Google Search results
+Note: The actual appearance in search results might be different. You can preview most features with the Rich Results Test.
+How to add structured data
+
+Structured data is a standardized format for providing information about a page and classifying the page content. If you're new to structured data, you can learn more about how structured data works.
+
+Here's an overview of how to build, test, and release structured data. For a step-by-step guide on how to add structured data to a web page, check out the structured data codelab.
+
+    Add the required properties. Based on the format you're using, learn where to insert structured data on the page.
+    Using a CMS? It may be easier to use a plugin that's integrated into your CMS.
+    Using JavaScript? Learn how to generate structured data with JavaScript.
+    Follow the guidelines.
+    Validate your code using the Rich Results Test and fix any critical errors. Consider also fixing any non-critical issues that may be flagged in the tool, as they can help improve the quality of your structured data (however, this isn't necessary to be eligible for rich results).
+    Deploy a few pages that include your structured data and use the URL Inspection tool to test how Google sees the page. Be sure that your page is accessible to Google and not blocked by a robots.txt file, the noindex tag, or login requirements. If the page looks okay, you can ask Google to recrawl your URLs.
+    Note: Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it.
+    To keep Google informed of future changes, we recommend that you submit a sitemap. You can automate this with the Search Console Sitemap API.
+
+Example
+
+Here's an example of a logo in JSON-LD code.
+
+
+  <head>
+    <title>About Us</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://www.example.com",
+      "logo": "https://www.example.com/images/logo.png"
+    }
+    </script>
+  </head>
+  
+  
+
+
+Guidelines
+
+You must follow these guidelines to be eligible to appear as a rich result.
+Warning: If your site violates one or more of these guidelines, then Google may take manual action against it. Once you have remedied the problem, you can submit your site for reconsideration.
+
+    Search Essentials
+    General structured data guidelines
+    Technical guidelines
+
+Technical guidelines
+
+You can put this markup on any page, though it may make sense to have it on your home page. You don't need to put it on every page.
+Structured data type definitions
+
+For logo usage, Google Search recognizes the following properties of an Organization. You must include the required properties for your content to be eligible for display as a rich result.
+Required properties
+logo 	
+
+URL or ImageObject
+
+A logo that is representative of the organization.
+
+Additional image guidelines:
+
+    The image must be 112x112px, at minimum.
+    The image URL must be crawlable and indexable.
+    The image file format must be supported by Google Images.
+    Make sure the image looks how you intend it to look on a purely white background (for example, if the logo is mostly white or gray, it may not look how you want it to look when displayed on a white background).
+
+If you use the ImageObject type, make sure that it has a valid contentUrl property or url property that follows the same guidelines as a URL type.
+url 	
+
+URL
+
+The URL of the website of the Organization associated with the logo. This is important to help uniquely identify the Organization.
+Troubleshooting
+
+If you're having trouble implementing or debugging structured data, here are some resources that may help you.
+
+    If you're using a content management system (CMS) or someone else is taking care of your site, ask them to help you. Make sure to forward any Search Console message that details the issue to them.
+    Google does not guarantee that features that consume structured data will show up in search results. For a list of common reasons why Google may not show your content in a rich result, see the General Structured Data Guidelines.
+    You might have an error in your structured data. Check the list of structured data errors.
+    If you received a structured data manual action against your page, the structured data on the page will be ignored (although the page can still appear in Google Search results). To fix structured data issues, use the Manual Actions report.
+    Review the guidelines again to identify if your content isn't compliant with the guidelines. The problem can be caused by either spammy content or spammy markup usage. However, the issue may not be a syntax issue, and so the Rich Results Test won't be able to identify these issues.
+    Troubleshoot missing rich results / drop in total rich results.
+    Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it. For general questions about crawling and indexing, check the Google Search crawling and indexing FAQ.
+    Post a question in the Google Search Central forum.
+
+

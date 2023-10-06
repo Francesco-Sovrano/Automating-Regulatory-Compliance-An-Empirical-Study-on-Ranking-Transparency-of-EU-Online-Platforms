@@ -1,0 +1,152 @@
+
+
+Breadcrumb (BreadcrumbList) structured data
+
+A breadcrumb trail on a page indicates the page's position in the site hierarchy, and it may help users understand and explore a site effectively. A user can navigate all the way up in the site hierarchy, one level at a time, by starting from the last breadcrumb in the breadcrumb trail.
+Breadcrumb displayed on a web page
+Note: The actual appearance in search results might be different. You can preview most features with the Rich Results Test.
+How to add structured data
+
+Structured data is a standardized format for providing information about a page and classifying the page content. If you're new to structured data, you can learn more about how structured data works.
+
+Here's an overview of how to build, test, and release structured data. For a step-by-step guide on how to add structured data to a web page, check out the structured data codelab.
+
+    Add the required properties. Based on the format you're using, learn where to insert structured data on the page.
+    Using a CMS? It may be easier to use a plugin that's integrated into your CMS.
+    Using JavaScript? Learn how to generate structured data with JavaScript.
+    Follow the guidelines.
+    Validate your code using the Rich Results Test and fix any critical errors. Consider also fixing any non-critical issues that may be flagged in the tool, as they can help improve the quality of your structured data (however, this isn't necessary to be eligible for rich results).
+    Deploy a few pages that include your structured data and use the URL Inspection tool to test how Google sees the page. Be sure that your page is accessible to Google and not blocked by a robots.txt file, the noindex tag, or login requirements. If the page looks okay, you can ask Google to recrawl your URLs.
+    Note: Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it.
+    To keep Google informed of future changes, we recommend that you submit a sitemap. You can automate this with the Search Console Sitemap API.
+
+Examples
+
+Google Search uses breadcrumb markup in the body of a web page to categorize the information from the page in search results. Often, as illustrated in following use cases, users can arrive at a page from very different types of search queries. While each search may return the same web page, the breadcrumb categorizes the content within the context of the Google Search query. The page ancillaryjustice.html might display the following breadcrumb trails depending upon the search context.
+Single breadcrumb trail
+
+A search query for a year and genre-based award, "2014 Nebula Award best novel", may generate the following breadcrumb:
+
+Books › Science Fiction › Award Winners
+Multiple breadcrumb trail
+
+If there are multiple ways to navigate to a page on your site, you can specify multiple breadcrumb trails for a single page. Here's one breadcrumb trail that leads to a page for award winning books:
+
+Books › Science Fiction › Award Winners
+
+Here's the another breadcrumb trail that leads to the same page:
+
+Literature › Award Winners
+Guidelines
+
+You must follow these guidelines to be eligible to appear with breadcrumbs in Google Search.
+Warning: If Google detects that some of the markup on your pages may be using techniques that are outside our structured data guidelines, your site may receive a manual action.
+
+    Search Essentials
+    General structured data guidelines
+
+We recommend providing breadcrumbs that represent a typical user path to a page, instead of mirroring the URL structure. Some parts of the URL path don't help people understand how the page fits in your website. For example, given the URL https://example.com/pages/books/catcher_in_the_rye.html, the pages path in the URL doesn't add any information, and neither does the top level element example.com.
+Structured data type definitions
+
+To specify breadcrumbs, define a BreadcrumbList that contains at least two ListItems. You must include the required properties for your content to be eligible for display with breadcrumbs.
+Data-vocabulary.org markup is no longer eligible for Google rich result features. Learn more about sunsetting support for data-vocabulary.
+BreadcrumbList
+
+BreadcrumbList is the container item that holds all elements in the list. The full definition of BreadcrumbList is available at schema.org/BreadcrumbList. The Google-supported properties are the following:
+Required properties
+itemListElement 	
+
+ListItem
+
+An array of breadcrumbs listed in a specific order. Specify each breadcrumb with a ListItem. For example:
+
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Books",
+    "item": "https://example.com/books"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Authors",
+    "item": "https://example.com/books/authors"
+  },{
+    "@type": "ListItem",
+    "position": 3,
+    "name": "Ann Leckie",
+    "item": "https://example.com/books/authors/annleckie"
+  }]
+}
+
+ListItem
+
+ListItem contains details about an individual item in the list. The full definition of ListItem is available at schema.org/ListItem. The Google-supported properties are the following:
+Required properties
+item 	
+
+URL or a subtype of Thing
+
+The URL to the webpage that represents the breadcrumb. There are two ways to specify item:
+
+    URL: Specify the URL of the page. For example:
+
+    "item": "https://example.com/books"
+
+    Thing: Use an id to specify the URL based on the markup format you're using:
+        JSON-LD: Use @id to specify the URL.
+        Microdata: You can use href or itemid to specify the URL.
+        RDFa: You can use about, href, or resource to specify the URL.
+
+If the breadcrumb is the last item in the breadcrumb trail, item is not required. If item isn't included for the last item, Google uses the URL of the containing page.
+name 	
+
+Text
+
+The title of the breadcrumb displayed for the user. If you're using a Thing with a name instead of a URL to specify item, then name is not required.
+position 	
+
+Integer
+
+The position of the breadcrumb in the breadcrumb trail. Position 1 signifies the beginning of the trail.
+Monitor rich results with Search Console
+
+Search Console is a tool that helps you monitor how your pages perform in Google Search. You don't have to sign up for Search Console to be included in Google Search results, but it can help you understand and improve how Google sees your site. We recommend checking Search Console in the following cases:
+
+    After deploying structured data for the first time
+    After releasing new templates or updating your code
+    Analyzing traffic periodically
+
+After deploying structured data for the first time
+
+After Google has indexed your pages, look for issues using the relevant Rich result status report. Ideally, there will be an increase of valid items, and no increase in invalid items. If you find issues in your structured data:
+
+    Fix the invalid items.
+    Inspect a live URL to check if the issue persists.
+    Request validation using the status report.
+
+After releasing new templates or updating your code
+When you make significant changes to your website, monitor for increases in structured data invalid items.
+
+    If you see an increase in invalid items, perhaps you rolled out a new template that doesn't work, or your site interacts with the existing template in a new and bad way.
+    If you see a decrease in valid items (not matched by an increase in invalid items), perhaps you are no longer embedding structured data in your pages. Use the URL Inspection tool to learn what is causing the issue.
+
+Warning: Don't use cached links to debug your pages. Instead, use the URL Inspection Tool because it has the most up-to-date version of your pages.
+Analyzing traffic periodically
+Analyze your Google Search traffic using the Performance Report. The data will show you how often your page appears as a rich result in Search, how often users click on it and what is the average position you appear on search results. You can also automatically pull these results with the Search Console API.
+Troubleshooting
+
+If you're having trouble implementing or debugging structured data, here are some resources that may help you.
+
+    If you're using a content management system (CMS) or someone else is taking care of your site, ask them to help you. Make sure to forward any Search Console message that details the issue to them.
+    Google does not guarantee that features that consume structured data will show up in search results. For a list of common reasons why Google may not show your content in a rich result, see the General Structured Data Guidelines.
+    You might have an error in your structured data. Check the list of structured data errors.
+    If you received a structured data manual action against your page, the structured data on the page will be ignored (although the page can still appear in Google Search results). To fix structured data issues, use the Manual Actions report.
+    Review the guidelines again to identify if your content isn't compliant with the guidelines. The problem can be caused by either spammy content or spammy markup usage. However, the issue may not be a syntax issue, and so the Rich Results Test won't be able to identify these issues.
+    Troubleshoot missing rich results / drop in total rich results.
+    Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it. For general questions about crawling and indexing, check the Google Search crawling and indexing FAQ.
+    Post a question in the Google Search Central forum.
+
+

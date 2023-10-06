@@ -1,0 +1,142 @@
+
+
+Software App (SoftwareApplication) structured data
+
+Mark up software application information in the body of a web page to better display your app details in Google Search results.
+Software application rich result in Google Search results
+Note: The actual appearance in search results might be different. You can preview most features with the Rich Results Test.
+How to add structured data
+
+Structured data is a standardized format for providing information about a page and classifying the page content. If you're new to structured data, you can learn more about how structured data works.
+
+Here's an overview of how to build, test, and release structured data. For a step-by-step guide on how to add structured data to a web page, check out the structured data codelab.
+
+    Add the required properties. Based on the format you're using, learn where to insert structured data on the page.
+    Using a CMS? It may be easier to use a plugin that's integrated into your CMS.
+    Using JavaScript? Learn how to generate structured data with JavaScript.
+    Follow the guidelines.
+    Validate your code using the Rich Results Test and fix any critical errors. Consider also fixing any non-critical issues that may be flagged in the tool, as they can help improve the quality of your structured data (however, this isn't necessary to be eligible for rich results).
+    Deploy a few pages that include your structured data and use the URL Inspection tool to test how Google sees the page. Be sure that your page is accessible to Google and not blocked by a robots.txt file, the noindex tag, or login requirements. If the page looks okay, you can ask Google to recrawl your URLs.
+    Note: Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it.
+    To keep Google informed of future changes, we recommend that you submit a sitemap. You can automate this with the Search Console Sitemap API.
+
+Examples
+Guidelines
+
+You must follow these guidelines for your app to be eligible to appear as a rich result.
+Warning: If your site violates one or more of these guidelines, then Google may take manual action against it. Once you have remedied the problem, you can submit your site for reconsideration.
+
+    Search Essentials
+    General structured data guidelines
+
+Structured data type definitions
+
+You must include the required properties for your content to be eligible for display as a rich result. You can also include the recommended properties to add more information about your content, which could provide a better user experience.
+SoftwareApplication
+
+The full definition of SoftwareApplication is available at schema.org/SoftwareApplication.
+
+The Google-supported properties are the following:
+Required properties
+name 	
+
+Text
+
+The name of the app.
+offers.price 	
+
+Offer
+
+An offer to sell the app. For developers, offers can indicate the marketplaces that carry the application. For marketplaces, use offers to indicate the price of the app for a specific app instance.
+
+If the app is available without payment, set offers.price to 0. For example:
+
+"offers": {
+  "@type": "Offer",
+  "price": "0"
+}
+
+If the app has a price greater than 0, you must include offers.currency. For example:
+
+"offers": {
+  "@type": "Offer",
+  "price": "1.00",
+  "priceCurrency": "USD"
+}
+
+Rating or review 	
+
+A rating or review of the app. You must include one of the following properties:
+aggregateRating 	
+
+AggregateRating
+
+The average review score of the app. Follow the Review snippet guidelines and list of required and recommended AggregateRating properties.
+review 	
+
+Review
+
+A single review of the app. Follow the Review snippet guidelines and list of required and recommended Review properties.
+Recommended properties
+applicationCategory 	
+
+Text
+
+The type of app (for example, BusinessApplication or GameApplication). The value must be a supported app type.
+
+List of supported app types
+
+    GameApplication
+    SocialNetworkingApplication
+    TravelApplication
+    ShoppingApplication
+    SportsApplication
+    LifestyleApplication
+    BusinessApplication
+    DesignApplication
+    DeveloperApplication
+    DriverApplication
+    EducationalApplication
+    HealthApplication
+    FinanceApplication
+    SecurityApplication
+    BrowserApplication
+    CommunicationApplication
+    DesktopEnhancementApplication
+    EntertainmentApplication
+    MultimediaApplication
+    HomeApplication
+    UtilitiesApplication
+    ReferenceApplication
+
+operatingSystem 	
+
+Text
+
+The operating system(s) required to use the app (for example, Windows 7, OSX 10.6, Android 1.6)
+Extended properties for app subtypes
+
+For mobile applications and web applications, Google also supports MobileApplication and WebApplication .
+
+Google doesn't show a rich result for Software Apps that only have the VideoGame type. To make sure that your Software App is eligible for display as a rich result, co-type the VideoGame type with another type. For example:
+
+{
+  "@context": "https://schema.org",
+  "@type": ["VideoGame", "MobileApplication"],
+  ....
+}
+
+Troubleshooting
+
+If you're having trouble implementing or debugging structured data, here are some resources that may help you.
+
+    If you're using a content management system (CMS) or someone else is taking care of your site, ask them to help you. Make sure to forward any Search Console message that details the issue to them.
+    Google does not guarantee that features that consume structured data will show up in search results. For a list of common reasons why Google may not show your content in a rich result, see the General Structured Data Guidelines.
+    You might have an error in your structured data. Check the list of structured data errors.
+    If you received a structured data manual action against your page, the structured data on the page will be ignored (although the page can still appear in Google Search results). To fix structured data issues, use the Manual Actions report.
+    Review the guidelines again to identify if your content isn't compliant with the guidelines. The problem can be caused by either spammy content or spammy markup usage. However, the issue may not be a syntax issue, and so the Rich Results Test won't be able to identify these issues.
+    Troubleshoot missing rich results / drop in total rich results.
+    Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it. For general questions about crawling and indexing, check the Google Search crawling and indexing FAQ.
+    Post a question in the Google Search Central forum.
+
+

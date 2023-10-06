@@ -1,0 +1,1164 @@
+
+
+Book actions (Book) structured data
+
+Book actions make Google Search an entry point to discover books and authors. This enables Search users to quickly buy or borrow the books that they find directly from Search results. For example, a user can search for Charlotte's Web and be presented with results that allow them to buy or borrow the book. As a provider of books, you can provide a feed of data to Google with the structured data schema provided here. Our specification provides ReadAction to let users buy a book and BorrowAction to borrow a book.
+A book action in Search results
+Note: The actual appearance in search results might be different.
+Note: To ensure robust coverage and better serve Search users, this feature is currently limited to book providers with a wide selection of available books. If you'd like to participate, register your interest. If you indicate interest in this feature, it doesn't guarantee your participation.
+
+Read actions and borrow actions, which are incorporated into the panels, display options to buy or borrow the book. Through links you provide, read actions and borrow actions send users directly from the knowledge panel and other Google surfaces to a book page on your website or app.
+
+The order of providers in the knowledge panel is personalized and dynamic to each user. This means different users see different orderings, and the same user might see different orderings at different times. There are a variety of factors that affect a given ordering. For example, if a user clicks a given provider link in the knowledge panel often, that provider is more likely to be positioned higher in an ordering. There's no way to control the order.
+Get started
+
+To successfully implement Book actions, you must build your feed in accordance with the Book actions structured data type definitions, but first review the following sections:
+
+    Guidelines
+    Create your feed
+    Test your feed with the Data Feed validation tool
+    Host your feed file
+    Submit your feed file for review
+    Update your feed as needed
+
+Guidelines
+
+To ensure that your books can be reliably surfaced in Search, it's important that you're familiar with some important details and key concepts. Further, your feed must meet some standardized format specifications.
+
+To help you do that, follow the guidelines described here, in addition to the general structured data guidelines and the Search Essentials. The guidelines are as follows:
+
+    Works and editions
+    Library systems and library members
+    ISBN and other supported identifiers
+    Links
+
+Works and editions
+
+Throughout this documentation, we use two distinct terms when we talk about a book:
+
+    Work: The abstract concept of a book. Specifically, metadata such as the title, author, and original language are attributes for a work.
+    Edition: A concrete copy of the book. Specifically, metadata such as the year of publication, name of the edition, and International Standard Book Number (ISBN) are attributes for the edition.
+
+For example, Charlotte's Web is a work, but every single variety it comes in is an edition. In this case, the work Charlotte's Web might have a first edition, second edition, abridged edition, French translation edition, and so on.
+
+This distinction is especially important in the feed where it might not be immediately obvious. There are two Book entities:
+
+    Book (Work) is the "top level" Book entity:
+        workExample is a property of Work and specifies one and only one instance of a Book (Edition).
+        There must be at least one workExample for each Work.
+    Book (Edition) is the "lower level" Book entity.
+
+It helps to remember that there can be multiple editions of a work. We recommend that you group these editions together as much as possible. This helps Google systems leverage all of the relevant information about a book and surface it in Search. If you must, you can break them into multiple work records, but each work record must have the following:
+
+    A different @id.
+    At least one edition with an ISBN or other supported identifier.
+
+Library systems and library members
+Note: This section is relevant for providers who lend books.
+
+The Library entity is the "top level" Library entity type. It's an abstract construct, which consists of a LibrarySystem entity and each "lower level" Library (member) entity of that library system.
+
+The LibrarySystem entity is an abstraction and represents a collaborative network of library members. For example, Austin Public Library can be specified as a LibrarySystem entity. The Austin Public Library website describes themself as a public library system that serves Austin, Texas. It consists of their 20 affiliated libraries, or library members.
+
+Every LibrarySystem entity requires at least one Library (member) entity, even if in real life the library isn't part of any library system. In this scenario, for the purpose of Book action implementation, the library is the sole library member of its own library system. For the purpose of Book action implementation, unlike a library system, a library member isn't an abstraction and therefore has a physical address.
+
+Conversely, every Library (member) entity must belong to at least one LibrarySystem entity.
+ISBN and other supported identifiers
+
+The ISBN is the main reconciliation signal when Google Search matches your feed data to Google's data. You must provide an ISBN or other supported identifier for all the books you wish to have surfaced in Search results. Without it, it's likely that your books can't be matched and therefore won't be served.
+
+Google Search prefers ISBN-13, but you can alternatively provide the following:
+
+    Online Computer Library Center (OCLC) Number
+    Library of Congress Control Number (LCCN)
+    JP e-code
+
+Warning: Google Search doesn't accept ISBN-10. For books that have only ISBN-10 information, use an ISBN conversion tool to convert to ISBN-13 before you send your feed to Google.
+
+Note: For books without an ISBN, you can still provide those books in the feed. They might not be surfaced to users in Google Search. However, the following practices might help facilitate a correct match:
+
+    Group all of the Edition entities under the same Work, and ensure at least one of the editions has an ISBN, OCLC Number, LCCN, or JP e-code. Google Search may be able to leverage the available ISBN or other supported identifier from another edition.
+    Add third-party identifiers. Google Search currently supports two widely used library control numbers: OCLC Number or LCCN. If you have either of these, provide them.
+
+Links
+
+To make sure people have the best experience finding your books, links in your feed must adhere to the following guidelines:
+
+    If you have duplicate pages for the same content, the link must be the canonical URL that contains the book title and other book information.
+    After a user clicks a read action or borrow action link, the user must be sent to a page that directly supports the purchase or borrowing of the book. Specifically, don't point action links to pages with more links that must be clicked in order to purchase or borrow the content. For example, don't send people to a search results page or a product summary page.
+
+Create your feed
+
+If your site sells books for users to buy, you must upload your Book feed. Reach out to your Google representative and verify the details about how and where to upload your feed.
+
+If your site lends books for users to borrow, you must upload two separate feeds: your Book feed and your Library feed. Reach out to your Google representative and verify the details about how and where to upload your feed.
+Adhere to feed file size, quantity, and format requirements
+
+The requirements are as follows:
+
+    Feed file size requirements:
+        An uncompressed feed file's size must be less than 1 GB.
+        A feed file that's to be compressed must be less than 1 GB. If your uncompressed feed file exceeds 1 GB, you must split the uncompressed feed file into multiple files.
+    You can compress feed files. They must be formatted into a zip, gz, tar, tar.gz, JAR, ar, arj, cpio, or dump archive file.
+    If you have multiple feed files, you can upload them as is, or if you prefer, you can include them as part of a sitemap index file.
+    Single feed files must have the .json filename extension.
+
+Adhere to feed content requirements
+
+Be especially aware of the following feed content requirements that you must adhere to:
+
+    The feed mustn't contain stale entities. Stale entities are entities with availabilityEnds set to a date that has passed or entities that are no longer available on your site.
+    All deep links, such as urlTemplate, and all URLs, such as url, that you include in your feed must be production URLs. Don't use QA, development, or any other type of non-production URL.
+    All URLs, such as url, must be canonical.
+    Each entity in your feed must specify the following properties:
+        A unique ID: @id
+        A unique URL: url
+        A unique deep link: urlTemplate
+
+Test your feed with the Data Feed validation tool
+
+We recommend the following troubleshooting steps for resolving common errors and warnings on the Data Feed validation tool:
+
+    Make sure that you have the correct option selected in the Validate on field. Select Books Action for the Book entity.
+    Verify that the value of @type is spelled correctly.
+    Make sure that the value of @context is set properly. Set "@context": "https://schema.org" for both ReadAction and BorrowAction.
+
+Host your feed file
+
+When your feed file is ready, host it at a secure location. Google fetches the feed regularly to ensure that your content is up-to-date.
+Host methods
+
+The following feed hosting methods are supported:
+Hosting 	Authentication Support
+Google Cloud Storage 	Storage Object Viewer permission
+HTTPS 	Username+Password or HTTP client certificates
+SFTP 	Password, Key+Phrase, or both
+AWS S3 	Key ID+Access Key
+Submit your feed file for review
+
+For your content to be available on Google Search, a Google support team reviews the quality of the deep links in your feed. We strongly recommend that you manually test some of the deep links to confirm whether they open the page where users can buy or borrow the books.
+Note: The successful use of this feature, along with the form you must use to submit your feed, is limited to partners.
+
+To request a review of your feed, provide the following:
+
+    Host location: The URL of your feed file.
+    Host authentication, if applicable: The authentication credentials to allow Google to get the feed file from your host location.
+
+Update your feed as needed
+
+We recommend that you update your feed daily, but this ultimately depends on how often your catalog changes. Be aware of the following conditions and tips:
+
+    Google Search doesn't support real-time updates.
+    Google Search fetches your feed once a day and typically indexes the content within two days.
+    If there's a foreseeable change in an edition's availability, use availabilityStarts and availabilityEnds to set the exact dates. If the entity is no longer available, remove the entity completely
+
+Structured data type definitions
+
+You must include the required properties listed here for your content to be eligible for display in structured search results. You can also include the recommended properties to add more information about your content, which can provide a better user experience.
+DataFeed entity
+
+Every schema.org data feed file delivered to Google must contain one single entity of DataFeed at the root level. All Book and Library entities must be listed under the dataFeedElement field of the DataFeed entity.
+
+The Google-supported properties are the following:
+Required properties
+@context 	
+
+Text
+
+Set to https://schema.org.
+@type 	
+
+Text
+
+Set to DataFeed.
+dataFeedElement 	
+
+Book or LibrarySystem
+
+Set to either a single Book entity or LibrarySystem entity. Otherwise, set to an array of either only Book entities or LibrarySystem entities. Don't set this to an array that includes both Book entities and LibrarySystem entities.
+
+Example use in a Book feed:
+
+{
+  "@context": "https://schema.org",
+  "@type": "DataFeed",
+  "dataFeedElement": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "@id": "https://example.com/work/the_catcher_in_the_rye",
+      "url": "https://example.com/work/the_catcher_in_the_rye",
+      "name": "The Catcher in the Rye",
+      "author": {
+        "@type": "Person",
+        "name": "J.D. Salinger"
+      },
+      "sameAs": "https://en.wikipedia.org/wiki/The_Catcher_in_the_Rye",
+      "workExample": [
+        {
+          "@type": "Book",
+          "@id": "https://example.com/edition/the_catcher_in_the_rye_paperback",
+          "isbn": "9787543321724",
+          "bookEdition": "Mass Market Paperback",
+          "bookFormat": "https://schema.org/Paperback",
+          "inLanguage": "en",
+          ...
+        },
+        ...
+      ]
+   }
+  ],
+  "dateModified": "2018-09-10T13:58:26.892Z"
+}
+
+Example use in a LibrarySystem feed:
+
+{
+  "@context": "https://schema.org",
+  "@type": "DataFeed",
+  "dataFeedElement": [
+    {
+      "@context": "https://schema.org",
+      "@type": "LibrarySystem",
+      "@id": "https://example.com/library-systems/100",
+      "name": "Santa Clara County Library District",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "librarytype",
+          "value": "public"
+        }
+      ],
+      ...
+    },
+    ...
+  ],
+  "dateModified": "2018-09-10T13:58:26.892Z"
+}
+
+Warning: As described in Create your feed, if you have both a Book feed and a Library feed, they must be two separate feeds files. Therefore, for any given DataFeed entity, you can set its dataFeedElement property according to one and only one of the following conditions:
+
+    Set dataFeedElement to either a single Book entity or an array of Book entities.
+    Set dataFeedElement to either a single LibrarySystem entity or an array of LibrarySystem entities.
+
+dateModified 	
+
+DateTime
+
+The date and time of the last update of the feed in the ISO 8601 format.
+Book entity
+
+While the full definition of Book is available at schema.org/Book, you only need to consider the following properties. You must define the required properties for every book you choose to include in your feed. You can also define recommended properties to add more information about your content, which can provide a better user experience.
+Book (Work)
+
+This Book entity is the top level entity type. It represents a work.
+Key Point: Read the Works and editions guidelines to understand the difference between the two Book entities in your implementation.
+
+The Google-supported properties are the following:
+Required properties
+@context 	
+
+Text
+
+Set to https://schema.org.
+@id 	
+
+Text
+
+A globally unique ID for the book in URL format. It must be unique to your organization. The ID must be stable and not change over time. URL format is suggested though not required. It doesn't have to be a working link. The domain used for the @id value must be owned by your organization.
+@type 	
+
+Text
+
+Set to Book.
+author 	
+
+Person or Organization
+
+The author(s) of the book.
+
+Note: If the book doesn't have an author, but rather, one or more contributors, include these other contributors as defined in schema.org/Book. For example, a book might have no known or recorded author, but might instead have a number of editors.
+
+Conversely, if a book's author is an organization, define the author accordinly as defined in schema.org/Organization. For example, the author for a book titled "Fundamentals of fire fighting skills" might be the organization National Fire Protection Association.
+name 	
+
+Text
+
+The title of the book.
+url 	
+
+URL
+
+The URL on your website where the book is introduced or described. This link helps accurately reconcile the content in your feed with the content in Google's databases. It can be the same as workExample.target.urlTemplate.
+
+For the actual landing page, Google Search uses the URL provided in workExample.target.urlTemplate.
+workExample 	
+
+Book (Edition)
+
+The edition(s) of the work.
+Recommended properties
+sameAs 	
+
+URL
+
+The URL of a reference page that identifies the work. For example, a Wikipedia, Wikidata, VIAF, or Library of Congress page for the book.
+Book (Edition)
+
+The workExample property uses this Book entity. It represents an edition of a work.
+Key Point: Read the Works and editions guidelines to understand the difference between the two Book entities in your implementation.
+
+The Google-supported properties are the following:
+Required properties
+@id 	
+
+Text
+
+A globally unique ID for the book in URL format. It must be unique to your organization. The ID must be stable and not change over time. URL format is suggested though not required. It doesn't have to be a working link. The domain used for the @id value must be owned by your organization.
+@type 	
+
+Text
+
+Set to Book.
+bookFormat 	
+
+Enum
+
+The format of the edition. The value of this must be one of the following:
+
+    https://schema.org/AudiobookFormat
+    https://schema.org/EBook
+    https://schema.org/Hardcover
+    https://schema.org/Paperback
+
+inLanguage 	
+
+Text
+
+The main language of the content in the edition. Use one of the two-letter codes from the list of ISO 639-1 alpha-2 codes.
+isbn 	
+
+Text
+
+The ISBN-13 of the edition. If you have ISBN-10, convert it into ISBN-13.
+potentialAction 	
+
+ReadAction or BorrowAction
+
+The action to be triggered for users to purchase or download the book. For more details, refer to ReadAction or BorrowAction.
+Recommended properties
+author 	
+
+Person or Organization
+
+The author(s) of the edition.
+
+Note: Only use this when the author of the edition is different from the work author information.
+
+If the edition doesn't have an author, but rather, one or more contributors, include these other contributors as defined in schema.org/Book. For example, an edition might have no known or recorded author, but might instead have a number of editors.
+
+Conversely, if an edition's author is an organization, define the author as defined in schema.org/Organization. For example, Publication manual of the American Psychological Association, 6th edition's author might be the organization American Psychological Association.
+bookEdition 	
+
+Text
+
+The edition information of the book. For example, 2nd Edition.
+datePublished 	
+
+Date
+
+The date of publication of the edition in YYYY-MM-DD or YYYY format. This can be either a specific date or only a specific year.
+identifier 	
+
+PropertyValue
+
+The external or other ID that unambiguously identifies this edition. Multiple identifiers are allowed. For more details, refer to PropertyValue (identifier).
+
+This property can be repeated.
+name 	
+
+Text
+
+The title of the edition. Only use this when the title of the edition is different from the title of the work.
+sameAs 	
+
+URL
+
+The URL of a reference web page that unambiguously indicates the edition. For example, a Wikipedia page for this specific edition. Don't reuse the sameAs of the Work.
+url 	
+
+URL
+
+The URL on your website where the edition is introduced or described. It can be the same as workExample.target.urlTemplate.
+
+Example Book (Edition):
+
+"workExample":
+        {
+          "@type": "Book",
+          "@id": "https://example.com/book/100",
+          "inLanguage": "en",
+          "isbn": "9787543321724",
+          "bookEdition": "20 Anniversary Edition",
+          "datePublished": "2000-02-26",
+          "bookFormat": "https://schema.org/Hardcover",
+          "potentialAction": {...}
+        }
+
+Example Book (Edition) with multiple workExample properties:
+
+"workExample": [
+        {
+          "@type": "Book",
+          "@id": "https://example.com/book/200",
+          "inLanguage": "zh",
+          "isbn": "9787543321721",
+          "bookEdition": "2nd Edition",
+          "bookFormat": "https://schema.org/Hardcover",
+          "potentialAction": {...}
+        },
+        {
+          "@type": "Book",
+          "@id": "https://example.com/book/300",
+          "inLanguage": "zh",
+          "isbn": "9787543321722",
+          "bookEdition": "1st Edition",
+          "bookFormat": "https://schema.org/EBook",
+          "potentialAction": {...}
+      }
+ ]
+
+Person or Organization (author)
+
+The author property of the book uses the Person or Organization entity.
+Required properties
+@type 	
+
+Text
+
+Set to Person or Organization.
+name 	
+
+Text
+
+The name of the person or organization.
+Recommended properties
+sameAs 	
+
+URL
+
+The URL of a reference web page that unambiguously indicates the person or organization's identity. For example, a Wikipedia page for the person or organization.
+
+Example author:
+
+"author": {
+  "@type": "Person",
+  "name": "William Shakespeare"
+}
+
+Example with multiple author properties:
+
+"author": [
+  {
+    "@type": "Person",
+    "name": "William Shakespeare"
+  },
+  {
+    "@type": "Person",
+    "name": "Victor Hugo",
+    "sameAs": "https://en.wikipedia.org/wiki/Victor_Hugo"
+  }
+]
+
+PropertyValue (identifier)
+
+The identifier property of the Edition uses the PropertyValue entity.
+Required properties
+@type 	
+
+Text
+
+Set to PropertyValue.
+propertyID 	
+
+Text
+
+The type of ID. As described in ISBN and other supported identifiers, it must be either of the following:
+
+    OCLC_NUMBER
+    LCCN
+    JP_E-CODE
+
+value 	
+
+Text
+
+The ID value. The external ID that unambiguously identifies this edition. Remove all non-numeric prefixes of the external ID.
+
+Example identifier:
+
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "OCLC_NUMBER",
+      "value":  "110123456"
+    }
+
+Example with multiple identifier properties:
+
+    "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "OCLC_NUMBER",
+      "value":  "110123456"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "LCCN",
+      "value":  "220123456"
+    },{
+      "@type": "PropertyValue",
+      "propertyID": "JP_E-CODE",
+      "value":  "12345678901234567890"
+    }]
+
+Example ReadAction Book feed JSON file
+
+{
+  "@context": "https://schema.org",
+  "@type": "DataFeed",
+  "dataFeedElement": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "@id": "https://example.com/work/the_catcher_in_the_rye",
+      "url": "https://example.com/work/the_catcher_in_the_rye",
+      "name": "The Catcher in the Rye",
+      "author": {
+        "@type": "Person",
+        "name": "J.D. Salinger"
+      },
+      "sameAs": "https://en.wikipedia.org/wiki/The_Catcher_in_the_Rye",
+      "workExample": [
+        {
+          "@type": "Book",
+          "@id": "https://example.com/edition/the_catcher_in_the_rye_paperback",
+          "isbn": "9787543321724",
+          "bookEdition": "Mass Market Paperback",
+          "bookFormat": "https://schema.org/Paperback",
+          "inLanguage": "en",
+          "url": "https://example.com/edition/the_catcher_in_the_rye_paperback",
+          "datePublished": "1991-05-01",
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "OCLC_NUMBER",
+            "value": "1057320822"
+          },
+          "potentialAction": {
+            "@type": "ReadAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://example.com/store/9787543321724",
+              "actionPlatform": [
+                "https://schema.org/DesktopWebPlatform",
+                "https://schema.org/AndroidPlatform",
+                "https://schema.org/IOSPlatform"
+              ]
+            },
+            "expectsAcceptanceOf": {
+              "@type": "Offer",
+              "category": "purchase",
+              "price": 6.99,
+              "priceCurrency": "USD",
+              "availabilityStarts": "2020-01-01T11:0:00-04:00",
+              "availabilityEnds": "2050-06-30T23:59:00-04:00",
+              "eligibleRegion": {
+                "@type": "Country",
+                "name": "US"
+              }
+            }
+          }
+        },
+        {
+          "@type": "Book",
+          "@id": "https://example.com/edition/the_catcher_in_the_rye_hardcover",
+          "isbn": "9780316769532",
+          "bookEdition": "Hardcover",
+          "bookFormat": "https://schema.org/Hardcover",
+          "inLanguage": "en",
+          "url": "https://example.com/edition/the_catcher_in_the_rye_hardcover",
+          "datePublished": "1951-07-16",
+          "potentialAction": {
+            "@type": "ReadAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://example.com/store/9780316769532",
+              "actionPlatform": [
+                "https://schema.org/DesktopWebPlatform",
+                "https://schema.org/AndroidPlatform",
+                "https://schema.org/IOSPlatform"
+              ]
+            },
+            "expectsAcceptanceOf": [
+              {
+                "@type": "Offer",
+                "category": "nologinrequired",
+                "availabilityStarts": "2020-01-01T11:0:00-04:00",
+                "availabilityEnds": "2050-06-30T23:59:00-04:00",
+                "eligibleRegion": [
+                  {
+                    "@type": "Country",
+                    "name": "US"
+                  },
+                  {
+                    "@type": "Country",
+                    "name": "GB"
+                  }
+                ]
+              },
+              {
+                "@type": "Offer",
+                "category": "Subscription",
+                "availabilityStarts": "2020-01-01T11:0:00-04:00",
+                "availabilityEnds": "2050-06-30T23:59:00-04:00",
+                "eligibleRegion": {
+                  "@type": "Country",
+                  "name": "IN"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "dateModified": "2018-09-10T13:58:26.892Z"
+}
+
+Example BorrowAction Book feed JSON file
+
+{
+  "@context": "https://schema.org",
+  "@type": "DataFeed",
+  "dataFeedElement": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "@id": "https://example.com/work/the_catcher_in_the_rye",
+      "url": "https://example.com/work/the_catcher_in_the_rye",
+      "name": "The Catcher in the Rye",
+      "author": {
+        "@type": "Person",
+        "name": "J.D. Salinger"
+      },
+      "sameAs": "https://en.wikipedia.org/wiki/The_Catcher_in_the_Rye",
+      "workExample": [
+        {
+          "@type": "Book",
+          "@id": "https://example.com/edition/the_catcher_in_the_rye_paperback",
+          "isbn": "9787543321724",
+          "bookEdition": "Mass Market Paperback",
+          "bookFormat": "https://schema.org/Paperback",
+          "inLanguage": "en",
+          "url": "https://example.com/edition/the_catcher_in_the_rye_paperback",
+          "datePublished": "1991-05-01",
+          "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "OCLC_NUMBER",
+            "value": "1057320822"
+          },
+          "potentialAction": {
+            "@type": "BorrowAction",
+            "lender": {
+              "@type": "LibrarySystem",
+              "@id": "https://example.com/librarySystem/100"
+            },
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://example.com/borrowpurchase?bookId=170",
+              "actionPlatform": [
+                "https://schema.org/DesktopWebPlatform",
+                "https://schema.org/AndroidPlatform",
+                "https://schema.org/IOSPlatform"
+              ]
+            }
+          }
+        },
+        {
+          "@type": "Book",
+          "@id": "https://example.com/edition/the_catcher_in_the_rye_hardcover",
+          "isbn": "9780316769532",
+          "bookEdition": "Hardcover",
+          "bookFormat": "https://schema.org/Hardcover",
+          "inLanguage": "en",
+          "url": "https://example.com/edition/the_catcher_in_the_rye_hardcover",
+          "datePublished": "1951-07-16",
+          "potentialAction": {
+            "@type": "BorrowAction",
+            "lender": {
+              "@type": "LibrarySystem",
+              "@id": "https://example.com/librarySystem/100"
+            },
+            "target": [
+              {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://example.com/borrowpurchase?bookId=170",
+                "actionPlatform": [
+                  "https://schema.org/DesktopWebPlatform"
+                ]
+              },
+              {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://example.com/mobile/borrowpurchase?bookId=170",
+                "actionPlatform": [
+                  "https://schema.org/AndroidPlatform",
+                  "https://schema.org/IOSPlatform"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "dateModified": "2018-09-10T13:58:26.892Z"
+}
+
+ReadAction (potentialAction)
+
+The potentialAction property uses the ReadAction entity. ReadAction defines your deep links to access the book, the retailer that stocks the book, and the criteria that the users must meet. Criteria might include membership status, login status, location, or anything else required to access the book.
+Required properties
+@type 	
+
+Text
+
+Set to ReadAction.
+expectsAcceptanceOf 	
+
+Offer
+
+The definition of user requirements to access this entity. If multiple Offer properties are present, a user matching any of the Offer criteria might be able to access the content.
+
+This property can be repeated.
+expectsAcceptanceOf.@type 	
+
+Text
+
+Set to Offer.
+expectsAcceptanceOf.category 	
+
+Text
+
+The type of Offer. This must be one of the following values:
+
+    nologinrequired: The action is available to the user with no purchase or login to access content.
+    free: The action is available with no purchase or paid subscription required of the user. The action does, however, require a user to log in.
+    subscription: The book is included with a paid subscription to your service.
+    purchase: The book is accessible through a purchase.
+    rental: The book is accessible for a finite amount of time after the purchase.
+
+expectsAcceptanceOf.eligibleRegion 	
+
+Country
+
+The country that's eligible for this Offer. This can be used to control the country and region where this content is or isn't available.
+
+This property can be repeated.
+expectsAcceptanceOf.eligibleRegion.@type 	
+
+Text
+
+Set to Country.
+expectsAcceptanceOf.eligibleRegion.name 	
+
+Text
+
+The ISO 3166-1 alpha-2 country code.
+target 	
+
+EntryPoint
+
+The specifications of your deep link, which includes the supported platform information. There can be multiple EntryPoint properties to define different deep links for different platform sets.
+
+This property can be repeated.
+target.@type 	
+
+Text
+
+Set to EntryPoint.
+target.actionPlatform 	
+
+Text
+
+The platform(s) that this deep link is valid for. Use one of the following values:
+
+    https://schema.org/DesktopWebPlatform
+    https://schema.org/AndroidPlatform
+    https://schema.org/IOSPlatform
+
+This property can be repeated.
+target.urlTemplate 	
+
+URL
+
+The link that takes users directly to the content of your book's landing page.
+Recommended properties
+expectsAcceptanceOf.availabilityEnds 	
+
+DateTime
+
+The end time of the availability window. This can be used to control the exact time when this book must no longer be exposed to users.
+expectsAcceptanceOf.availabilityStarts 	
+
+DateTime
+
+The start time of the availability window. This can be used to control the exact time when this book can be exposed to users.
+expectsAcceptanceOf.price 	
+
+Number
+
+The purchase price of the book. This is required when the Offer property's category is set to purchase or rental.
+expectsAcceptanceOf.priceCurrency 	
+
+Text
+
+The currency of the price in three-letter ISO 4217 format.
+
+Example ReadAction:
+
+"potentialAction": {
+  "@type": "ReadAction",
+  "target": {
+    "@type": "EntryPoint",
+    "urlTemplate": "https://example.com/purchase?bookId=170",
+    "actionPlatform": [
+      "https://schema.org/DesktopWebPlatform",
+      "https://schema.org/AndroidPlatform",
+      "https://schema.org/IOSPlatform"
+    ]
+  },
+  "expectsAcceptanceOf": {
+    "@type": "Offer",
+    "category": "purchase",
+    "price": "9.99",
+    "priceCurrency": "USD",
+    "availabilityStarts": "2018-04-01T11:01:00-04:00",
+    "availabilityEnds": "2018-06-30T23:59:00-04:00",
+    "eligibleRegion": {
+      "@type": "Country",
+      "name": "US"
+    }
+  }
+}
+
+Example ReadAction with multiple EntryPoint properties:
+
+"potentialAction": {
+  "@type": "ReadAction",
+  "target": [
+    {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://example.com/purchase?bookId=170",
+      "actionPlatform": [
+        "https://schema.org/DesktopWebPlatform"
+      ]
+    },
+    {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://example.com/mobile/purchase?bookId=170",
+      "actionPlatform": [
+        "https://schema.org/AndroidPlatform",
+        "https://schema.org/IOSPlatform"
+      ]
+    }
+  ],
+  "expectsAcceptanceOf": [
+    {
+      "@type": "Offer",
+      "category": "noLoginRequired",
+      "availabilityStarts": "2018-04-01T11:01:00-04:00",
+      "availabilityEnds": "2018-06-30T23:59:00-04:00",
+      "eligibleRegion": [
+        {
+          "@type": "Country",
+          "name": "US"
+        },
+        {
+          "@type": "Country",
+          "name": "GB"
+        }
+      ]
+    },
+    {
+      "@type": "Offer",
+      "category": "Subscription",
+      "availabilityStarts": "2018-04-01T11:01:00-04:00",
+      "availabilityEnds": "2018-06-30T23:59:00-04:00",
+      "eligibleRegion": {
+        "@type": "Country",
+        "name": "IN"
+      }
+    }
+  ]
+}
+
+BorrowAction (potentialAction)
+
+The potentialAction property uses the BorrowAction entity. BorrowAction defines your deep links to access the book, the library that stocks the book, and the criteria that the users must meet. Criteria might include membership status, login status, location, or anything else required to access the book.
+Required properties
+@type 	
+
+Text
+
+Set to BorrowAction.
+lender 	
+
+LibrarySystem
+
+The library system that provides access to this edition.
+lender.@id 	
+
+URL
+
+The ID references of the LibrarySystem, which must be fully described separately in the library feed.
+lender.@type 	
+
+Text
+
+Set to LibrarySystem.
+target 	
+
+EntryPoint
+
+The specifications of your deep link, which includes the supported platform information. To define deep links for different platform sets, specify an EntryPoint array.
+
+This property can be repeated.
+target.@type 	
+
+Text
+
+Set to EntryPoint.
+target.actionPlatform 	
+
+Text
+
+The platform(s) that this deep link is valid for. Use one of the following values:
+
+    https://schema.org/DesktopWebPlatform
+    https://schema.org/AndroidPlatform
+    https://schema.org/IOSPlatform
+
+This property can be repeated.
+target.urlTemplate 	
+
+URL
+
+The link that takes users directly to the content of your book's landing page.
+
+Example BorrowAction:
+
+"potentialAction": {
+  "@type": "BorrowAction",
+  "lender": {
+    "@type": "LibrarySystem",
+    "@id": "https://example.com/librarySystem/100"
+  },
+  "target": {
+    "@type": "EntryPoint",
+    "urlTemplate": "https://example.com/borrow?bookId=170",
+    "actionPlatform": [
+      "https://schema.org/DesktopWebPlatform",
+      "https://schema.org/AndroidPlatform",
+      "https://schema.org/IOSPlatform"
+    ]
+  }
+}
+
+Example BorrowAction with multiple EntryPoint properties:
+
+"potentialAction": {
+  "@type": "BorrowAction",
+  "lender": {
+    "@type": "LibrarySystem",
+    "@id": "https://example.com/librarySystem/100"
+  },
+  "target": [
+    {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://example.com/borrow?bookId=170",
+      "actionPlatform": [
+        "https://schema.org/DesktopWebPlatform"
+      ]
+    },
+    {
+      "@type": "EntryPoint",
+`      "urlTemplate": "https://example.com/mobile/borrow?bookId=170",
+      "actionPlatform": [
+        "https://schema.org/AndroidPlatform",
+        "https://schema.org/IOSPlatform"
+      ]
+    }
+  ]
+}
+
+Library entity
+
+While the full definition of Library is available at schema.org/Library, you only need to consider the following properties. You must define the required properties for every library you choose to include in your feed. You can also define recommended properties to add more information about your content, which can provide a better user experience.
+
+This Library entity is the top level Library entity type. It's an abstract construct, which consists of a LibrarySystem entity and each lower level Library (member) entity of that LibrarySystem.
+
+The Library feed is distinct from the Book feed. Therefore, any Library feed you might implement must be entirely separate from your Book feed. For more information, refer to Create your feed.
+Key Point: Read the Library systems and library members guidelines to understand the difference between the top level Library entity, the LibrarySystem entity, and the lower level Library entity in your implementation.
+LibrarySystem
+
+The LibrarySystem entity represents a collaborative network of library members.
+Key Point: Read the Library systems and library members guidelines to understand the difference between the top level Library entity, the LibrarySystem entity, and the lower level Library entity in your implementation.
+Required properties
+@context 	Text
+
+Set to https://schema.org.
+@id 	URL
+
+A globally unique ID for the library system in URL format. The ID must be stable and not change over time. It's treated as an opaque string and doesn't need to be a working link. The domain used for the @id value must be owned by your organization.
+@type 	Text
+
+Set to LibrarySystem.
+additionalProperty 	PropertyValue
+
+The additional property used to indicate the type of the library.
+additionalProperty.@type 	Text
+
+Set to PropertyValue.
+additionalProperty.name 	Text
+
+Set to librarytype.
+additionalProperty.value 	Text
+
+The type of the library. Use one of the following values:
+
+    public
+    academic
+    corporate
+    government
+    school
+    special
+
+member 	Library
+
+The member(s) of the library system.
+name 	Text
+
+The name of the library system. For example, The Southwestern League of Libraries.
+url 	URL
+
+The URL where the library system is introduced or described. Google Search uses this link to reconcile the content in your feed with the content in Google's databases. For the actual landing page, Google Search uses the URL provided in workExample.target.urlTemplate.
+Library (member)
+
+The member property of the LibrarySystem entity uses the Library (member) entity. Library (member) represents a single library member of a given library system.
+Key Point: Read the Library systems and library members guidelines to understand the difference between the top level Library entity, the LibrarySystem entity, and the lower level Library entity in your implementation.
+Required properties
+@id 	URL
+
+A globally unique ID for the library branch in URL format. The ID must be stable and not change over time. It's treated as an opaque string and doesn't need to be a working link. The domain used for the @id value must be owned by your organization.
+@type 	Text
+
+Set to Library.
+location 	PostalAddress
+
+The street address of the library branch. Not all properties apply to every country. You must include as many as apply to the addresses of your libraries.
+
+Example United States location:
+
+{
+  "@type": "Library",
+  "@id": "https://example.com/library-branches/1001",
+  "name": "Campbell Library",
+  "location": {
+    "@type": "PostalAddress",
+    "streetAddress": "77 Harrison Ave",
+    "addressLocality": "Campbell",
+    "addressRegion": "CA",
+    "postalCode": "95008",
+    "addressCountry": "US"
+  }
+}
+
+Example Japan location:
+
+{
+  "@type": "Library",
+  "@id": "https://example.com/library-branches/1003",
+  "name": "Tokyo Metropolitan Central Library",
+  "location": {
+    "@type": "PostalAddress",
+    "streetAddress": "７-13-5 Minamiazabu, Minato City",
+    "addressLocality": "Tokyo",
+    "postalCode": "106-0047",
+    "addressCountry": "JP"
+  }
+}
+
+location.@type 	Text
+
+Set to PostalAddress.
+location.addressCountry 	Text
+
+The country code in ISO 3166-1 format. For example, US.
+location.addressLocality 	Text
+
+The locality. For example, Mountain View.
+location.addressRegion 	Text
+
+The region. For example, CA.
+location.postalCode 	Text
+
+The postal code. For example, 94043.
+location.streetAddress 	Text
+
+The street address. For example, 1600 Amphitheatre Pkwy.
+name 	Text
+
+The name of the library branch.
+Example LibrarySystem feed JSON file
+
+{
+   "@context": "https://schema.org",
+   "@type":"LibrarySystem",
+   "@id":"https://example.com/library-systems/100",
+   "name":"Santa Clara County Library District",
+   "additionalProperty":[
+      {
+         "@type":"PropertyValue",
+         "name":"librarytype",
+         "value":"public"
+      }
+   ],
+   "member":[
+      {
+         "@type":"Library",
+         "@id":"https://example.com/library-branches/1001",
+         "name":"Campbell Library",
+         "location":{
+            "@type":"PostalAddress",
+            "streetAddress":"77 Harrison Ave",
+            "addressLocality":"Campbell",
+            "addressRegion":"CA",
+            "postalCode":"95008",
+            "addressCountry":"US"
+         }
+      },
+      {
+         "@type":"Library",
+         "@id":"https://example.com/library-branches/1002",
+         "name":"Gilroy Library",
+         "location":{
+            "@type":"PostalAddress",
+            "streetAddress":"350 W 6th St",
+            "addressLocality":"Gilroy",
+            "addressRegion":"CA",
+            "postalCode":"95020",
+            "addressCountry":"US"
+         }
+      }
+   ]
+}
+

@@ -1,0 +1,49 @@
+How to create a robots.txt file
+
+You can use a robots.txt file to set standards for a Robots Exclusion Protocol (REP)-compliant search engine crawler (a robot or bot). This file helps to control bots that crawl your site by specifying the directories and files on your web server that they cannot visit, i.e., sections that should not be crawled. Here, it is important to note that a page that is not crawled will not be indexed. To know how to prevent a page from getting indexed click here.
+Steps:
+
+Identify the directories and files on your web server that you want to block from the crawler
+
+Examine your web server for published content that you do not want to be visited by search engines.
+Create a list of the accessible files and directories on your web server that you want to disallow. For example: You might want bots to ignore crawling site directories such as /cgi-bin, /scripts, and /tmp (or their equivalents, if they exist in your server architecture).
+
+Identify whether you need to specify additional instructions for a particular search engine bot beyond a generic set of crawling directives
+
+Examine your web server’s referer logs to see if there are bots crawling your site that you want to block beyond the generic directives that apply to all bots.
+
+
+On finding a specific set of instructions for itself, Bingbot will ignore the directives listed in the generic section, so you need to repeat all the general directives in addition to the specific directives you created for it in specific section of the file.
+
+Use a text editor to create the robots.txt file and add REP directives to block content from being visited by bots. The text file should be saved in ASCII or UTF-8 encoding.
+
+Bots are referenced as user-agents in the robots.txt file. In the beginning of the file, start the first section of directives applicable to all bots by adding this line: User-agent: *
+Create a list of Disallow directives listing the content you want blocked. For Example: Given our previously used directory examples, such set of directives would look like this:
+User-agent: *
+Disallow: /cgi-bin/
+Disallow: /scripts/
+Disallow: /tmp/
+
+You cannot list multiple content references in one line, so you need to create a new Disallow directive for each pattern to be blocked. But you can use wildcard characters. Note that each URL pattern starts with the forward slash, representing the root of the current site.
+You can also use an Allow directive for files stored in a directory whose contents will otherwise be blocked.
+For more information on using wildcards and on creating Disallow and Allow directives, see the Webmaster Center blog article Prevent a bot from getting “lost in space”.
+
+If you want to add customized directives for specific bots that are not appropriate for all bots, such as crawl-delay, add them in a custom section after the first, generic section, changing the User-agent reference to a specific bot. For Example:
+
+User-agent: Bingbot
+
+Crawl-delay: 1
+For a list of applicable bot names, see the Robots Database.
+noteNOTE
+Adding different set of directives, customized for individual bots, is not a recommended strategy. The typical need to repeat directives from the generic section complicates file maintenance tasks; omissions in properly maintaining these customized sections are often the source of crawling problems with search engine bots.
+
+Optional: Add a reference to your sitemap file (if you have one)
+
+If you have created a sitemap file listing the most important pages on your site, you can point the bot to it by mentioning it at the end of the file.
+A sitemap file is typically saved in the root directory of a site. Such a sitemap directive line would look like this:
+
+Sitemap: http://www.your-url.com/sitemap.xml
+
+Check for errors by validating your robots.txt file in the robots.txt tester tool.
+
+Upload the robots.txt file in the root directory of your site. 

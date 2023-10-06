@@ -1,0 +1,314 @@
+
+
+How-to (HowTo) structured data
+Does your page provide instructions for food or drinks? Add Recipe structured data instead of HowTo.
+
+Use HowTo structured data to explicitly tell Google that your content is a how-to. A how-to walks users through a set of steps to successfully complete a task, and can feature video, images, and text. For example, "How to tie a tie" or "How to tile a kitchen backsplash". If each step in your how-to must be read in sequence, it's a good sign that HowTo structured data could benefit your content. HowTo structured data is appropriate when the how-to is the main focus of the page.
+
+Properly marked up how-to pages may be eligible to have a rich result on Search and an Action on the Google Assistant, which can help your site reach the right users.
+Adding HowTo structured data to your page can automatically generate a How-to Action for smart displays. If you'd like to provide your users with the best visual experience on these devices, including the images specified in the markup, fill out the interest form.
+How to add structured data
+
+Structured data is a standardized format for providing information about a page and classifying the page content. If you're new to structured data, you can learn more about how structured data works.
+
+Here's an overview of how to build, test, and release structured data. For a step-by-step guide on how to add structured data to a web page, check out the structured data codelab.
+
+    Add the required properties. Based on the format you're using, learn where to insert structured data on the page.
+    Using a CMS? It may be easier to use a plugin that's integrated into your CMS.
+    Using JavaScript? Learn how to generate structured data with JavaScript.
+    Follow the guidelines.
+    Validate your code using the Rich Results Test and fix any critical errors. Consider also fixing any non-critical issues that may be flagged in the tool, as they can help improve the quality of your structured data (however, this isn't necessary to be eligible for rich results).
+    Deploy a few pages that include your structured data and use the URL Inspection tool to test how Google sees the page. Be sure that your page is accessible to Google and not blocked by a robots.txt file, the noindex tag, or login requirements. If the page looks okay, you can ask Google to recrawl your URLs.
+    Note: Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it.
+    To keep Google informed of future changes, we recommend that you submit a sitemap. You can automate this with the Search Console Sitemap API.
+
+Feature availability
+
+How-to rich results are currently available in all languages and countries where Google Search is available. The feature is available on mobile and desktop devices.
+Examples
+
+Here are some examples of how your content may appear in How-to rich results. A more visual variant may be displayed if your how-to contains an image of the completed how-to and an image per step. Make sure to add as many required and recommended properties as possible so your how-to can be most effectively represented in Google Search.
+Standard How-to rich result
+Standard How-To Rich Result in Google Search
+Note: The actual appearance in search results might be different. You can preview most features with the Rich Results Test.
+How-to rich result with images for each step
+Image of a Visual How-to Rich Result
+How-to rich result with video
+Guidelines
+
+For your page to be eligible for How-to rich results and a How-to Action for the Google Assistant, you must follow these guidelines:
+
+    General structured data guidelines
+    Search Essentials
+    Content restrictions policy for Actions on Google
+    How-to content guidelines
+
+Content guidelines
+
+    Advertising: Don't use HowTo structured data for advertising purposes.
+    Ineligible Content: How-to rich results may not be displayed if the content is obscene, profane, sexually explicit, or graphically violent; or if it promotes dangerous or illegal activities or has hateful or harassing language.
+    Source: All HowTo content must be visible to the user on the source page. Make sure that the how-to is the main focus of the source page. Don't include more than one HowTo for a certain page.
+    Materials and Tools: Add structured data to all materials and tools necessary to complete the task.
+    Steps: Each HowToStep must include the entire contents of the source step. Don't mark up non-step data such as a summary or introduction section as a step.
+    Step images: If the steps are best represented visually, ensure the images in these steps are marked up for each HowToStep. Only mark up the instructional step images that are specific for each step and don't use the same image in multiple steps for the same how-to. Use the same images that correspond to the content on your page. Don't use images that don't reflect the how-to content, or use different images to optimize the rich-result.
+    Final image: If the end result can be accurately described by an image, ensure this image is present on the page, and your HowTo markup includes it using the image property. This image may be the same as the one marked up for the last step.
+    Content: Don't use HowTo markup for recipes; instead, use Recipe structured data. Articles and general advice content that is not a specific set of instructions are not appropriate for HowTo markup. 
+
+Structured data type definitions
+
+You must include the required properties for your content to be eligible for display as a rich result. You can also include the recommended properties to add more information to your structured data, which could provide a better user experience.
+HowTo
+
+The full definition of HowTo is available at schema.org/HowTo.
+
+The HowTo type indicates that the page contains a how-to. There must be one HowTo type definition per page.
+
+The Google-supported properties are the following:
+Required properties
+name 	
+
+Text
+
+The title of the how-to. For example, "How to tie a tie".
+step 	HowToStep or HowToSection
+
+An array of HowToStep elements which comprise the full instructions of the how-to. Each step element must correspond to an individual step in the instructions. Don't mark up non-step data such as a summary or introduction section, using this property. For example:
+
+    You can specify the complete text for each step by setting the text of each HowToStep. An image, the title of a step given as name, and url are optional, but recommended, since optional properties may contribute to a rich presentation of the search result.
+
+    "step":[
+      {
+        "@type": "HowToStep",
+        "text": "Button your shirt how you'd like to wear it, then drape the tie around your neck. Make the thick end about 1/3rd longer than the short end. For formal button down shirts, it usually works best with the small end of the tie between 4th and 5th button.",
+        "image": "https://example.com/1x1/photo.jpg"
+      }, {
+        "@type": "HowToStep",
+        "text": "Cross the long end over the short end. This will form the basis for your knot.",
+        "image": "https://example.com/1x1/photo.jpg"
+      }, {
+        "@type": "HowToStep",
+        "text": "Bring the long end back under the short end, then throw it back over the top of the short end in the other direction. ",
+        "image": "https://example.com/1x1/photo.jpg"
+      }, {
+        "@type": "HowToStep",
+        "text": "Now pull the long and through the loop near your neck, forming another loop near your neck.",
+        "image": "https://example.com/1x1/photo.jpg"
+      }, {
+        "@type": "HowToStep",
+        "text": "Pull the long end through that new loop and tighten to fit! ",
+        "image": "https://example.com/1x1/photo.jpg"
+      }
+    ]
+
+    For complex steps, you can provide a step name and list individual substeps using HowToDirection or HowToTip.
+
+
+
+An array of HowToSection elements which comprise the full instructions of this HowTo. For example:
+
+
+Recommended properties
+estimatedCost 	MonetaryAmount or Text
+
+The estimated cost of the supplies consumed when performing instructions.
+image 	ImageObject or URL
+
+Image of the completed how-to.
+
+Additional image guidelines:
+
+    Every page must contain at least one image. Google will pick the best image(s) to display in Search results based on the aspect ratio and resolution.
+    Image URLs must be crawlable and indexable. To check if Google can access your URLs, use the URL Inspection tool.
+    Images must represent the marked up content.
+    Images must be in a file format that's supported by Google Images.
+
+supply 	HowToSupply or Text
+
+A supply consumed when performing instructions or a direction.
+tool 	HowToTool or Text
+
+An object used (but not consumed) when performing instructions or a direction.
+totalTime 	Duration
+
+The total time required to perform all instructions or directions (including time to prepare the supplies), in ISO 8601 duration format.
+video 	VideoObject
+
+A video of the how-to. Follow the list of required and recommended Video properties. Mark the steps within a video with hasPart.
+
+
+video.hasPart 	
+
+Clip
+
+A video clip that is part of the entire video.
+video.hasPart.endOffset 	
+
+Number
+
+The end time of the clip expressed as the number of seconds from the beginning of the video.
+video.hasPart.name 	
+
+Text
+
+The name of the clip. For example, "Pull and tighten" could be the name of the clip that shows how to pull and tighten a tie.
+video.hasPart.startOffset 	
+
+Number
+
+The start time of the clip expressed as the number of seconds from the beginning of the video.
+video.hasPart.url 	
+
+URL
+
+A link to the start time of the clip. The start time must match the value set in video.hasPart.startOffset. For example:
+
+"startOffset": 30,
+"endOffset": 45,
+"url": "https://www.youtube.com/watch?v=4AOI1tZrgMI&t=30"
+
+HowToSection
+
+The full definition of HowToSection is available at schema.org/HowToSection.
+
+The HowToSection type defines a section of a single how-to and contains one or multiple steps. Don't use HowToSection to define different solutions to complete a task; instead, use HowToSection as part of a single solution. For listing multiple ways to complete a task, use multiple HowTo objects. For example, multiple ways to change a flat tire are listed as multiple HowTo objects, not HowToSection objects.
+
+The Google-supported properties are the following:
+Required properties
+itemListElement 	HowToStep
+
+A list of detailed steps for the section.
+name 	Text
+
+The name of the section.
+HowToStep
+
+The full definition of HowToStep is available at schema.org/HowToStep.
+
+The HowToStep type defines the simple textual step in a how-to, and may include an image.
+
+The Google-supported properties are the following:
+Required properties
+itemListElement 	HowToDirection or HowToTip
+
+A list of detailed substeps, including directions or tips.
+
+Optional if text is used.
+text 	Text
+
+The full instruction text of this step.
+
+Optional if itemListElement is used. Additional guidelines:
+
+    Include only instructional text and don't include other text such as "Directions", "Watch the video", "Step 1". Specify those phrases outside of the marked up property.
+
+    Not recommended:
+
+    {
+      "@type": "HowToStep",
+      "text": "Step 1. Drape the tie around your neck."
+    }
+
+    Recommended:
+
+    {
+      "@type": "HowToStep",
+      "text": "Drape the tie around your neck."
+    }
+
+Recommended properties
+image 	ImageObject or URL
+
+An image for the step. Additional image guidelines:
+
+    Image URLs must be crawlable and indexable.
+    Images must represent the marked up content.
+    Images must be in .jpg, .png, or. gif format.
+
+name 	Text
+
+The word or short phrase summarizing the step (for example, "Attach wires to post" or "Dig"). Don't use non-descriptive text (for example, "Step 1: [text]") or other form of step number (for example, "1. [text]").
+url 	URL
+
+A URL that directly links to the step (if one is available). For example, an anchor link fragment.
+video 	VideoObject or Clip
+
+A video for this step of the how-to, or a clip from one video that shows the entire how-to.
+
+For VideoObject, follow the list of required and recommended Video properties.
+
+Here's an example using VideoObject:
+
+{
+  "@type": "HowToStep",
+  "video": {
+    "name": "Drape the tie",
+    "description": "Drape the tie.",
+    "thumbnailUrl": "https://example.com/photos/photo.jpg",
+    "contentUrl": "https://www.example.com/videos/123_600x400.mp4",
+    "embedUrl": "https://www.example.com/videoplayer?id=123",
+    "uploadDate": "2019-01-05T08:00:00+08:00",
+    "duration": "PT12S"
+  }
+}
+          
+
+Here's an example using Clip:
+
+
+HowToSupply, HowToTool
+
+The full definitions of HowToSupply and HowToTool are available at schema.org/HowToSupply and schema.org/HowToTool.
+
+HowToSupply and HowToTool are used to complete the HowTo. They have the same required and recommended properties.
+Required properties
+name 	Text
+
+The name of the supply or tool.
+HowToDirection, HowToTip
+
+The full definitions of HowToDirection and HowToTip are available at schema.org/HowToDirection and schema.org/HowToTip.
+
+Use HowToDirection and HowToTip to describe directions or tips. They have the same required and recommended properties.
+Required properties
+text 	Text
+
+The text of the direction or tip.
+Monitor rich results with Search Console
+
+Search Console is a tool that helps you monitor how your pages perform in Google Search. You don't have to sign up for Search Console to be included in Google Search results, but it can help you understand and improve how Google sees your site. We recommend checking Search Console in the following cases:
+
+    After deploying structured data for the first time
+    After releasing new templates or updating your code
+    Analyzing traffic periodically
+
+After deploying structured data for the first time
+
+After Google has indexed your pages, look for issues using the relevant Rich result status report. Ideally, there will be an increase of valid items, and no increase in invalid items. If you find issues in your structured data:
+
+    Fix the invalid items.
+    Inspect a live URL to check if the issue persists.
+    Request validation using the status report.
+
+After releasing new templates or updating your code
+When you make significant changes to your website, monitor for increases in structured data invalid items.
+
+    If you see an increase in invalid items, perhaps you rolled out a new template that doesn't work, or your site interacts with the existing template in a new and bad way.
+    If you see a decrease in valid items (not matched by an increase in invalid items), perhaps you are no longer embedding structured data in your pages. Use the URL Inspection tool to learn what is causing the issue.
+
+Warning: Don't use cached links to debug your pages. Instead, use the URL Inspection Tool because it has the most up-to-date version of your pages.
+Analyzing traffic periodically
+Analyze your Google Search traffic using the Performance Report. The data will show you how often your page appears as a rich result in Search, how often users click on it and what is the average position you appear on search results. You can also automatically pull these results with the Search Console API.
+Troubleshooting
+
+If you're having trouble implementing or debugging structured data, here are some resources that may help you.
+
+    If you're using a content management system (CMS) or someone else is taking care of your site, ask them to help you. Make sure to forward any Search Console message that details the issue to them.
+    Google does not guarantee that features that consume structured data will show up in search results. For a list of common reasons why Google may not show your content in a rich result, see the General Structured Data Guidelines.
+    You might have an error in your structured data. Check the list of structured data errors.
+    If you received a structured data manual action against your page, the structured data on the page will be ignored (although the page can still appear in Google Search results). To fix structured data issues, use the Manual Actions report.
+    Review the guidelines again to identify if your content isn't compliant with the guidelines. The problem can be caused by either spammy content or spammy markup usage. However, the issue may not be a syntax issue, and so the Rich Results Test won't be able to identify these issues.
+    Troubleshoot missing rich results / drop in total rich results.
+    Allow time for re-crawling and re-indexing. Remember that it may take several days after publishing a page for Google to find and crawl it. For general questions about crawling and indexing, check the Google Search crawling and indexing FAQ.
+    Post a question in the Google Search Central forum.
+
+

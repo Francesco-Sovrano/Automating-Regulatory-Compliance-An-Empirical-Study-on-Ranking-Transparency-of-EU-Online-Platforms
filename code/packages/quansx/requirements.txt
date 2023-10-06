@@ -1,0 +1,12 @@
+transformers==4.8.2 # text summarization and other NLP tasks
+nltk
+torch==1.10.0
+more_itertools
+
+python-Levenshtein
+nlp==0.4.0
+sentence_transformers==2.0.0 # sentence embeddings
+tqdm
+#simpleneighbors[annoy] # kNN
+
+#knowpy
