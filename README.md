@@ -1,6 +1,6 @@
-# Automating Regulatory Compliance: An Empirical Study on Ranking Transparency in the Software Documentation of EU Online Platforms
+# An Empirical Study on Compliance with Ranking Transparency in the Software Documentation of EU Online Platforms
 
-Welcome to the replication package for the ICSE-SEIS 2024 paper titled "Automating Regulatory Compliance: An Empirical Study on Ranking Transparency in the Software Documentation of EU Online Platforms."
+Welcome to the replication package for the ICSE-SEIS 2024 paper titled "An Empirical Study on Compliance with Ranking Transparency in the Software Documentation of EU Online Platforms."
 
 ## Abstract
 

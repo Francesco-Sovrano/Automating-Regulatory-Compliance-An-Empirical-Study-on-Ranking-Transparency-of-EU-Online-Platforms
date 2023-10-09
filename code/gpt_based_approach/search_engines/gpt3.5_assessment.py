@@ -14,6 +14,11 @@ import csv
 with open("../../../data/checklist/checklist_for_search_engines.txt", "r") as f:
     checklist = f.readlines()
 
+results_dir = 'results'
+os.makedirs(results_dir, exist_ok=True)
+results_dir = 'results/gpt3.5'
+os.makedirs(results_dir, exist_ok=True)
+
 # Initialize OpenAI API
 openai.organization = os.environ.get('OPENAI_ORGANIZATION')
 openai.api_key = os.environ.get('OPENAI_API_KEY')
@@ -101,7 +106,7 @@ __gpt_cache = load_or_create_cache(gpt_cache_name, lambda: {})
 checklist = [item.strip() for item in checklist]
 
 # Read software documentation from txt or md file
-for documentation_file in filter(lambda x: x.endswith('.txt') or x.endswith('.md') or x.endswith('.html'), get_document_list('docs')):
+for documentation_file in filter(lambda x: x.endswith('.txt') or x.endswith('.md') or x.endswith('.html'), get_document_list('../../../data/platform_docs/search_engines')):
     # documentation_file = sys.argv[1]  # Change this to your documentation filename
     with open(documentation_file, "r") as f:
         documentation = f.read()
@@ -135,7 +140,7 @@ for documentation_file in filter(lambda x: x.endswith('.txt') or x.endswith('.md
         scores[question] = [best_assessment]
 
     # Print results
-    with open(documentation_file+'.results.csv', 'w', newline='', encoding='utf-8') as f:
+    with open(results_dir+'/'+documentation_file.split('/')[-1]+'.results.csv', 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         
         # Write header
