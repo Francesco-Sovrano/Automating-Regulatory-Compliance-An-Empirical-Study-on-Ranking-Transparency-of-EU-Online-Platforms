@@ -127,3 +127,7 @@ After setting up the environment, you can run the automated assessments using:
 ## Conclusion
 
 We hope this repository serves as a valuable resource for researchers and practitioners aiming to understand and automate the assessment of regulatory compliance, particularly concerning the EU's P2B Regulation. Feedback and contributions are always welcome!
+
+## Support
+
+For any problem or question, please contact me at `cesco.sovrano@gmail.com`
