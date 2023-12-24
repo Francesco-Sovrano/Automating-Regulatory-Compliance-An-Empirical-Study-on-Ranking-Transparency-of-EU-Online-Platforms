@@ -19,7 +19,7 @@ This repository comprises various tools, scripts, and data sets essential for re
 - **[expert_vs_gpt_vs_doxpy](expert_vs_gpt_vs_doxpy)**: This folder contains the code of DoXpert and the ChatGPT-based assessment tool. It also contains the data assessment results produced by the three experts and the the software documentation object of this study. For more details, read Sections 6.1 and 6.3 of the paper.
     - [code/data_analysis](expert_vs_gpt_vs_doxpy/code/data_analysis/experts_vs_tools): Contains scripts dedicated to the analysis of the research data.
     - [code/doxpert](expert_vs_gpt_vs_doxpy/code/doxpert): Houses the source code of the DoXpert tool.
-    - [code/gpt_based_approach](expert_vs_gpt_vs_doxpy/code/gpt_based_approach): Directory with scripts that implement the baseline tool leveraging ChatGPT.
+    - [code/gpt_based_approach](expert_vs_gpt_vs_doxpy/code/gpt_based_approach): Directory with scripts that implement the baseline tool leveraging ChatGPT. Inside the [marketplaces](expert_vs_gpt_vs_doxpy/code/gpt_based_approach/marketplaces) and [search_engines](expert_vs_gpt_vs_doxpy/code/gpt_based_approach/search_engines) directories, you will find some pkl files containing the cached outputs of the queries to ChatGPT (v4 and v3.5). If you want to regenerate those outputs, cancel the pkl files and run the assessments.
     - [code/packages](expert_vs_gpt_vs_doxpy/code/packages): Includes custom Python packages used throughout the project which are forked versions of:
         - [DoXpy](https://github.com/Francesco-Sovrano/DoXpy)
         - [DiscoLQA](https://github.com/Francesco-Sovrano/DiscoLQA) 
