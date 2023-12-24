@@ -10,22 +10,22 @@ Compliance with the EU's Platform-to-Business (P2B) Regulation is challenging fo
 
 This repository comprises various tools, scripts, and data sets essential for replicating the findings of our ICSE-SEIS 2024 paper. Here's a detailed breakdown:
 
-- **setup_virtualenv.sh**: A script designed to establish a virtual environment for the project, ensuring isolation and specific dependency versions.
+- **[setup_virtualenv.sh](setup_virtualenv.sh)**: A script designed to establish a virtual environment for the project, ensuring isolation and specific dependency versions.
   
-- **run_automated_assessments.sh**: A shell script crafted to execute the automated assessments elucidated in the research paper.
+- **[run_automated_assessments.sh](run_automated_assessments.sh)**: A shell script crafted to execute the automated assessments elucidated in the research paper.
 
-- **prolific_survey**: Contains the data resulting from the large-scale manual assessment on Prolific involving 134 participants. For more details, read Section 6.2 of the paper.
+- **[prolific_survey](prolific_survey)**: This folder contains the data resulting from the large-scale manual assessment on Prolific involving 134 participants. For more details, read Section 6.2 of the paper.
 
-- **expert_vs_gpt_vs_doxpy**: Contains the code of DoXpert and the ChatGPT-based assessment tool. It also contains the data assessment results produced by the three experts and the the software documentation object of this study. For more details, read Sections 6.1 and 6.3 of the paper.
-    - `code/data_analysis`: Contains scripts dedicated to the analysis of the research data.
-    - `code/doxpert`: Houses the source code of the DoXpert tool.
-    - `code/gpt_based_approach`: Directory with scripts that implement the baseline tool leveraging ChatGPT.
-    - `code/packages`: Includes custom Python packages used throughout the project which are forked versions of:
+- **[expert_vs_gpt_vs_doxpy](expert_vs_gpt_vs_doxpy)**: This folder contains the code of DoXpert and the ChatGPT-based assessment tool. It also contains the data assessment results produced by the three experts and the the software documentation object of this study. For more details, read Sections 6.1 and 6.3 of the paper.
+    - [code/data_analysis](expert_vs_gpt_vs_doxpy/code/data_analysis): Contains scripts dedicated to the analysis of the research data.
+    - [code/doxpert](expert_vs_gpt_vs_doxpy/code/doxpert): Houses the source code of the DoXpert tool.
+    - [code/gpt_based_approach](expert_vs_gpt_vs_doxpy/code/gpt_based_approach): Directory with scripts that implement the baseline tool leveraging ChatGPT.
+    - [code/packages](expert_vs_gpt_vs_doxpy/code/packages): Includes custom Python packages used throughout the project which are forked versions of:
         - [DoXpy](https://github.com/Francesco-Sovrano/DoXpy)
         - [DiscoLQA](https://github.com/Francesco-Sovrano/DiscoLQA) 
-    - `data/assessment_results`: Contains the outcomes of the automated and experts evaluations of the technical documentation.
-    - `data/platform_docs`: This directory houses the software documentation data from three major online intermediation services (Amazon, Tripadvisor, and Booking) and three online search engines (Google, Bing, and Yahoo). Our selection was driven by representativeness and audience profile. For details on the number of links and average word count per document, refer to the table below.
-    - `data/checklist`: Features the checklist instrumental in evaluating the compliance of platform documentation with the P2B Regulation.
+    - [data/assessment_results](expert_vs_gpt_vs_doxpy/data/assessment_results): Contains the outcomes of the automated and experts evaluations of the technical documentation.
+    - [data/platform_docs](expert_vs_gpt_vs_doxpy/data/platform_docs): This directory houses the software documentation data from three major online intermediation services (Amazon, Tripadvisor, and Booking) and three online search engines (Google, Bing, and Yahoo). Our selection was driven by representativeness and audience profile. For details on the number of links and average word count per document, refer to the table below.
+    - [data/checklist](expert_vs_gpt_vs_doxpy/data/checklist): Features the checklist instrumental in evaluating the compliance of platform documentation with the P2B Regulation.
 
 ```
     Platform       | No. of Links | Avg. Words/Doc 
