@@ -14,18 +14,18 @@ This repository comprises various tools, scripts, and data sets essential for re
   
 - **run_automated_assessments.sh**: A shell script crafted to execute the automated assessments elucidated in the research paper.
 
-- **code**:
-  - `data_analysis`: Contains scripts dedicated to the analysis of the research data.
-  - `doxpert`: Houses the source code of the DoXpert tool.
-  - `gpt_based_approach`: Directory with scripts that implement the baseline tool leveraging ChatGPT.
-  - `packages`: Includes custom Python packages used throughout the project which are forked versions of:
-    - [DoXpy](https://github.com/Francesco-Sovrano/DoXpy)
-    - [DiscoLQA](https://github.com/Francesco-Sovrano/DiscoLQA)
-  
-- **data**:
-  - `assessment_results`: Contains the outcomes of the automated and/or human evaluations of the technical documentation.
-  - `platform_docs`: This directory houses the software documentation data from three major online intermediation services (Amazon, Tripadvisor, and Booking) and three online search engines (Google, Bing, and Yahoo). Our selection was driven by representativeness and audience profile. For details on the number of links and average word count per document, refer to the table below.
-  - `checklist`: Features the checklist instrumental in evaluating the compliance of platform documentation with the P2B Regulation.
+- **prolific_survey**: Contains the data resulting from the large-scale manual assessment on Prolific involving 134 participants. For more details, read Section 6.2 of the paper.
+
+- **expert_vs_gpt_vs_doxpy**: Contains the code of DoXpert and the ChatGPT-based assessment tool. It also contains the data assessment results produced by the three experts and the the software documentation object of this study. For more details, read Sections 6.1 and 6.3 of the paper.
+    - `code/data_analysis`: Contains scripts dedicated to the analysis of the research data.
+    - `code/doxpert`: Houses the source code of the DoXpert tool.
+    - `code/gpt_based_approach`: Directory with scripts that implement the baseline tool leveraging ChatGPT.
+    - `code/packages`: Includes custom Python packages used throughout the project which are forked versions of:
+        - [DoXpy](https://github.com/Francesco-Sovrano/DoXpy)
+        - [DiscoLQA](https://github.com/Francesco-Sovrano/DiscoLQA) 
+    - `data/assessment_results`: Contains the outcomes of the automated and experts evaluations of the technical documentation.
+    - `data/platform_docs`: This directory houses the software documentation data from three major online intermediation services (Amazon, Tripadvisor, and Booking) and three online search engines (Google, Bing, and Yahoo). Our selection was driven by representativeness and audience profile. For details on the number of links and average word count per document, refer to the table below.
+    - `data/checklist`: Features the checklist instrumental in evaluating the compliance of platform documentation with the P2B Regulation.
 
 ```
     Platform       | No. of Links | Avg. Words/Doc 

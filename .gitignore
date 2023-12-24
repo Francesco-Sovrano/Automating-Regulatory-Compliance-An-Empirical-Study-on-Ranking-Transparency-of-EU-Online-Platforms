@@ -27,3 +27,6 @@ venv.bak/
 
 # graphml files
 *.graphml
+
+prolific_data*
+survey_data*

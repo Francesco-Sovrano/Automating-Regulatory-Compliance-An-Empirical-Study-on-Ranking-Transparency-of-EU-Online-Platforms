@@ -1,5 +1,7 @@
 source .env/bin/activate
 
+cd expert_vs_gpt_vs_doxpy
+
 ################################
 ######## ChatGPT ###############
 ################################
