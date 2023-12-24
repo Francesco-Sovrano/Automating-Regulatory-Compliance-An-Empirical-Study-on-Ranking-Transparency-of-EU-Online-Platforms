@@ -38,6 +38,8 @@ This repository comprises various tools, scripts, and data sets essential for re
     Yahoo          | 3            | 174
 ```
 
+**N.B.** We are currently using ChatGPT version 0613, which OpenAI may soon discontinue. If you wish to use different versions, you can easily modify the Python scripts found in the [marketplaces](expert_vs_gpt_vs_doxpy/code/gpt_based_approach/marketplaces) and [search_engines](expert_vs_gpt_vs_doxpy/code/gpt_based_approach/search_engines) folders.
+
 ## System Specifications
 
 This repository is tested and recommended on:
