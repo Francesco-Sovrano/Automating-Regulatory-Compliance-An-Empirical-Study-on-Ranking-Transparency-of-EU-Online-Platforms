@@ -17,7 +17,7 @@ This repository comprises various tools, scripts, and data sets essential for re
 - **[prolific_survey](prolific_survey)**: This folder contains the data resulting from the large-scale manual assessment on Prolific involving 134 participants. For more details, read Section 6.2 of the paper.
 
 - **[expert_vs_gpt_vs_doxpy](expert_vs_gpt_vs_doxpy)**: This folder contains the code of DoXpert and the ChatGPT-based assessment tool. It also contains the data assessment results produced by the three experts and the the software documentation object of this study. For more details, read Sections 6.1 and 6.3 of the paper.
-    - [code/data_analysis](expert_vs_gpt_vs_doxpy/code/data_analysis): Contains scripts dedicated to the analysis of the research data.
+    - [code/data_analysis](expert_vs_gpt_vs_doxpy/code/data_analysis/experts_vs_tools): Contains scripts dedicated to the analysis of the research data.
     - [code/doxpert](expert_vs_gpt_vs_doxpy/code/doxpert): Houses the source code of the DoXpert tool.
     - [code/gpt_based_approach](expert_vs_gpt_vs_doxpy/code/gpt_based_approach): Directory with scripts that implement the baseline tool leveraging ChatGPT.
     - [code/packages](expert_vs_gpt_vs_doxpy/code/packages): Includes custom Python packages used throughout the project which are forked versions of:
