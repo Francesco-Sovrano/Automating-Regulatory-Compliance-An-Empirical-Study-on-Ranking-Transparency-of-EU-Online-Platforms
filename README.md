@@ -1,6 +1,6 @@
 # An Empirical Study on Compliance with Ranking Transparency in the Software Documentation of EU Online Platforms
 
-Welcome to the replication package for the ICSE-SEIS 2024 paper titled "An Empirical Study on Compliance with Ranking Transparency in the Software Documentation of EU Online Platforms."
+Welcome to the replication package for the ICSE-SEIS 2024 paper titled ["An Empirical Study on Compliance with Ranking Transparency in the Software Documentation of EU Online Platforms."](http://arxiv.org/abs/2312.14794)
 
 ## Abstract
 
@@ -38,8 +38,6 @@ This repository comprises various tools, scripts, and data sets essential for re
     Yahoo          | 3            | 174
 ```
 
-**N.B.** We are currently using ChatGPT version 0613, which OpenAI may soon discontinue. If you wish to use different versions, you can easily modify the Python scripts found in the [marketplaces](expert_vs_gpt_vs_doxpy/code/gpt_based_approach/marketplaces) and [search_engines](expert_vs_gpt_vs_doxpy/code/gpt_based_approach/search_engines) folders. Additionally, you should update the GPT model referenced in the `instruct_model` function within the [model_manager.py](expert_vs_gpt_vs_doxpy/code/packages/doxpy/doxpy/models/model_manager.py) script.
-
 ## System Specifications
 
 This repository is tested and recommended on:
@@ -53,18 +51,36 @@ This package uses forked versions of two repositories. The original repositories
 - [DoXpy Repository](https://github.com/Francesco-Sovrano/DoXpy)
 - [DiscoLQA Repository](https://github.com/Francesco-Sovrano/DiscoLQA)
 
-## Configuration and Setup
+## Environment Setup
 
-Before using the tools and scripts in this repository, you need to configure certain environment variables and potentially set up a virtual environment.
+In order to run the automated assessments, you need to install a proper environment. To do so, we offer two solutions. 
 
-### Environment Variables
+### Docker-based Solution
+The first solution relies on Docker.
+Use the following command to download the image from Docker Hub:
+```bash
+docker pull francescosovrano/dox4p2bcompliance
+```
+
+After the download is complete, you can verify that the image is downloaded by using the command `docker images`, which will list all the Docker images available on your system.
+
+Once the download is complete, run the following commands to create and start a new container:
+```bash
+docker run -it francescosovrano/dox4p2bcompliance bash
+```
+
+### Shell Script Solution
+Instead, if you don't want to use Docker, in order to create the necessary virtual environment and install the necessary dependencies, run the following script:
+
+```bash
+./setup_virtualenv.sh
+```
+
+## Installation of OpenAI Keys
 
 To use this package, you must set up two environment variables: `OPENAI_ORGANIZATION` and `OPENAI_API_KEY`. These variables represent your OpenAI organization identifier and your API key respectively.
 
-#### Setting Up Environment Variables
-
-##### On UNIX-like Operating Systems (Linux, MacOS):
-
+On UNIX-like Operating Systems (Linux, MacOS):
 1. Open your terminal.
 2. To set the `OPENAI_ORGANIZATION` variable, run:
    ```bash
@@ -76,26 +92,11 @@ To use this package, you must set up two environment variables: `OPENAI_ORGANIZA
    ```
 4. These commands will set the environment variables for your current session. If you want to make them permanent, you can add the above lines to your shell profile (`~/.bashrc`, `~/.bash_profile`, `~/.zshrc`, etc.)
 
-##### On Windows:
-
-1. Press `Win + R`, type `sysdm.cpl`, and press Enter.
-2. Go to the `Advanced` tab and click on `Environment Variables`.
-3. Under `User variables`, click on `New`.
-4. For the `Variable name` field, enter `OPENAI_ORGANIZATION` and for the `Variable value` field, enter your organization ID.
-5. Repeat the process and add another user variable with the name `OPENAI_API_KEY` and your API key as the value.
-6. Click `OK` to close all windows.
-
-#### Verifying the Setup
-
 To ensure you've set up the environment variables correctly:
 
 1. In your terminal or command prompt, run:
    ```bash
    echo $OPENAI_ORGANIZATION  # For UNIX-like systems
-   ```
-   or
-   ```powershell
-   echo %OPENAI_ORGANIZATION%  # For Windows
    ```
    This should display your organization ID.
    
@@ -103,28 +104,20 @@ To ensure you've set up the environment variables correctly:
    ```bash
    echo $OPENAI_API_KEY  # For UNIX-like systems
    ```
-   or
-   ```powershell
-   echo %OPENAI_API_KEY%  # For Windows
-   ```
 
 Ensure that both values match what you've set.
 
-### Setting Up the Virtual Environment
-
-To create a virtual environment and install necessary dependencies, run the following script:
-
-```bash
-./setup_virtualenv.sh
-```
-
-### Running Automated Assessments
+## Run the Automated Assessments
 
 After setting up the environment, you can run the automated assessments using:
 
 ```bash
 ./run_automated_assessments.sh
 ```
+
+The GPT-based assessments, specifically from line 9 to line 17 of the [run_automated_assessments.sh](run_automated_assessments.sh) script, will be the quickest due to the pre-cached output of GPT. On the other hand, DoXpert's assessments may take more time, depending on the number of CPUs and GPUs at your disposal. While a GPU is recommended, it is not mandatory.
+
+We are currently using ChatGPT version 0613, which OpenAI may soon discontinue. If you wish to use different versions, you can easily modify the Python scripts found in the [marketplaces](expert_vs_gpt_vs_doxpy/code/gpt_based_approach/marketplaces) and [search_engines](expert_vs_gpt_vs_doxpy/code/gpt_based_approach/search_engines) folders. Additionally, you should update the GPT model referenced in the `instruct_model` function within the [model_manager.py](expert_vs_gpt_vs_doxpy/code/packages/doxpy/doxpy/models/model_manager.py) script.
 
 ## Conclusion
 
