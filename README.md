@@ -96,13 +96,13 @@ To ensure you've set up the environment variables correctly:
 
 1. In your terminal or command prompt, run:
    ```bash
-   echo $OPENAI_ORGANIZATION  # For UNIX-like systems
+   echo $OPENAI_ORGANIZATION
    ```
    This should display your organization ID.
    
 2. Similarly, verify the API key:
    ```bash
-   echo $OPENAI_API_KEY  # For UNIX-like systems
+   echo $OPENAI_API_KEY
    ```
 
 Ensure that both values match what you've set.
