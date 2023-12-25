@@ -1,6 +1,8 @@
 # An Empirical Study on Compliance with Ranking Transparency in the Software Documentation of EU Online Platforms
 
-Welcome to the replication package for the ICSE-SEIS 2024 paper titled ["An Empirical Study on Compliance with Ranking Transparency in the Software Documentation of EU Online Platforms."](http://arxiv.org/abs/2312.14794)
+Welcome to the replication package for the ICSE-SEIS 2024 paper titled ["An Empirical Study on Compliance with Ranking Transparency in the Software Documentation of EU Online Platforms"](http://arxiv.org/abs/2312.14794).
+
+**Preprint available at: [http://arxiv.org/abs/2312.14794](http://arxiv.org/abs/2312.14794)**
 
 ## Abstract
 
@@ -122,6 +124,20 @@ We are currently using ChatGPT version 0613, which OpenAI may soon discontinue. 
 ## Conclusion
 
 We hope this repository serves as a valuable resource for researchers and practitioners aiming to understand and automate the assessment of regulatory compliance, particularly concerning the EU's P2B Regulation. Feedback and contributions are always welcome!
+
+## Citations
+This code is free. So, if you use this code anywhere, please cite us:
+```
+@inproceedings{sovrano2024p2b,
+  title={An Empirical Study on Compliance with Ranking Transparency in the Software Documentation of EU Online Platforms},
+  author={Sovrano, Francesco and Lognoul, Michaël and Bacchelli, Alberto},
+  booktitle={2024 IEEE/ACM 46th International Conference on Software Engineering: Software Engineering in Society (ICSE-SEIS)},
+  year={2024},
+  organization={IEEE}
+}
+```
+
+Thank you!
 
 ## Support
 
