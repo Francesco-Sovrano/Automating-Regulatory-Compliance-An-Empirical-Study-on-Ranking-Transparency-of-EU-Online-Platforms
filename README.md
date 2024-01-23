@@ -78,6 +78,8 @@ Instead, if you don't want to use Docker, in order to create the necessary virtu
 ./setup_virtualenv.sh
 ```
 
+If you cannot download the pytorch_model.bin file from Git LFS, download [pytorch_model.bin](https://zenodo.org/records/10555604/files/pytorch_model.bin?download=1) from [https://doi.org/10.5281/zenodo.10555603](https://doi.org/10.5281/zenodo.10555603) and manually move it inside [expert_vs_gpt_vs_doxpy/code/doxpert/question_extractor/data/models/distilt5-disco-qaamr-multi](expert_vs_gpt_vs_doxpy/code/doxpert/question_extractor/data/models/distilt5-disco-qaamr-multi).
+
 ## Installation of OpenAI Keys
 
 To use this package, you must set up two environment variables: `OPENAI_ORGANIZATION` and `OPENAI_API_KEY`. These variables represent your OpenAI organization identifier and your API key respectively.
@@ -120,6 +122,10 @@ After setting up the environment, you can run the automated assessments using:
 The GPT-based assessments, specifically from line 9 to line 17 of the [run_automated_assessments.sh](run_automated_assessments.sh) script, will be the quickest due to the pre-cached output of GPT. On the other hand, DoXpert's assessments may take more time, depending on the number of CPUs and GPUs at your disposal. While a GPU is recommended, it is not mandatory.
 
 We are currently using ChatGPT version 0613, which OpenAI may soon discontinue. If you wish to use different versions, you can easily modify the Python scripts found in the [marketplaces](expert_vs_gpt_vs_doxpy/code/gpt_based_approach/marketplaces) and [search_engines](expert_vs_gpt_vs_doxpy/code/gpt_based_approach/search_engines) folders. Additionally, you should update the GPT model referenced in the `instruct_model` function within the [model_manager.py](expert_vs_gpt_vs_doxpy/code/packages/doxpy/doxpy/models/model_manager.py) script.
+
+Upon completion of the script, you will find the assessment results in the directory [code/doxpert/logs](expert_vs_gpt_vs_doxpy/code/doxpert/logs). This directory contains log files detailing the outcomes of the assessments.
+
+**Note:** To reduce script verbosity and manage log output, please comment out lines 18 to 22 in the file located at [expert_vs_gpt_vs_doxpy/code/doxpert/doxpert_assessment.py](expert_vs_gpt_vs_doxpy/code/doxpert/doxpert_assessment.py). Then, for a more readable format, you can convert these log files into CSV files. Move the log files to [expert_vs_gpt_vs_doxpy/data/assessment_results/dox-based/log_files](expert_vs_gpt_vs_doxpy/data/assessment_results/dox-based/log_files) and then run the script [expert_vs_gpt_vs_doxpy/data/assessment_results/dox-based/format_assessment_to_csv.py](expert_vs_gpt_vs_doxpy/data/assessment_results/dox-based/format_assessment_to_csv.py) to perform the conversion.
 
 ## Conclusion
 

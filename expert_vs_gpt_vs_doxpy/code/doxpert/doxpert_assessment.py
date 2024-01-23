@@ -15,11 +15,11 @@ from os import mkdir, path as os_path
 import sys
 import re
 import time
-# import logging
-# logger = logging.getLogger('doxpy')
-# logger.setLevel(logging.INFO)
-# # logger.setLevel(logging.WARNING)
-# logger.addHandler(logging.StreamHandler(sys.stdout))
+import logging
+logger = logging.getLogger('doxpy')
+logger.setLevel(logging.INFO)
+# logger.setLevel(logging.WARNING)
+logger.addHandler(logging.StreamHandler(sys.stdout))
 
 import argparse
 
